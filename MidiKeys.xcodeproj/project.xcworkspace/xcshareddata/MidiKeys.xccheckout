@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C56180C3-F612-4901-BFF8-D2799CFFEF60</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MidiKeys</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>16C17E10-D637-4CCA-8138-24FC791BB562</key>
+		<string>svn://himiko.local/svnroot/MidiKeys/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MidiKeys.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>16C17E10-D637-4CCA-8138-24FC791BB562</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>16C17E10-D637-4CCA-8138-24FC791BB562</key>
+		<string>svn://himiko.local/svnroot</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>svn://himiko.local/svnroot/MidiKeys/trunk/MidiKeys.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>16C17E10-D637-4CCA-8138-24FC791BB562</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>16C17E10-D637-4CCA-8138-24FC791BB562</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MidiKeys</string>
+		</dict>
+	</array>
+</dict>
+</plist>

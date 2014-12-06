@@ -1,0 +1,94 @@
+{\rtf1\mac\ansicpg10000\cocoartf102
+{\fonttbl\f0\fswiss\fcharset77 Helvetica-Bold;\f1\fswiss\fcharset77 Helvetica;\f2\fswiss\fcharset77 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;}
+\vieww12000\viewh16200\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
+
+\f0\b\fs32 \cf0 MidiKeys 1.6
+\f1\b0\fs24 \
+
+\fs20 Copyright \'a9 2002-2003 Chris Reed. Alle Rechte vorbehalten.
+\fs24 \
+\
+\
+
+\f0\b\fs26 Einleitung
+\f1\b0\fs24 \
+MidiKeys ist ein Programm, das ein kleines Bild eines MIDI-keyboards auf dem Bildschirm anzeigt. Klickt man die Tasten oder tippt auf der Tastatur werden Noten an das ausgew\'8ahlte Ziel gesendet. Sie k\'9annen es verwenden um mit Ihrem Lieblingssequencer unterwegs zu komponieren, oder um einen neuen Soft-Synth auszuprobieren. Im Wesentlichen ist es einfach ein praktisches Hilfsmittel. \
+\
+Beachten Sie, dass MidiKeys selbst keinen Klang produziert sondern nur Signale sendet. Sie m\'9fssen es mit einem MIDI-Ziel verbinden, um etwas zu h\'9aren. Ein solches Ziel kann z.B. ein Software Synthesizer oder externe Hardware sein, die \'9fber einen USB-MIDI Adapter angeschlossen ist.\
+\
+
+\f0\b\fs26 Voraussetzungen
+\f1\b0\fs24 \
+\'a5 Mac OS X 10.2 oder neuer\
+\'a5 Software synthesizer, MIDI sequencer Programm, oder externes MIDI-Ger\'8at und MIDI Schnittstelle. Ich empfehle entweder SimpleSynth von Pete Yandell oder Rax von Robert Grant. Beide Programme sind bei versiontracker.com und macupdate.com erh\'8altlich.\
+\
+
+\f0\b\fs26 Installation
+\f1\b0\fs24 \
+Kopieren Sie MidiKeys in den Programmordner Ihrer Wahl.\
+\
+
+\f0\b\fs26 MidiKeys verwenden
+\f1\b0\fs24 \
+Es gibt zwei Arten, MidiKeys zu verwenden. Zum einen k\'9annen Sie als Ziel \'e3Virtuelle Quelle\'d2 einstellen. Dies ist die Standardeinstellung. Bei dieser Einstellung muss MidiKeys als Eingabeanschluss in der anderen Software, die Sie benutzen eingestellt werden. (Zum Beispiel kann in Ableton Live kann in den Voreinstellungen [Men\'9f \'e3Optionen\'d2] der \'e3Midi / Sync\'d2 Tab angeklickt und im Pop-Up Men\'9f f\'9fr den Midi-Eingang MidiKeys ausgew\'8ahlt werden.)\
+\
+Die andere Methode besteht darin, unter \'e3Ziel\'d3 ein anderes Ziel auszuw\'8ahlen. In diesem Aufklappmen\'9f erscheinen sowohl Hardwareger\'8ate, wie auch Ziele, die von anderen laufenden Programmen angeboten werden. Damit ein Programm hier erscheint muss es ein virtuelles Ziel anbieten.\
+\
+Wenn Sie MidiKeys als virtuelle Quelle einsetzen, ist es bei manchen Programmen erforderlich, MidiKeys zuerst zu starten, damit es in deren Liste der Quellen erscheint. Wahrscheinlich werden Sie meist diese Methode verwenden. Und wenn das Pragramm nicht auf Apples CoreMIDI zur\'9fckgreift (sondern stattdessen z.B. Quicktime verwendet) kann man nichts machen\'c9es wird einfach nicht funktionieren.\
+\
+MidiKeys kann die Note, die auf einem anderen Keyboard oder Sequencer gespielt werden, auf der eigenen Tastatur anzeigen. Dazu muss die entsprechende MIDI-Quelle mit dem Aufklappmen\'9f ausgew\'8ahlt werden. Wenn eine Quelle ausgew\'8ahlt ist, werden die Tasten entsprechend eintreffender Noten hervorgehoben. Daf\'9fr spielt es keine Rolle, auf welchem MIDI-Kanal diese Noten gesendet werden. Wenn
+\f2\i  \'e3Weiterleiten\'d3 aktiviert ist, werden die empfangenen Noten an das eingestellte Ziel weitergeleitet.\
+\
+Sind Ziel, Quelle und Weiterleitung eingestellt, kann diese Einstellung mit dem Knopf rechts oben eingeklappt werden, damit die Tastatur nicht unn\'9atig viel Platz auf dem Bildschirm einnimmt. Mit dem gleichen Knopf kann der Bereich auch wieder eingeblendet werden.
+\f1\i0 \
+\
+Um h\'9ahere oder tiefere T\'9ane zu spielen, k\'9annen die Befehle \'e3Oktave hoch\'d2 und \'e3Oktave runter\'d2 aus dem Men\'9f \'e3Keys\'d2 oder die Pfeiltasten rechts und links verwendet werden, eine Verschiebung wird auf der Tastatur transparent dargestellt. Der Tonbereich kann auf diese Weise um vier Oktaven noch oben oder unten verschoben werden. 
+\f2\i Es gibt auch einen Befehl \'e3Alle Noten aus\'d3 senden in diesem Men\'9f, der f\'9fr alle Tasten ein Tonende-Signal erzeugt. Dies ist n\'9ftzlich falls T\'9ane \'e3klemmen\'d2 (also weiterklingen). 
+\f1\i0 \
+\
+Die H\'8arte des Anschlags kann mit dem Schieberegler \'9fber der Tastatur oder den Pfeiltasten f\'9fr oben und unten in Kombination mit der \'e3Taste f\'9fr den systemweiten Zugriff\'d2 (s.u.) eingestellt werden.\
+\
+
+\f0\b\fs26 Einstellungen
+\f1\b0\fs24 \
+Der Einstellungsdialog kann durch Auswahl von \'e3Einstellungen\'d2 aus dem Programmmen\'9f ge\'9affnet werden. Die \'80nderungen werden erst wirksam, wenn sie mit \'e3OK\'d2 best\'8atigt wurden; entsprechend werden keine \'80nderungen durchgef\'9fhrt, wenn \'e3Abbrechen\'d3 gedr\'9fckt wird.\
+\
+Die Farbe der aktiven Taste kann mit dem Farbw\'8ahler \'e3Farbe der aktiven Taste\'d2 ausgew\'8ahlt werden. Weiter kann hier noch die Transparenz dieser Farbe angepasst werden.\
+\
+Midikeys enth\'8alt mehrere Tastaturbelegungen: \'e3Gesamt\'d2 stellt etwas mehr als zwei Oktaven auf der Tastatur zur Verf\'9fgung. Dabei entsprechen die Tasten in den Reihen YXCV\'c9 und QWERTZ\'c9 (deutsche Belegung) den wei\'a7en und die Reihen ASDF\'c9 und 1234\'c9 den schwarzen. Die Belegung \'e3Einfach\'d3 verwendet nur die unteren beiden Reihen, hier steht entsprechend nur eine Oktave zur Verf\'9fgung. 
+\f2\i Entsprechend werden bei \'e3Einfach (oben)\'d2 nur die oberen Tasten und bei \'e3Gesamt (vertauscht)\'d2 alle Tasten mit vertauschten Oktaven verwendet.
+\f1\i0 \
+\
+Die \'e3Taste f\'9fr systemweiten Zugriff\'d2 macht das Keyboard auch dann benutzbar, wenn andere Programme im Vordergrund sind. Daf\'9fr sind nicht immer alle Tasten benutzbar \'d0 dies h\'8angt von der benutzten Systemversion und anderer installierter Software ab.\
+\
+Die Auswahlfelder f\'9fr die Sondertasten geben die Tasten an, die gehalten werden m\'9fssen, um MidiKeys aus anderen Programmen zu benutzen. Hier muss mindestens ein Feld ausgew\'8ahlt werden. Und um dieser Frage zuvorzukommen, die Feststelltaste (CapsLock) wird vom System f\'9fr diesen Zweck leider nicht unterst\'9ftzt. (Aus dem gleichen Grund muss mindestens eine Taste ausgew\'8ahlt werden.)\
+\
+Weil z.B. Sequenzer auf dem Bildschirm fast allen Platz einnehmen, hat MidiKeys eine Option, \'9fber allen anderen Programmen zu schweben. Dies kann mit der Einstellung \'e3Tastatur immer im Vordergrund\'d2 erreicht werden. Das Tastaturfenster kann auch transparent dargestellt werden (damit man sehen kann, was dahinter passiert), optional auch nur dann, wenn MidiKeys im Hintergrund ist. Daf\'9fr gibt es einen Schieberegler und die Option \'e3Nur im Hintergrund\'d2.\
+\
+\
+
+\f0\b\fs26 Bekannte Probleme\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
+
+\f1\b0\fs24 \cf0 \'a5 Bei einigen Rechnern/Tastaturen scheint es ein Limit von 6 gleichzeitigen Tastendr\'9fcken zu geben. Bei meinem PowerBook kann ich mindestens 8 Tasten gleichzeitig dr\'9fcken. 
+\f2\i (Anm. des \'86bersetzers: Leider nicht mein PowerBook, auf meinem ProKeyboard tritt das Problem auch auf)\
+
+\f1\i0 \'a5 Abgesehen von diesem Hardwareproblem dauert es ca. 25-30 Millisekunden, bis ein Tastendruck verarbeitet wird. Werden also 6 Tasten gleichzeitig gedr\'9fckt, gibt es eine Gesamtverz\'9agerung von 25*6 = 150 ms. Ich werde versuchen, die Situation in zuk\'9fnftigen Versionen zu verbessern. Externe Signale leiden nicht unter dieser Verz\'9agerung.\
+\'a5 Manche Tastenkombinationen k\'9annen nicht f\'9fr den systemweiten Zugriff verwendet werden. Vermutlich kann ich daran nichts \'8andern.\
+\'a5 Manche Sequencer-Programme verarbeiten im Hintergrund keine MIDI-Signale (z.B. Intuem). Um dieses Problem zu umgehen, muss auf die obengenannten Optionen zur\'9fckgegriffen werden.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
+
+\f0\b\fs26 \cf0 \
+Sonstige Anmerkungen\
+
+\f1\b0 Sie verwenden MidiKeys auf eigenes Risiko. Ich bin nicht verantwortlich f\'9fr Dinge die als Folge der Benutzung von MidiKeys mit Ihnen oder Ihrem Computer passieren oder nicht passieren. Wenn Sie eine Sehnenscheidenentz\'9fndung belommen, w\'8ahrend Sie versuchen, auf Ihrem Laptop Bach zu spielen, ist das Ihr Problem.\
+\
+MidiKeys ist Freeware (Gratissoftware), aber nicht Public Domain (\'9affentliches Eigentum). Im Augenblich erw\'8age ich nicht, den Quellcode zu ver\'9affentlichen. Dies kann sich in Zukunft \'8andern, aber fragen sie bitte nicht nach.\
+\
+Besonderer Dank geht an Richard Zelzer und Ralf Welter f\'9fr die deutsche, Fr\'8ederic Ball\'8eriaux f\'9fr die franz\'9asische, sowie Hiroshi Yamato f\'9fr die japanische Lokalisierung.\
+\
+Ich kann per e-mail unter 
+\fs24 flit@ftml.net erreicht werden (Anmerkung des \'86bersetzers: Bitte auf Englisch anschreiben, wenn Sie eine Antwort erwarten. Wenn Sie damit Probleme haben, k\'9annen Sie sich an mich unter i_see@macnews.de wenden.)}

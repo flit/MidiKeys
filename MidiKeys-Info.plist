@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>MidiKeys</string>
+	<key>CFBundleGetInfoString</key>
+	<string>1.8, Copyright © 2002-2010 Immo Software.</string>
+	<key>CFBundleHelpBookName</key>
+	<string>ReadMe.rtf</string>
+	<key>CFBundleIconFile</key>
+	<string>MidiKeys.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.immosw.MidiKeys</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>MidiKeys</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.8</string>
+	<key>CFBundleSignature</key>
+	<string>MKéY</string>
+	<key>CFBundleVersion</key>
+	<string>1.8</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.music</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.5.0</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>MidiKeysApplication</string>
+	<key>SUFeedURL</key>
+	<string>http://immosw.com/versions/midikeys/appcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
+</dict>
+</plist>

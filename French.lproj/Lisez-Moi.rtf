@@ -1,0 +1,83 @@
+{\rtf1\mac\ansicpg10000\cocoartf102
+{\fonttbl\f0\fswiss\fcharset77 Helvetica-Bold;\f1\fswiss\fcharset77 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11904\paperh16835\margl1440\margr1440\vieww12960\viewh14420\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
+
+\f0\b\fs32 \cf0 MidiKeys 1.6
+\f1\b0\fs24 \
+
+\fs20 Copyright \'a9 2002-2003 Chris Reed. All rights reserved.
+\fs24 \
+\
+\
+
+\f0\b\fs26 Introduction
+\f1\b0\fs24 \
+MidiKeys est une application repr\'8esentant un petit clavier MIDI \'88 l'\'8ecran. Cliquer sur les touches ou taper sur le clavier de l'ordinateur enverra les notes MIDI \'88 la destination d\'8esir\'8ee. Vous pouvez l'utiliser pour composer avec votre s\'8equenceur pr\'8ef\'8er\'8e loin de votre clavier ma\'94tre, ou simplement pour essayer un nouveau clavier virtuel. C'est plus g\'8en\'8eralement un outil pratique \'88 avoir.\
+\
+Gardez \'88 l'esprit que MidiKeys ne produit pas de son mais envoie juste des notes MIDI. Vous devez le connecter \'88 une source sonore MIDI pour entendre quelque chose. Par exemple un clavier virtuel ou un synth\'8etiseur externe connect\'8e avec une interface MIDI USB.\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b\fs26 \cf0 Configuration requise\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
+
+\f1\b0\fs24 \cf0 \'a5 Mac OS X 10.2 ou sup\'8erieur\
+\'a5 Un clavier virtuel, un s\'8equenceur MIDI, ou n'importe quel clavier, module, sampleur MIDI externe avec une interface MIDI.\
+\
+
+\f0\b\fs26 Installation\
+
+\f1\b0\fs24 Copiez l'application MidiKeys dans le dossier Applications de votre cho
+\fs26 ix.\
+\
+
+\f0\b Utilisation de MidiKeys\
+
+\f1\b0\fs24 Il y a deux fa\'8dons d'utiliser MidiKeys. Premi\'8frement, vous pouvez s\'8electionner "Source Virtuelle" dans le menu "Destination". C'est le r\'8eglage par d\'8efaut. Avec "Source Virtuelle" comme destination, vous devez s\'8electionner "MidiKeys" comme port d'entr\'8ee dans les autres programmes MIDI que vous utilisez. (Par exemple, dans Ableton Live, ouvrez les pr\'8ef\'8erences, s\'8electionnez "Midi/Sync" et choisissez "MidiKeys" dans le menu d\'8eroulant "input source").\
+\
+La deuxi\'8fme m\'8ethode est de choisir une destination diff\'8erente dans le menu "Destination". Les appareils MIDI externes y seront list\'8es, ainsi que les destinations virtuelles cr\'8e\'8ees par d'autres applications. Une application doit pouvoir cr\'8eer une destination virtuelle pour \'90tre list\'8ee ici.\
+\
+Si vous utilisez la m\'8ethode "Source Virtuelle", certains programmes n\'8ecessiteront que MidiKeys soit d\'8emarr\'8e en premier pour l'afficher dans la liste des sources possibles. C'est probablement la fa\'8don la plus courante d'utiliser MidiKeys. Bien s\'9er, si une application n'utilise pas CoreMIDI (par exemple si elle utilise Quicktime) il n'y a rien \'88 faire... \'82a ne marchera pas.\
+\
+MidiKeys peut afficher les notes jou\'8ees sur un autre clavier, ou la sortie d'un s\'8equenceur. S\'8electionnez la source MIDI d\'8esir\'8ee dans le menu "Port \'88 \'8ecouter" de la fen\'90tre principale. Une fois une source s\'8electionn\'8ee, les notes entrantes s'afficheront sur le clavier. Les notes de tous les canaux sont affich\'8ees. Quand "Thru" est s\'8electionn\'8e (\'88 c\'99t\'8e de "Port \'88 \'8ecouter"), toutes les notes apparaissant sur le clavier sont transmises au port de destination.\
+\
+Pour acc\'8eder \'88 des notes plus hautes ou plus basses, utilisez les commandes "Octave Sup\'8erieure" ou "Octave Inf\'8erieure" dans le menu "Clavier". Deux octaves vers le haut et vers le bas sont permises. Vous trouverez aussi une commande "Stopper toutes les notes" dans le menu "Clavier" qui enverra une commande "note off" pour toutes les notes. Pratique si une note reste "cal\'8ee".\
+\
+
+\f0\b\fs26 Pr\'8ef\'8erences
+\f1\b0\fs24 \
+Ouvrez le panneau des pr\'8ef\'8erences en choisissant "Pr\'8ef\'8erences" dans le menu de l'application. Les changements ne seront appliqu\'8es qu'apr\'8fs avoir cliqu\'8e sur "OK", et bien s\'9er aucun changement n'est appliqu\'8e si vous cliquez sur "Annuler".\
+\
+Vous pouvez d\'8efinir la couleur des touches actives ainsi que leur transparence. \
+\
+Il y a quatre configuration de clavier possible. "Compl\'8fte" r\'8eparti deux octaves sur le clavier de l'ordinateur. Le rang commen\'8dant par WXCV et celui commen\'8dant par AZER pour les blanches et les rangs commen\'8dant par QSDF et 1234 pour les noires. "Simple" n'utilise que les rangs W... et Q... pour une seule octave. "Simple Invers\'8ee" fait la m\'90me chose mais avec le rang du haut (A... et 1...). "Compl\'8fte Invers\'8ee" inverse simplement les deux octaves jou\'8ees par la configuration "Compl\'8fte".\
+\
+S\'8electionner "Clavier actif \'88 l'arri\'8fre-plan" permet d'utiliser le clavier lorsqu'une autre application est au premier plan. La "configuration clavier" rentre en jeu ici. Certaines touches ne peuvent pas \'90tre utilis\'8ee comme "hotkeys"\'d1Cela varie d'une version du syst\'8fme \'88 l'autre et suivant les programmes que vous avez install\'8es. \
+\
+En dessous vous pouvez cocher les touches de combinaisons d\'8esir\'8ees pour activer MidiKeys lorsqu'il est \'88 l'arri\'8fre-plan. Vous devez cocher au moins une touche de combinaison. Et, avant que vous le demandiez, la fonction majuscule (Caps Lock) n'est pas support\'8ee comme touche de combinaison par le syst\'8fme, d\'8esol\'8e. \
+\
+Les programmes comme les s\'8equenceurs utilisant souvent la plus grosse partie de l'\'8ecran, MidiKeys a une option pour maintenir la fen\'90tre du clavier au-dessus des autres applications. Pour ce faire, cochez l'option "Clavier toujours au-dessus". Vous pouvez d\'8efinir la transparence du clavier afin de voir ce sur quoi vous travaillez tout en jouant. L'option "Opaque quand MidiKeys est \'88 l'avant-plan" supprimera la transparence chaque fois que MidiKeys sera ramen\'8e au premier plan.\
+\
+
+\f0\b\fs26 Probl\'8fmes connus\
+
+\f1\b0\fs24 \'a5 Il semble qu'il y ait un maximum de 6 touches press\'8ees en m\'90me temps sur certains syst\'8fmes et/ou claviers, mais mon PowerBook en accepte 8.\
+\'a5 Ind\'8ependamment du nombre maximum de touches simultan\'8ees, il faut environ 25 \'88 30 ms pour traiter l'envoi d'une pression de touche. Donc, si vous pressez 6 touches simultan\'8ement, il y aura une diff\'8erence d'au moins 25*6 = 150 ms entre la premi\'8fre et la derni\'8fre touche trait\'8ee. J'essayerai d'am\'8eliorer cela dans les futures versions. Le traitement des sources MIDI externes ne souffre pas de ce probl\'8fme.\
+\'a5 Certaines combinaisons de touches ne peuvent pas \'90tre utilis\'8ee comme "hotkeys". Je doute que je puisse y changer quoi que ce soit.\
+\'a5 Certains s\'8equenceurs ne fonctionnent pas quand ils sont \'88 l'arri\'8fre-plan. Par exemple, Intuem est apparemment dans le cas. Le seul moyen de contourner le probl\'8fme est d'utiliser les options "Midikeys toujours au-dessus" et  "Clavier actif \'88 l'arri\'8fre-plan".\
+\
+
+\f0\b\fs26 Remarques diverses\
+
+\f1\b0\fs24 Vous utilisez Midikeys \'88 vos risques et p\'8erils. Je ne suis responsable de rien de ce qui pourrait arriver \'88 vous ou \'88 votre ordinateur suite \'88 l'utilisation de MidiKeys. Si vous attrapez le syndrome du canal carpien en jouant Bach sur votre portable, c'est votre probl\'8fme.\
+\
+Midikeys est un gratuiciel (freeware), mais n'est pas dans le domaine public. Tant que maintenant, je ne pense pas rendre le code source accessible. Cela peut changer dans le futur, mais il est inutile de me le demander.\
+\
+Remerciements tout particuliers \'88 Richard Zelzer et Ralf Welter pour la traduction en allemand et \'88 Fr\'8ed\'8eric Ball\'8eriaux pour la localisation fran\'8daise. Si vous souhaitez voir MidiKeys dans votre langue, je serai content de le faire si vous me fournissez les traductions.\
+\
+Vous pouvez me contacter par mail \'88 l'adresse suivante: flit@ftml.net \
+\
+}

@@ -1,0 +1,86 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf250
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\vieww12000\viewh16200\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural
+
+\f0\b\fs32 \cf0 MidiKeys 1.8
+\b0\fs24 \
+
+\fs20 Copyright \'a9 2002-2010 Immo Software. All rights reserved.
+\fs24 \
+\
+\
+
+\b\fs26 Introduction
+\b0\fs24 \
+MidiKeys is an application that presents a small graphic representation of a MIDI keyboard on screen. Clicking the keys or typing on the computer keyboard will send notes to the selected destination. You can use it to compose music with your favourite sequencer while on the road, or simply to try out a new softsynth. It's generally just a handy tool to have around.\
+\
+Keep in mind that MidiKeys does not itself produce any sound, it just sends note events. You have to connect it to a MIDI sound source to hear something. This can be anything from a software synthesizer to an external hardware synth connected through a USB MIDI interface.\
+\
+
+\b\fs26 Requirements
+\b0\fs24 \
+\'95 Mac OS X 10.5 or greater\
+\'95 PowerPC or Intel\
+\'95 Software synthesizer, MIDI sequencer application, or external MIDI device with MIDI interface. Apple\'92s AU Lab is excellent.\
+\
+
+\b\fs26 Installation
+\b0\fs24 \
+Just copy the MidiKeys program to the Applications folder of your choice.\
+\
+
+\b\fs26 Using MidiKeys
+\b0\fs24 \
+There are two ways use MidiKeys. First, you can set the Destination menu to "Virtual source". This is the default destination. With "Virtual source" selected, you must select "MidiKeys" as the input port in whatever other software you're using. (For example, in Ableton Live, open the preferences, select the Midi/Sync tab, and select MidiKeys in the "input source" popup menu.)\
+\
+The second method is to select a different destination in the "Destination" menu. Real hardware MIDI devices will be listed here, as well as virtual destinations created by other running applications. The application you are interested in using must create a virtual destination for it to be listed here.\
+\
+If you are using the virtual source method, some programs will require that you launch MidiKeys first in order to it to show up in their list of sources. This is likely the most common way you'll use MidiKeys. And of course, if the application does not use Apple's CoreMIDI (for example, if it uses QuickTime) then there's nothing to be done about it\'85it just won't work.\
+\
+MidiKeys can show the notes being played on another keyboard, or the output of a sequencer, on its keyboard. Select the desired MIDI source using the "Listen to port" popup menu in the main window. Once a source is selected, any incoming note events will highlight the keys. Notes from all channels are displayed. When the "Thru" checkbox next to the Listen to port popup is checked, any notes that are displayed on the keyboard are also output to the destination.\
+\
+To access lower or higher notes, use the Octave Up and Octave Down commands in the Keys menu. Up to four octaves up or down are allowed, and the current octave displacement is shown in the keyboard window by arrow symbols placed on the keyboard. There is also a "Send All Notes Off" command in the Keys menu that will send a note off command for every key. This is useful if a note gets stuck.\
+\
+If you want to adjust the octave from the keyboard, use the left and right arrows. The velocity is also adjustable from the keyboard, using the up and down arrows. When hot keys are enabled, the arrow keys, in combination with any modifier keys you have set in the preferences (see below), also work from other applications.\
+\
+
+\b\fs26 Preferences
+\b0\fs24 \
+Open the preferences panel by selecting Preferences from the application menu. Changes are not applied until you click OK, and of course no changes are made if you click Cancel.\
+\
+The colour used to highlight keys when played is selected using the colour well titled "Active key highlighting". In addition to the colour, you can adjust the transparency.\
+\
+Several key maps comes with MidiKeys. Turn on the \'93Show Key Caps\'94 preference to have the corresponding character for each note drawn on the on-screen MIDI keyboard keys.\
+\
+Turning on the hot keys option will make it the MidiKeys keyboard accessible even when other applications are in front. The key map setting comes into play here. You may find that not all keys are able to be used as hot keys\'97it varies with the OS version and other software you have installed, or you may simply want to reduce the number of hot keys.\
+\
+The checkboxes below the hot keys checkbox allow you to select which modifier keys must be held down to access the keyboard. You may choose to use no modifiers, if you like. In this case, you will not be able to type normal text while the hot keys are enabled, though it makes playing keys much easier. Unfortunately, the alpha lock (caps lock) is not supported by the OS, sorry.\
+\
+In the Keys menu there is a \'93Global Hot Keys\'94 menu item that lets you easily control the state of the hot keys without having to open the preferences panel. When hot keys are enabled, this menu item will have a check mark next to it. Selecting the item will toggle the hot key state.\
+\
+In addition, you can set a hot key shortcut that will allow you to toggle the state of the global hot keys from any application. This toggle hot key is configured in the preferences panel, under the Keys tab. Click the area next to \'93Toggle hot keys:\'94, where it says \'93Click to record shortcut\'94. Then press the a key combination you would like to use to toggle hot keys from any application.\
+\
+Because programs like sequencers often take up most of the screen real estate, MidiKeys has an option to float the keyboard window above all other applications. Turn floating on by checking the "Keyboard window is always on top" checkbox. You can set the transparency of the keyboard window with the slider below so you can see what you're working on while playing. The "Opaque when MidiKeys is in front" option will bring the window back to solid when you make MidiKeys the active application. Bringing another application to the front with this option set will restore the window's transparency.\
+\
+Another related option is \'93Click through when not in front\'94. This option will make the keyboard window transparent to mouse clicks when MidiKeys is not the foreground application, so you can click on items and windows beneath the on-screen keyboard. This works best when the keyboard is made transparent and floating.\
+\
+
+\b\fs26 Known Issues
+\b0\fs24 \
+\'95 On some laptops prior to the multi-touch trackpad, you may want to disable the \'93ignore accidental input\'94 option in the trackpad preference panel so you can use the trackpad while holding keys down. Otherwise, you won\'92t be able to twiddle knobs while playing notes.\
+\'95 There seems to be a limit of 6 concurrent key presses on some desktop systems and/or keyboards. But my laptop can handle at least 8 key presses simultaneously.\
+\'95 Even ignoring the hardware limit on concurrent key presses, it takes approximately 25-30 ms to process each key down event. So if you press 6 keys at once, there will be a difference of at least 25*6 = 150 ms between the first and last key processed. I will be attempting to improve this in future versions. Processing of external MIDI sources does not suffer from this problem.\
+\'95 Some key combinations cannot be used as hot keys. I doubt there's anything I can do about this.\
+\'95 Some sequencer applications apparently do not process MIDI while in the background. For example, Intuem apparently does not. You must use the window floating and hot keys options to work around this.\
+\
+
+\b\fs26 Miscellaneous Notes
+\b0\fs24 \
+I can be reached via email at flit@ftml.net. MidiKeys is freeware, but it is not in the public domain. At this time, I am not considering releasing the source code.\
+\
+You use MidiKeys at your own risk. I am not responsible for anything that does or does not happen to you or your computer system as a result of using MidiKeys. If you get carpal tunnel syndrome while trying to play Bach on your laptop, that's your problem.\
+\
+\
+}
