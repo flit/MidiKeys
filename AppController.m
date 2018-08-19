@@ -102,7 +102,8 @@
 	}
 	
 	// now insert all available midi destinations
-	int i, numDevices = MIDIGetNumberOfDestinations();
+	int i;
+	ItemCount numDevices = MIDIGetNumberOfDestinations();
 	
 	// add a separator if there are any destinations
 	if (numDevices > 0)
@@ -1057,6 +1058,15 @@
 			[self updateDestinationMenu];
 			[self updateSourceMenu];
 			break;
+		case kMIDIMsgObjectAdded:
+		case kMIDIMsgObjectRemoved:
+		case kMIDIMsgPropertyChanged:
+		case kMIDIMsgSerialPortOwnerChanged:
+		case kMIDIMsgThruConnectionsChanged:
+		default:
+		{
+			// ignore
+		}
 	}
 }
 
@@ -1205,7 +1215,7 @@
 		// process the received packet
 		MidiParser *parser = [MidiParser parserWithMidiPacketList:packetList];
 		MIDIPacket *packet;
-		while (packet = [parser nextMidiPacket])
+		while ((packet = [parser nextMidiPacket]))
 		{
 			// handle note on and off for any channel
 			if (packet->length == 3)

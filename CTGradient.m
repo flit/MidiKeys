@@ -8,6 +8,7 @@
 
 #import "CTGradient.h"
 
+
 @interface CTGradient (Private)
 - (void)_commonInit;
 - (void)addElement:(CTGradientElement*)newElement;
@@ -40,8 +41,8 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
   {
   elementList = nil;
 	
-  static const float input_value_range   [2] = { 0, 1 };						//range  for the evaluator input
-  static const float output_value_ranges [8] = { 0, 1, 0, 1, 0, 1, 0, 1 };		//ranges for the evaluator output (4 returned values)
+  static const CGFloat input_value_range   [2] = { 0, 1 };						//range  for the evaluator input
+  static const CGFloat output_value_ranges [8] = { 0, 1, 0, 1, 0, 1, 0, 1 };		//ranges for the evaluator output (4 returned values)
   
   gradientFunction = CGFunctionCreate(&elementList,					//the two transition colors
 									  1, input_value_range,			//number of inputs (just fraction of progression)
@@ -449,10 +450,14 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 
 - (void)fillRect:(NSRect)rect angle:(float)angle
   {
+	  
+	  const double_t pi = 3.141592653589793;
+
   //First Calculate where the beginning and ending points should be
   CGPoint startPoint;
   CGPoint endPoint;
   
+	  /*
   if(angle == 0 && NO)		//screw the calculations - we know the answer
   	{
   	startPoint = CGPointMake(NSMinX(rect), NSMinY(rect));	//right of rect
@@ -463,7 +468,8 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
   	startPoint = CGPointMake(NSMinX(rect), NSMinY(rect));	//bottom of rect
   	endPoint   = CGPointMake(NSMinX(rect), NSMaxY(rect));	//top    of rect
   	}
-  else						//ok, we'll do the calculations now 
+  else						//ok, we'll do the calculations now
+	   */
   	{
   	float x,y;
   	float sina, cosa, tana;

@@ -10,8 +10,8 @@
 
 typedef struct _CTGradientElement 
 	{
-	float red, green, blue, alpha;
-	float position;
+	CGFloat red, green, blue, alpha;
+	CGFloat position;
 	
 	struct _CTGradientElement *nextElement;
 	} CTGradientElement;

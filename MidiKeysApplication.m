@@ -7,6 +7,7 @@
 //
 
 #import "MidiKeysApplication.h"
+#import "AppController.h"
 
 
 enum {
@@ -48,17 +49,29 @@ static struct {
 		switch ([theEvent subtype])
 		{
 			case kEventHotKeyPressedSubtype:
+			{
 				if (cachedDelegateHandles.pressed)
 				{
-					[[self delegate] hotKeyPressed:[theEvent data1]];
+					AppController *c = [self delegate];
+					[c hotKeyPressed: (UInt32) [theEvent data1]];
 				}
 				break;
+			}
 			case kEventHotKeyReleasedSubtype:
+			{
 				if (cachedDelegateHandles.released)
 				{
-					[[self delegate] hotKeyReleased:[theEvent data1]];
+					AppController *c = [self delegate];
+					[c hotKeyReleased: (UInt32) [theEvent data1]];
 				}
 				break;
+			}
+			case NSEventSubtypeWindowMoved:
+			case NSEventSubtypeWindowExposed:
+			default:
+			{
+				// ignore
+			}
 		}
 	}
 	
