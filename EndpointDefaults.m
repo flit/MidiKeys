@@ -13,7 +13,7 @@
 
 - (MIDIEndpointRef)endpointForKey:(NSString *)key
 {
-	MIDIUniqueID endpointUID = [self integerForKey:key];
+	MIDIUniqueID endpointUID = (MIDIUniqueID) [self integerForKey:key];
 	if (endpointUID != 0)
 	{
 		MIDIObjectType objType;

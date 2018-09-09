@@ -210,10 +210,10 @@ static PreferencesController *_sharedPrefsController = nil;
     
     // Toggle hot keys shortcut.
     KeyCombo combo = [_toggleHotKeysShortcut keyCombo];
-    int carbonFlags = [_toggleHotKeysShortcut cocoaToCarbonFlags:combo.flags];
+    int carbonFlags = (int) [_toggleHotKeysShortcut cocoaToCarbonFlags:combo.flags];
     NSDictionary * comboDict = [NSDictionary dictionaryWithObjectsAndKeys:
         [NSNumber numberWithInt:carbonFlags], SHORTCUT_FLAGS_KEY,
-        [NSNumber numberWithInt:combo.code], SHORTCUT_KEYCODE_KEY,
+        [NSNumber numberWithInteger:combo.code], SHORTCUT_KEYCODE_KEY,
         nil, nil];
     [defaults setObject:comboDict forKey:kToggleHotKeysShortcutPrefKey];
 	

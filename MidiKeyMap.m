@@ -45,13 +45,12 @@
 
 - (void)constructMaps
 {
-	int i;
-	for (i=0; i < MAX_KEY_CODES; ++i)
+	for (int i=0; i < MAX_KEY_CODES; ++i)
 	{
 		mKeyCodeToNoteMap[i] = -1;
 	}
 	
-	for (i=0; i < MAX_MIDI_NOTES; ++i)
+	for (int i=0; i < MAX_MIDI_NOTES; ++i)
 	{
 		mNoteToKeyCodeMap[i] = -1;
 	}
@@ -63,8 +62,8 @@
 		{
 			NSArray *rangeKeys = [range objectForKey:@"KeyCodes"];
 			int rangeStartNote = [[range objectForKey:@"FirstMidiNote"] intValue];
-			int numKeyCodes = [rangeKeys count];
-			for (i=0; i < numKeyCodes; ++i)
+			NSUInteger numKeyCodes = [rangeKeys count];
+			for (NSUInteger i=0; i < numKeyCodes; ++i)
 			{
 				id thisKey = [rangeKeys objectAtIndex:i];
 				int keycode = [thisKey intValue];
@@ -125,6 +124,38 @@
 - (NSString *)characterForMidiNote:(int)midiNote
 {
 	int keyCode = [self keyCodeForMidiNote:midiNote];
+	
+	NSString *result = nil;
+	TISInputSourceRef t = TISCopyCurrentKeyboardLayoutInputSource();
+	if (t)
+	{
+		void* v = TISGetInputSourceProperty(t, kTISPropertyUnicodeKeyLayoutData);
+		
+		if (v)
+		{
+			CFDataRef d = (CFDataRef)v;
+			
+			UCKeyboardLayout *uchrData = (UCKeyboardLayout*) CFDataGetBytePtr(d);
+			
+			// Get Unicode characters for this keycode.
+			UInt32 deadKeyState = 0;
+			UniChar keyChars[16] = {0};
+			UniCharCount keyCharsCount = 0;
+			OSStatus status = UCKeyTranslate(uchrData, keyCode, kUCKeyActionDisplay, 0, LMGetKbdType(), kUCKeyTranslateNoDeadKeysMask, &deadKeyState, sizeof(keyChars), &keyCharsCount, keyChars);
+			if (status)
+			{
+				return nil;
+			}
+			
+			// Return NSString with the Unicode characters.
+			result = [NSString stringWithCharacters:(const unichar *)&keyChars length:keyCharsCount];
+		}
+		
+		CFRelease(t);
+	}
+	return result;
+
+	#if oldCode
 	
 	// Get current key layout selected in Keyboard menu.
 	KeyboardLayoutRef layout;
@@ -198,7 +229,7 @@
 			return [NSString stringWithUTF8String:keyCharString];
 		}
 	}
-	
+	#endif
 	return nil;
 }
 
@@ -224,16 +255,15 @@
 		{
 			NSArray *rangeKeys = [range objectForKey:@"KeyCodes"];
 			int rangeStartNote = [[range objectForKey:@"FirstMidiNote"] intValue];
-			int numKeyCodes = [rangeKeys count];
-			int i;
-			for (i=0; i < numKeyCodes; ++i)
+			NSUInteger numKeyCodes = [rangeKeys count];
+			for (NSUInteger i=0; i < numKeyCodes; ++i)
 			{
 				id thisKey = [rangeKeys objectAtIndex:i];
-				int midiNote = rangeStartNote + i;
+				int midiNote = rangeStartNote + (int) i;
 				err = RegisterEventHotKey([thisKey intValue], modifiers, hotKeyID, GetApplicationEventTarget(), 0, &hotKeyRef);
 				if (err)
 				{
-					NSLog(@"error %ld installing hotkey (keycode = %ld)", err, [thisKey intValue]);
+					NSLog(@"error %ld installing hotkey (keycode = %ld)", (long) err, (long) [thisKey intValue]);
 					continue;
 				}
 				mHotKeysAreRegistered = YES;
@@ -266,7 +296,7 @@
 		OSStatus err = UnregisterEventHotKey(hotKeyRef);
 		if (err)
         {
-			NSLog(@"err %ld unregistering hot key %p", err, hotKeyRef);
+			NSLog(@"err %ld unregistering hot key %p", (long) err, hotKeyRef);
         }
 	}
 	

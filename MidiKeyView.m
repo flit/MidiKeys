@@ -320,6 +320,7 @@
 	}
 	
 	[image compositeToPoint:drawPoint operation:NSCompositeSourceOver fraction:indicatorCompositeFraction];
+	// todo:	[image drawInRect:<#(NSRect)#> fromRect:<#(NSRect)#> operation:NSCompositeSourceOver fraction:indicatorCompositeFraction]
 	
 	if (abs(mOctaveOffset) > 1)
 	{
