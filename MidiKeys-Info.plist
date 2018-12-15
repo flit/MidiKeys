@@ -30,12 +30,14 @@
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.5.0</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>MidiKeys</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>MidiKeysApplication</string>
 	<key>SUFeedURL</key>
-	<string>http://immosw.com/versions/midikeys/appcast.xml</string>
+	<string>https://immosw.com/versions/midikeys/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 </dict>
