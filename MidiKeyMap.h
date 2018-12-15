@@ -32,7 +32,7 @@
 
 //! Returns -1 if the key was not found
 - (int)midiNoteForKeyCode:(int)keycode;
-- (int)midiNoteForHotKeyWithIdentifier:(UInt32)identifier;
+- (int)midiNoteForHotKeyWithIdentifier:(uintptr_t)identifier;
 
 //! @brief Returns the key code for a MIDI note.
 - (int)keyCodeForMidiNote:(int)note;

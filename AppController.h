@@ -111,8 +111,8 @@ enum _velocity_up_or_down
 - (void)velocityHotKeyTimerFired:(NSTimer *)timer;
 - (void)handleVelocityKeyReleased;
 
-- (void)hotKeyPressed:(UInt32)identifier;
-- (void)hotKeyReleased:(UInt32)identifier;
+- (void)hotKeyPressed:(uintptr_t)identifier;
+- (void)hotKeyReleased:(uintptr_t)identifier;
 
 - (void)registerToggleHotKey;
 - (void)unregisterToggleHotKey;

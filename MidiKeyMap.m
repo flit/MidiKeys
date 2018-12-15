@@ -97,7 +97,7 @@
 }
 
 // look up the hot key in our dictionary
-- (int)midiNoteForHotKeyWithIdentifier:(UInt32)identifier
+- (int)midiNoteForHotKeyWithIdentifier:(uintptr_t)identifier
 {
 	// return -1 if there are no hotkeys installed
 	if (!mHotKeysAreRegistered || [mRegisteredHotKeys count]==0)

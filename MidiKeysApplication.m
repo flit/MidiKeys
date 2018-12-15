@@ -53,7 +53,7 @@ static struct {
 				if (cachedDelegateHandles.pressed)
 				{
 					AppController * c = (AppController *)[self delegate];
-					[c hotKeyPressed: (UInt32) [theEvent data1]];
+					[c hotKeyPressed: (uintptr_t) [theEvent data1]];
 				}
 				break;
 			}
@@ -62,7 +62,7 @@ static struct {
 				if (cachedDelegateHandles.released)
 				{
 					AppController *c = (AppController *)[self delegate];
-					[c hotKeyReleased: (UInt32) [theEvent data1]];
+					[c hotKeyReleased: (uintptr_t) [theEvent data1]];
 				}
 				break;
 			}

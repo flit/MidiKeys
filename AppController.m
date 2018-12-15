@@ -931,9 +931,9 @@
 }
 
 //! @brief Handle a hot key event.
-- (void)hotKeyPressed:(UInt32)identifier
+- (void)hotKeyPressed:(uintptr_t)identifier
 {
-	if (identifier == (UInt32)_toggleHotKeyRef)
+	if (identifier == (uintptr_t)_toggleHotKeyRef)
 	{
 		[self toggleHotKeys:self];
 
@@ -942,26 +942,26 @@
 		// in response to the toggle hot key itself, not the hot keys menu item.
 		[self displayHotKeysOverlay];
 	}
-	else if (identifier == (UInt32)octaveUpHotKeyRef)
+	else if (identifier == (uintptr_t)octaveUpHotKeyRef)
 	{
 		[self octaveUp:nil];
 	}
-	else if (identifier == (UInt32)octaveDownHotKeyRef)
+	else if (identifier == (uintptr_t)octaveDownHotKeyRef)
 	{
 		[self octaveDown:nil];
 	}
-	else if (identifier == (UInt32)velocityUpHotKeyRef)
+	else if (identifier == (uintptr_t)velocityUpHotKeyRef)
 	{
 		[self handleVelocityKeyPressedUpOrDown:kVelocityUp];
 	}
-	else if (identifier == (UInt32)velocityDownHotKeyRef)
+	else if (identifier == (uintptr_t)velocityDownHotKeyRef)
 	{
 		[self handleVelocityKeyPressedUpOrDown:kVelocityDown];
 	}
 	else
 	{
 		// look up note number
-		int midiNote = [keyMap midiNoteForHotKeyWithIdentifier:identifier] + octaveOffset * 12;
+		int midiNote = (int)[keyMap midiNoteForHotKeyWithIdentifier:identifier] + octaveOffset * 12;
 		
 		// send the note
 		int channel = currentChannel - 1;
@@ -973,17 +973,17 @@
 	}
 }
 
-- (void)hotKeyReleased:(UInt32)identifier
+- (void)hotKeyReleased:(uintptr_t)identifier
 {
-	if (identifier == (UInt32)octaveUpHotKeyRef || identifier == (UInt32)octaveDownHotKeyRef)
+	if (identifier == (uintptr_t)octaveUpHotKeyRef || identifier == (uintptr_t)octaveDownHotKeyRef)
 	{
 		// do nothing
 	}
-	else if (identifier == (UInt32)velocityUpHotKeyRef)
+	else if (identifier == (uintptr_t)velocityUpHotKeyRef)
 	{
 		[self handleVelocityKeyReleased];
 	}
-	else if (identifier == (UInt32)velocityDownHotKeyRef)
+	else if (identifier == (uintptr_t)velocityDownHotKeyRef)
 	{
 		[self handleVelocityKeyReleased];
 	}
