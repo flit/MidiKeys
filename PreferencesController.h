@@ -52,6 +52,12 @@
 
 @end
 
+@protocol PreferencesControllerDelegate
+
+- (void)preferencesDidChange:(id)sender;
+
+@end
+
 // Notification
 extern NSString *kPreferencesChangedNotification;
 

@@ -102,14 +102,14 @@
 	}
 	
 	// now insert all available midi destinations
-	int i;
+	long i;
 	ItemCount numDevices = MIDIGetNumberOfDestinations();
 	
 	// add a separator if there are any destinations
 	if (numDevices > 0)
 		[[destinationPopup menu] addItem:[NSMenuItem separatorItem]];
 	
-	int iOffset = [destinationPopup numberOfItems];
+	NSInteger iOffset = [destinationPopup numberOfItems];
 	for (i=iOffset; i<numDevices+iOffset; ++i)	// so i is equal to the last menu item
 	{
 		MIDIUniqueID endpointUID;
@@ -158,7 +158,7 @@
 	[[sourcePopup menu] addItem:[NSMenuItem separatorItem]];
 	
 	// fill in menu with available sources
-	int i, numDevices = MIDIGetNumberOfSources();
+	ItemCount i, numDevices = MIDIGetNumberOfSources();
 	for (i=0; i<numDevices; ++i)
 	{
 		MIDIUniqueID endpointUID;
@@ -171,7 +171,7 @@
 			
 		NSString *endpointTitle = [self uniqueTitle:[self nameForMidiEndpoint:theEndpoint] forMenu:[sourcePopup menu]];
 		[sourcePopup addItemWithTitle:endpointTitle];
-		int itemIndex = [sourcePopup numberOfItems] - 1;	// the last item in the menu
+		NSInteger itemIndex = [sourcePopup numberOfItems] - 1;	// the last item in the menu
 		[[sourcePopup itemAtIndex:itemIndex] setRepresentedObject:[NSData dataWithBytes:&theEndpoint length:sizeof theEndpoint]];
 		
 		// if this endpoint matches the currently selected one, set the popup's selection
@@ -301,10 +301,10 @@
 	currentVelocity = [defaults floatForKey:kVelocityPrefKey];
 	[velocitySlider setFloatValue:currentVelocity];
 	
-	currentChannel = [defaults integerForKey:kChannelPrefKey];
+	currentChannel = (int)[defaults integerForKey:kChannelPrefKey];
 	[channelPopup selectItemWithTag:currentChannel - 1];
 	
-	octaveOffset = [defaults integerForKey:kOctaveOffsetPrefKey];
+	octaveOffset = (int)[defaults integerForKey:kOctaveOffsetPrefKey];
 	[midiKeys setOctaveOffset:octaveOffset];
 	
 	// set up the midi keys window
@@ -516,7 +516,7 @@
 
 - (IBAction)channelDidChange:(id)sender
 {
-	currentChannel = [channelPopup selectedTag] + 1;
+	currentChannel = (int)[channelPopup selectedTag] + 1;
 	[[NSUserDefaults standardUserDefaults] setInteger:currentChannel forKey:kChannelPrefKey];
 }
 
@@ -804,7 +804,7 @@
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
 	// Get the modifier key.
-	int modifiers = [defaults integerForKey:kHotKeysModifiersPrefKey];
+	int modifiers = (int)[defaults integerForKey:kHotKeysModifiersPrefKey];
 	
 	// Register both note keys and control keys.
 	[keyMap registerHotKeysWithModifiers:modifiers];

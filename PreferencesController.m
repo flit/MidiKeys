@@ -118,7 +118,7 @@ static PreferencesController *_sharedPrefsController = nil;
     [_velocityOverlaysCheckbox setIntValue:[defaults boolForKey:SHOW_VELOCITY_OVERLAYS_PREF_KEY]];
     
 	// modifier checkboxes
-	int modifiers = [defaults integerForKey:kHotKeysModifiersPrefKey];
+	long modifiers = [defaults integerForKey:kHotKeysModifiersPrefKey];
 	BOOL controlChecked = (modifiers & controlKey) > 0;
 	BOOL shiftChecked = (modifiers & shiftKey) > 0;
 	BOOL optionChecked = (modifiers & optionKey) > 0;

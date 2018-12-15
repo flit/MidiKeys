@@ -319,8 +319,7 @@
 		indicatorCompositeFraction = 0.25;
 	}
 	
-	[image compositeToPoint:drawPoint operation:NSCompositeSourceOver fraction:indicatorCompositeFraction];
-	// todo:	[image drawInRect:<#(NSRect)#> fromRect:<#(NSRect)#> operation:NSCompositeSourceOver fraction:indicatorCompositeFraction]
+    [image drawAtPoint:drawPoint fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:indicatorCompositeFraction];
 	
 	if (abs(mOctaveOffset) > 1)
 	{
@@ -331,7 +330,7 @@
 				drawPoint.x -= imageSize.width * 0.5;
 			else
 				drawPoint.x += imageSize.width * 0.5;
-			[image compositeToPoint:drawPoint operation:NSCompositeSourceOver fraction:indicatorCompositeFraction];
+            [image drawAtPoint:drawPoint fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:indicatorCompositeFraction];
 		}
 	}
 }
@@ -357,8 +356,8 @@
 	drawPoint.y = 0.;
 	
 	do {
-		[octaveImage compositeToPoint:drawPoint operation:NSCompositeCopy];
-		drawPoint.x += octaveSize.width - 1.;
+        [octaveImage drawAtPoint:drawPoint fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.0f];
+        drawPoint.x += octaveSize.width - 1.;
 	} while (drawPoint.x < frameWidth);
 	
 	BOOL drawKeyCaps = _showKeycaps && mDelegate && [mDelegate respondsToSelector:@selector(characterForMidiNote:)];

@@ -45,7 +45,7 @@ enum _velocity_up_or_down
  * Manages the keyboard window, all MIDI events, hot keys, menu items, and pretty much every
  * thing else except for preferences.
  */
-@interface AppController : NSObject
+@interface AppController : NSObject <NSWindowDelegate, NSApplicationDelegate>
 {
 	IBOutlet NSPopUpButton *destinationPopup;
 	IBOutlet NSPopUpButton *sourcePopup;

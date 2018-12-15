@@ -62,8 +62,8 @@
 		{
 			NSArray *rangeKeys = [range objectForKey:@"KeyCodes"];
 			int rangeStartNote = [[range objectForKey:@"FirstMidiNote"] intValue];
-			NSUInteger numKeyCodes = [rangeKeys count];
-			for (NSUInteger i=0; i < numKeyCodes; ++i)
+			uint32_t numKeyCodes = (uint32_t)[rangeKeys count];
+			for (uint32_t i=0; i < numKeyCodes; ++i)
 			{
 				id thisKey = [rangeKeys objectAtIndex:i];
 				int keycode = [thisKey intValue];
