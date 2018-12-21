@@ -26,7 +26,7 @@ static struct {
 
 - (void)sendEvent:(NSEvent *)theEvent
 {
-	if ([theEvent type] == NSSystemDefined)
+	if ([theEvent type] == NSEventTypeSystemDefined)
 	{
 		// cache the results of these -respondsToSelector: messages so
 		// we handle hot keys as fast as possible (even though it's only

@@ -153,7 +153,7 @@
     NSRect contentRect = NSMakeRect((NSWidth(screenFrame) - width) / 2.0f, (NSHeight(screenFrame) - height) / 2.0f, width, height);
     
     // create overlay window
-    _overlayWindow = [[NSWindow alloc] initWithContentRect:contentRect styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:YES screen:mainScreen];
+    _overlayWindow = [[NSWindow alloc] initWithContentRect:contentRect styleMask:NSWindowStyleMaskBorderless backing:NSBackingStoreBuffered defer:YES screen:mainScreen];
     [_overlayWindow setOpaque:NO];
     [_overlayWindow setHasShadow:NO];
 //    [_overlayWindow setAlphaValue:0.75f];
