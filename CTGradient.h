@@ -9,20 +9,20 @@
 #import <Cocoa/Cocoa.h>
 
 typedef struct _CTGradientElement 
-	{
+{
 	CGFloat red, green, blue, alpha;
 	CGFloat position;
 	
 	struct _CTGradientElement *nextElement;
-	} CTGradientElement;
+} CTGradientElement;
 
 
 @interface CTGradient : NSObject <NSCopying, NSCoding>
-	{
+{
 	CTGradientElement* elementList;
 	
 	CGFunctionRef gradientFunction;
-	}
+}
 
 + (id)gradientWithBeginningColor:(NSColor *)begin endingColor:(NSColor *)end;
 
@@ -35,19 +35,19 @@ typedef struct _CTGradientElement
 + (id)unifiedPressedGradient;
 + (id)unifiedDarkGradient;
 
-- (CTGradient *)gradientWithAlphaComponent:(float)alpha;
+- (CTGradient *)gradientWithAlphaComponent:(double)alpha;
 
-- (CTGradient *)addColorStop:(NSColor *)color atPosition:(float)position;	//positions given relative to [0,1]
+- (CTGradient *)addColorStop:(NSColor *)color atPosition:(double)position;	//positions given relative to [0,1]
 - (CTGradient *)removeColorStopAtIndex:(unsigned)index;
-- (CTGradient *)removeColorStopAtPosition:(float)position;
+- (CTGradient *)removeColorStopAtPosition:(double)position;
 
 
 - (NSColor *)colorStopAtIndex:(unsigned)index;
-- (NSColor *)colorAtPosition:(float)position;
+- (NSColor *)colorAtPosition:(double)position;
 
 
 - (void)drawSwatchInRect:(NSRect)rect;
-- (void)fillRect:(NSRect)rect angle:(float)angle;					//fills rect with axial gradient
+- (void)fillRect:(NSRect)rect angle:(double)angle;					//fills rect with axial gradient
 																	//	angle in degrees
 - (void)radialFillRect:(NSRect)rect;								//fills rect with radial gradient
 																	//  gradient from center outwards

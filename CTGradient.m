@@ -16,14 +16,15 @@
 - (CTGradientElement *)elementAtIndex:(unsigned)index;
 
 - (CTGradientElement)removeElementAtIndex:(unsigned)index;
-- (CTGradientElement)removeElementAtPosition:(float)position;
+- (CTGradientElement)removeElementAtPosition:(double)position;
 @end
 
 
 @implementation CTGradient
 
 /////////////////////////////////////Initialization Type Stuff
-void linearEvaluation (void *info, const float *in, float *out);
+void linearEvaluation (void * _Nullable info, const double * _Nonnull in, double * _Nonnull out);
+
 static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluation, NULL };	//Version, evaluator function, cleanup function
 
 - (id)init
@@ -88,11 +89,11 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 	CTGradientElement *currentElement = elementList;
 	while(currentElement != nil)
 		{
-		[coder encodeValueOfObjCType:@encode(float) at:&(currentElement->red)];
-		[coder encodeValueOfObjCType:@encode(float) at:&(currentElement->green)];
-		[coder encodeValueOfObjCType:@encode(float) at:&(currentElement->blue)];
-		[coder encodeValueOfObjCType:@encode(float) at:&(currentElement->alpha)];
-		[coder encodeValueOfObjCType:@encode(float) at:&(currentElement->position)];
+		[coder encodeValueOfObjCType:@encode(double) at:&(currentElement->red)];
+		[coder encodeValueOfObjCType:@encode(double) at:&(currentElement->green)];
+		[coder encodeValueOfObjCType:@encode(double) at:&(currentElement->blue)];
+		[coder encodeValueOfObjCType:@encode(double) at:&(currentElement->alpha)];
+		[coder encodeValueOfObjCType:@encode(double) at:&(currentElement->position)];
 		
 		count++;
 		currentElement = currentElement->nextElement;
@@ -113,11 +114,11 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 	{
     CTGradientElement newElement;
 	
-	[coder decodeValueOfObjCType:@encode(float) at:&(newElement.red)];
-	[coder decodeValueOfObjCType:@encode(float) at:&(newElement.green)];
-	[coder decodeValueOfObjCType:@encode(float) at:&(newElement.blue)];
-	[coder decodeValueOfObjCType:@encode(float) at:&(newElement.alpha)];
-	[coder decodeValueOfObjCType:@encode(float) at:&(newElement.position)];
+	[coder decodeValueOfObjCType:@encode(double) at:&(newElement.red)];
+	[coder decodeValueOfObjCType:@encode(double) at:&(newElement.green)];
+	[coder decodeValueOfObjCType:@encode(double) at:&(newElement.blue)];
+	[coder decodeValueOfObjCType:@encode(double) at:&(newElement.alpha)];
+	[coder decodeValueOfObjCType:@encode(double) at:&(newElement.position)];
 	
 	count--;
 	[self addElement:&newElement];
@@ -344,7 +345,7 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 
 
 #pragma mark Modification
-- (CTGradient *)gradientWithAlphaComponent:(float)alpha
+- (CTGradient *)gradientWithAlphaComponent:(double)alpha
   {
   id newInstance = [[[self class] alloc] init];
   
@@ -365,7 +366,7 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 
 //Adds a color stop with <color> at <position> in elementList
 //(if two elements are at the same position then added imediatly after the one that was there already)
-- (CTGradient *)addColorStop:(NSColor *)color atPosition:(float)position
+- (CTGradient *)addColorStop:(NSColor *)color atPosition:(double)position
   {
   CTGradient *newGradient = [self copy];
   CTGradientElement newGradientElement;
@@ -385,7 +386,7 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 
 
 //Removes the color stop at <position> from elementList
-- (CTGradient *)removeColorStopAtPosition:(float)position
+- (CTGradient *)removeColorStopAtPosition:(double)position
   {
   CTGradient *newGradient = [self copy];
   CTGradientElement removedElement = [newGradient removeElementAtPosition:position];
@@ -427,9 +428,9 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
   return nil;
   }
 
-- (NSColor *)colorAtPosition:(float)position
+- (NSColor *)colorAtPosition:(double)position
   {
-  float components[4];
+  double components[4];
   
   linearEvaluation(&elementList, &position, components);
   
@@ -448,7 +449,7 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
   [self fillRect:rect angle:45];
   }
 
-- (void)fillRect:(NSRect)rect angle:(float)angle
+- (void)fillRect:(NSRect)rect angle:(double)angle
   {
 	  
 	  const double_t pi = 3.141592653589793;
@@ -471,16 +472,16 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
   else						//ok, we'll do the calculations now
 	   */
   	{
-  	float x,y;
-  	float sina, cosa, tana;
+  	double x,y;
+  	double sina, cosa, tana;
   	
-  	float length;
-  	float deltax,
+  	double length;
+  	double deltax,
   		  deltay;
 	
-  	float rangle = angle * pi/180;	//convert the angle to radians
+  	double rangle = angle * pi/180;	//convert the angle to radians
 	
-  	if(fabsf(tan(rangle))<=1)	//for range [-45,45], [135,225]
+  	if(fabs(tan(rangle))<=1)	//for range [-45,45], [135,225]
 		{
 		x = NSWidth(rect);
 		y = NSHeight(rect);
@@ -489,7 +490,7 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 		cosa = cos(rangle);
 		tana = tan(rangle);
 		
-		length = x/fabsf(cosa)+(y-x*fabsf(tana))*fabsf(sina);
+		length = x/fabs(cosa)+(y-x*fabs(tana))*fabs(sina);
 		
 		deltax = length*cosa/2;
 		deltay = length*sina/2;
@@ -503,7 +504,7 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 		cosa = cos(rangle - 90*pi/180);
 		tana = tan(rangle - 90*pi/180);
 		
-		length = x/fabsf(cosa)+(y-x*fabsf(tana))*fabsf(sina);
+		length = x/fabs(cosa)+(y-x*fabs(tana))*fabs(sina);
 		
 		deltax =-length*sina/2;
 		deltay = length*cosa/2;
@@ -531,7 +532,7 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 - (void)radialFillRect:(NSRect)rect
   {
   CGPoint startPoint , endPoint;
-  float startRadius, endRadius;
+  double startRadius, endRadius;
   
   startPoint = endPoint = CGPointMake(NSMidX(rect), NSMidY(rect));
   
@@ -631,7 +632,7 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
   return removedElement;
   }
 
-- (CTGradientElement)removeElementAtPosition:(float)position
+- (CTGradientElement)removeElementAtPosition:(double)position
   {
   CTGradientElement removedElement;
 	removedElement.red = 0.0;
@@ -698,8 +699,8 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 #pragma mark Core Graphics
 - (CGFunctionRef)buildCGFunction
   {
-  static const float input_value_range   [2] = { 0, 1 };						//range  for the evaluator input
-  static const float output_value_ranges [8] = { 0, 1, 0, 1, 0, 1, 0, 1 };		//ranges for the evaluator output (4 returned values)
+  static const CGFloat input_value_range   [2] = { 0, 1 };						//range  for the evaluator input
+  static const CGFloat output_value_ranges [8] = { 0, 1, 0, 1, 0, 1, 0, 1 };		//ranges for the evaluator output (4 returned values)
   
   return CGFunctionCreate(&elementList,					//the two transition colors
 						  1, input_value_range  ,		//number of inputs (just fraction of progression)
@@ -714,9 +715,9 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
 
 //////////////////////////////////////LinearEvaluation Function/////////////////////////////////////
 
-void linearEvaluation (void *info, const float *in, float *out)
+void linearEvaluation (void * _Nullable info, const double * _Nonnull in, double * _Nonnull out)
   {
-  float position = *in;
+  double position = *in;
   
   if(*(CTGradientElement **)info == nil)	//if elementList is empty return clear color
 	{
