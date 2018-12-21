@@ -6,6 +6,8 @@
 //  Copyright (c) 2002-2003 Chris Reed. All rights reserved.
 //
 
+#import <ShortcutRecorder/SRRecorderControl.h>
+
 //! @name Preference Keys
 //@{
 
@@ -36,8 +38,8 @@
 #define kToggleHotKeysShortcutPrefKey @"ToggleHotKeysShortcut"
 
 // Dictionary keys for shortcut preferences.
-#define SHORTCUT_FLAGS_KEY @"flags"
-#define SHORTCUT_KEYCODE_KEY @"keycode"
+#define SHORTCUT_FLAGS_KEY SRShortcutModifierFlagsKey //@"flags"
+#define SHORTCUT_KEYCODE_KEY SRShortcutKeyCode //@"keycode"
 
 // Hidden preferences
 #define kVelocityRepeatIntervalPrefKey @"VelocityRepeatInterval"

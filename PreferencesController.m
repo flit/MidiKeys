@@ -59,8 +59,14 @@ static PreferencesController *_sharedPrefsController = nil;
     // Add our delegate as an observer for some notifications.
     NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
     [center addObserver:delegate selector:@selector(preferencesDidChange:) name:kPreferencesChangedNotification object:nil];
-    
-    [_toggleHotKeysShortcut setCanCaptureGlobalHotKeys:YES];
+
+    _toggleHotKeysShortcut.delegate = self;
+//    [_toggleHotKeysShortcut setCanCaptureGlobalHotKeys:YES];
+}
+
+- (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder shouldUnconditionallyAllowModifierFlags:(NSEventModifierFlags)aModifierFlags forKeyCode:(unsigned short)aKeyCode
+{
+    return YES;
 }
 
 - (void)showPanel:(id)sender
@@ -130,18 +136,19 @@ static PreferencesController *_sharedPrefsController = nil;
 	
     // Update toggle hot keys key combo.
     NSDictionary * toggleDict = [defaults dictionaryForKey:kToggleHotKeysShortcutPrefKey];
-    KeyCombo combo;
-    if (toggleDict)
-    {
-        combo.flags = [_toggleHotKeysShortcut carbonToCocoaFlags:[[toggleDict objectForKey:SHORTCUT_FLAGS_KEY] intValue]];
-        combo.code = [[toggleDict objectForKey:SHORTCUT_KEYCODE_KEY] intValue];
-    }
-    else
-    {
-        combo.flags = 0;
-        combo.code = -1;
-    }
-    [_toggleHotKeysShortcut setKeyCombo:combo];
+//    KeyCombo combo;
+//    if (toggleDict)
+//    {
+//        combo.flags = [_toggleHotKeysShortcut carbonToCocoaFlags:[[toggleDict objectForKey:SHORTCUT_FLAGS_KEY] intValue]];
+//        combo.code = [[toggleDict objectForKey:SHORTCUT_KEYCODE_KEY] intValue];
+//    }
+//    else
+//    {
+//        combo.flags = 0;
+//        combo.code = -1;
+//    }
+//    [_toggleHotKeysShortcut setKeyCombo:combo];
+    _toggleHotKeysShortcut.objectValue = toggleDict;
 }
 
 //! @brief Save preferences to defaults and send prefs changed notification.
@@ -209,14 +216,15 @@ static PreferencesController *_sharedPrefsController = nil;
     [defaults setBool:[_velocityOverlaysCheckbox intValue] forKey:SHOW_VELOCITY_OVERLAYS_PREF_KEY];
     
     // Toggle hot keys shortcut.
-    KeyCombo combo = [_toggleHotKeysShortcut keyCombo];
-    int carbonFlags = (int) [_toggleHotKeysShortcut cocoaToCarbonFlags:combo.flags];
-    NSDictionary * comboDict = [NSDictionary dictionaryWithObjectsAndKeys:
-        [NSNumber numberWithInt:carbonFlags], SHORTCUT_FLAGS_KEY,
-        [NSNumber numberWithInteger:combo.code], SHORTCUT_KEYCODE_KEY,
-        nil, nil];
-    [defaults setObject:comboDict forKey:kToggleHotKeysShortcutPrefKey];
-	
+//    KeyCombo combo = [_toggleHotKeysShortcut keyCombo];
+//    int carbonFlags = (int) [_toggleHotKeysShortcut cocoaToCarbonFlags:combo.flags];
+//    NSDictionary * comboDict = [NSDictionary dictionaryWithObjectsAndKeys:
+//        [NSNumber numberWithInt:carbonFlags], SHORTCUT_FLAGS_KEY,
+//        [NSNumber numberWithInteger:combo.code], SHORTCUT_KEYCODE_KEY,
+//        nil, nil];
+//    [defaults setObject:comboDict forKey:kToggleHotKeysShortcutPrefKey];
+    [defaults setObject:_toggleHotKeysShortcut.objectValue forKey:kToggleHotKeysShortcutPrefKey];
+
 	// send notification that the prefs have changed
 	[[NSNotificationCenter defaultCenter] postNotificationName:kPreferencesChangedNotification object:nil];
 	

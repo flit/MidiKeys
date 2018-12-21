@@ -8,12 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "Preferences.h"
-#import "SRRecorderControl.h"
+#import <ShortcutRecorder/SRRecorderControl.h>
 
 /*!
  * @brief Manages the preferences panel.
  */
-@interface PreferencesController : NSWindowController
+@interface PreferencesController : NSWindowController <SRRecorderControlDelegate>
 {
 	IBOutlet NSWindow * _prefsWindow;
 	IBOutlet NSPopUpButton *keymapPopup;
