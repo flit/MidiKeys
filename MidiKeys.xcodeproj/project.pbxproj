@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		028AD5BC21CDA27C0044ED26 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */; };
+		028AD5BD21CDA28F0044ED26 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		029ECAD410E7DB9C003648D5 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029ECAD310E7DB9C003648D5 /* Sparkle.framework */; };
 		029ECAE210E7DBAD003648D5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 029ECAD310E7DB9C003648D5 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		029ECAEA10E7DCCC003648D5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 029ECAE910E7DCCC003648D5 /* dsa_pub.pem */; };
@@ -41,11 +43,6 @@
 		02BC7184050CE8EB00D77426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		02BC7188050CE8EC00D77426 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F546ED0A035D17E50199E6AF /* CoreAudio.framework */; };
 		02BC7190050CE8EC00D77426 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F546EC63035D01E20199E6AF /* CoreMIDI.framework */; };
-		02D6110210ED232600B7DF2F /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D610F910ED232600B7DF2F /* SRCommon.m */; };
-		02D6110310ED232600B7DF2F /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D610FB10ED232600B7DF2F /* SRKeyCodeTransformer.m */; };
-		02D6110410ED232600B7DF2F /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D610FD10ED232600B7DF2F /* SRRecorderCell.m */; };
-		02D6110510ED232600B7DF2F /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D610FF10ED232600B7DF2F /* SRRecorderControl.m */; };
-		02D6110610ED232600B7DF2F /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D6110110ED232600B7DF2F /* SRValidator.m */; };
 		02E533C90C122A2800CBD4A5 /* CTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E533C30C122A2800CBD4A5 /* CTGradient.m */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +53,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				028AD5BD21CDA28F0044ED26 /* ShortcutRecorder.framework in CopyFiles */,
 				029ECAE210E7DBAD003648D5 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +69,7 @@
 		020D980F03EB1FDE0031FAE0 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/KeyMapNames.strings; sourceTree = "<group>"; };
 		020D981003EB1FDE0031FAE0 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0255683705D5E8B2002EA660 /* MidiKeys-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MidiKeys-Info.plist"; sourceTree = "<group>"; };
+		028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		028FE9A303B6D8B5006ABE44 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
 		028FE9A703B6D8DC006ABE44 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = German.lproj/Credits.html; sourceTree = "<group>"; };
 		028FE9A803B6DA6C006ABE44 /* MidiKeys_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiKeys_Prefix.h; sourceTree = "<group>"; };
@@ -100,16 +99,6 @@
 		02BD73AE044E6A97000C9424 /* Version history.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Version history.rtf"; sourceTree = "<group>"; };
 		02BFAFAC03EDEA94000CADE3 /* OctaveDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OctaveDown.png; sourceTree = "<group>"; };
 		02BFAFAD03EDEA94000CADE3 /* OctaveUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OctaveUp.png; sourceTree = "<group>"; };
-		02D610F810ED232600B7DF2F /* SRCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
-		02D610F910ED232600B7DF2F /* SRCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
-		02D610FA10ED232600B7DF2F /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
-		02D610FB10ED232600B7DF2F /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRKeyCodeTransformer.m; sourceTree = "<group>"; };
-		02D610FC10ED232600B7DF2F /* SRRecorderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderCell.h; sourceTree = "<group>"; };
-		02D610FD10ED232600B7DF2F /* SRRecorderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderCell.m; sourceTree = "<group>"; };
-		02D610FE10ED232600B7DF2F /* SRRecorderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRRecorderControl.h; sourceTree = "<group>"; };
-		02D610FF10ED232600B7DF2F /* SRRecorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
-		02D6110010ED232600B7DF2F /* SRValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
-		02D6110110ED232600B7DF2F /* SRValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
 		02E533C20C122A2800CBD4A5 /* CTGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTGradient.h; sourceTree = "<group>"; };
 		02E533C30C122A2800CBD4A5 /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
 		02E533EA0C122BB500CBD4A5 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -156,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028AD5BC21CDA27C0044ED26 /* ShortcutRecorder.framework in Frameworks */,
 				02BC70F0050CE8EB00D77426 /* Carbon.framework in Frameworks */,
 				02BC7184050CE8EB00D77426 /* Cocoa.framework in Frameworks */,
 				02BC7188050CE8EC00D77426 /* CoreAudio.framework in Frameworks */,
@@ -179,27 +169,9 @@
 			name = Documentation;
 			sourceTree = "<group>";
 		};
-		02D610F710ED232600B7DF2F /* ShortcutRecorder */ = {
-			isa = PBXGroup;
-			children = (
-				02D610F810ED232600B7DF2F /* SRCommon.h */,
-				02D610F910ED232600B7DF2F /* SRCommon.m */,
-				02D610FA10ED232600B7DF2F /* SRKeyCodeTransformer.h */,
-				02D610FB10ED232600B7DF2F /* SRKeyCodeTransformer.m */,
-				02D610FC10ED232600B7DF2F /* SRRecorderCell.h */,
-				02D610FD10ED232600B7DF2F /* SRRecorderCell.m */,
-				02D610FE10ED232600B7DF2F /* SRRecorderControl.h */,
-				02D610FF10ED232600B7DF2F /* SRRecorderControl.m */,
-				02D6110010ED232600B7DF2F /* SRValidator.h */,
-				02D6110110ED232600B7DF2F /* SRValidator.m */,
-			);
-			path = ShortcutRecorder;
-			sourceTree = "<group>";
-		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				02D610F710ED232600B7DF2F /* ShortcutRecorder */,
 				F546EC5F035D006C0199E6AF /* AppController.h */,
 				F5F8BC1103909790013BC55C /* AppController.m */,
 				F508BD0A036B783D01EFE74C /* ColourDefaults.h */,
@@ -281,6 +253,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */,
 				029ECDB110E95822003648D5 /* Quartz.framework */,
 				029ECAD310E7DB9C003648D5 /* Sparkle.framework */,
 				F527A938036C845101ACC053 /* Carbon.framework */,
@@ -386,11 +359,6 @@
 				02BC7069050CE74700D77426 /* OverlayIndicator.m in Sources */,
 				02BC706B050CE74800D77426 /* PreferencesController.m in Sources */,
 				02E533C90C122A2800CBD4A5 /* CTGradient.m in Sources */,
-				02D6110210ED232600B7DF2F /* SRCommon.m in Sources */,
-				02D6110310ED232600B7DF2F /* SRKeyCodeTransformer.m in Sources */,
-				02D6110410ED232600B7DF2F /* SRRecorderCell.m in Sources */,
-				02D6110510ED232600B7DF2F /* SRRecorderControl.m in Sources */,
-				02D6110610ED232600B7DF2F /* SRValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +440,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0225C04808573BF200B30E71 /* Development */ = {
+		0225C04808573BF200B30E71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -488,9 +456,11 @@
 				GCC_PREFIX_HEADER = MidiKeys_Prefix.h;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				INFOPLIST_FILE = "MidiKeys-Info.plist";
 				INSTALL_PATH = "$(USER_APPS_DIR)";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -502,9 +472,9 @@
 				PRODUCT_NAME = MidiKeys;
 				WARNING_CFLAGS = "-Wmost";
 			};
-			name = Development;
+			name = Debug;
 		};
-		0225C04908573BF200B30E71 /* Deployment */ = {
+		0225C04908573BF200B30E71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -518,9 +488,11 @@
 				GCC_PREFIX_HEADER = MidiKeys_Prefix.h;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				INFOPLIST_FILE = "MidiKeys-Info.plist";
 				INSTALL_PATH = "$(USER_APPS_DIR)";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -531,9 +503,9 @@
 				PRODUCT_NAME = MidiKeys;
 				WARNING_CFLAGS = "-Wmost";
 			};
-			name = Deployment;
+			name = Release;
 		};
-		0225C04C08573BF200B30E71 /* Development */ = {
+		0225C04C08573BF200B30E71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -567,9 +539,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = "";
 			};
-			name = Development;
+			name = Debug;
 		};
-		0225C04D08573BF200B30E71 /* Deployment */ = {
+		0225C04D08573BF200B30E71 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -601,7 +573,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = "";
 			};
-			name = Deployment;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -609,20 +581,20 @@
 		0225C04708573BF200B30E71 /* Build configuration list for PBXNativeTarget "MidiKeys" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0225C04808573BF200B30E71 /* Development */,
-				0225C04908573BF200B30E71 /* Deployment */,
+				0225C04808573BF200B30E71 /* Debug */,
+				0225C04908573BF200B30E71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Release;
 		};
 		0225C04B08573BF200B30E71 /* Build configuration list for PBXProject "MidiKeys" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0225C04C08573BF200B30E71 /* Development */,
-				0225C04D08573BF200B30E71 /* Deployment */,
+				0225C04C08573BF200B30E71 /* Debug */,
+				0225C04D08573BF200B30E71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
