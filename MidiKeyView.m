@@ -171,12 +171,12 @@ const key_info_t kNoteInOctaveInfo[] = {
     const key_info_t * octaveNoteInfo = &kNoteInOctaveInfo[noteInOctave];
 
     // Copy const key info, then set a few other fields.
-    keyInfo = *octaveNoteInfo;
-	keyInfo.theOctave = theOctave;
-	keyInfo.octaveFirstNote = octaveFirstNote;
-	keyInfo.noteInOctave = noteInOctave;
+    _keyInfo = *octaveNoteInfo;
+	_keyInfo.theOctave = theOctave;
+	_keyInfo.octaveFirstNote = octaveFirstNote;
+	_keyInfo.noteInOctave = noteInOctave;
 
-	return &keyInfo;
+	return &_keyInfo;
 }
 
 - (NSBezierPath *)bezierPathForMidiNote:(int)note

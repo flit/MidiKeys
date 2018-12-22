@@ -47,7 +47,7 @@ typedef struct _key_info {
 	NSImage *mOctaveUpImage;
 	int mOctaveOffset;
 	BOOL _showKeycaps;
-    key_info_t keyInfo; //!< Shared key info struct.
+    key_info_t _keyInfo; //!< Shared key info struct.
 }
 
 @property (assign, nullable, weak) id<MidiKeyViewDelegate> delegate;
