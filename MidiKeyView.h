@@ -26,12 +26,14 @@ typedef struct _key_info {
 	BOOL leftIsInset;
 } key_info_t;
 
+@protocol MidiKeyViewDelegate;
+
 /*!
  * @brief View class that displays a musical keyboard.
  */
 @interface MidiKeyView : NSView
 {
-	id mDelegate;
+	id<MidiKeyViewDelegate> mDelegate;
 	NSImage *octaveImage;
 	char midiKeyStates[KEY_COUNT];
 	BOOL inited;
@@ -47,14 +49,12 @@ typedef struct _key_info {
 	BOOL _showKeycaps;
 }
 
-- (void)setDelegate:(id)delegate;
-- delegate;
+@property (assign, nullable, weak) id<MidiKeyViewDelegate> delegate;
+
+@property (retain, nonnull) NSColor * highlightColour;
 
 - (void)turnMidiNoteOn:(int)note;
 - (void)turnMidiNoteOff:(int)note;
-
-- (NSColor *)highlightColour;
-- (void)setHighlightColour:(NSColor *)theColour;
 
 - (int)octaveOffset;
 - (void)setOctaveOffset:(int)offset;
@@ -64,12 +64,14 @@ typedef struct _key_info {
 
 @end
 
-@interface NSObject (MidiKeyViewControllerMethods)
+@protocol MidiKeyViewDelegate
+
+@optional
 
 - (void)processMidiKeyWithCode:(int)keycode turningOn:(BOOL)isTurningOn;
 - (void)processMidiKeyClickWithNote:(int)note turningOn:(BOOL)isTurningOn;
 
-- (NSString *)characterForMidiNote:(int)note;
+- (NSString * _Nonnull)characterForMidiNote:(int)note;
 
 @end
 

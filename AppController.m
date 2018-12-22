@@ -286,7 +286,7 @@
 	[self updateSourceMenu];
 	
 	// set up the keys view
-	[midiKeys setDelegate:self];
+	midiKeys.delegate = self;
 	NSColor *highlightColour = [defaults colorForKey:kHighlightColourPrefKey];
 	if (!highlightColour)
 	{

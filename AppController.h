@@ -9,8 +9,8 @@
 #import <AppKit/AppKit.h>
 #import <CoreMIDI/CoreMIDI.h>
 #import <Carbon/Carbon.h>
+#import "MidiKeyView.h"
 
-@class MidiKeyView;
 @class KeyMapManager;
 @class MidiKeyMap;
 @class OverlayIndicator;
@@ -45,7 +45,7 @@ enum _velocity_up_or_down
  * Manages the keyboard window, all MIDI events, hot keys, menu items, and pretty much every
  * thing else except for preferences.
  */
-@interface AppController : NSObject <NSWindowDelegate, NSApplicationDelegate>
+@interface AppController : NSObject <NSWindowDelegate, NSApplicationDelegate, MidiKeyViewDelegate>
 {
 	IBOutlet NSPopUpButton *destinationPopup;
 	IBOutlet NSPopUpButton *sourcePopup;

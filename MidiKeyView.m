@@ -360,7 +360,7 @@
         drawPoint.x += octaveSize.width - 1.;
 	} while (drawPoint.x < frameWidth);
 	
-	BOOL drawKeyCaps = _showKeycaps && mDelegate && [mDelegate respondsToSelector:@selector(characterForMidiNote:)];
+	BOOL drawKeyCaps = _showKeycaps && mDelegate && [(NSObject *)mDelegate respondsToSelector:@selector(characterForMidiNote:)];
 	
 	// draw each key that is currently pressed
 	int i;
