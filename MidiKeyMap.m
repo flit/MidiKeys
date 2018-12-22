@@ -36,7 +36,7 @@
 	{
 		[self unregisterHotKeys];
 	}
-	
+
 	[mRegisteredHotKeys release];
 	[mRanges release];
 	[mDefinition release];
@@ -49,12 +49,12 @@
 	{
 		mKeyCodeToNoteMap[i] = -1;
 	}
-	
+
 	for (int i=0; i < MAX_MIDI_NOTES; ++i)
 	{
 		mNoteToKeyCodeMap[i] = -1;
 	}
-	
+
 	id range;
 	for (range in mRanges)
 	{
@@ -102,7 +102,7 @@
 	// return -1 if there are no hotkeys installed
 	if (!mHotKeysAreRegistered || [mRegisteredHotKeys count]==0)
 		return -1;
-	
+
 	int note = [[mRegisteredHotKeys objectForKey:[NSValue valueWithPointer:(void *)identifier]] intValue];
 	return note;
 }
@@ -124,19 +124,19 @@
 - (NSString *)characterForMidiNote:(int)midiNote
 {
 	int keyCode = [self keyCodeForMidiNote:midiNote];
-	
+
 	NSString *result = nil;
 	TISInputSourceRef t = TISCopyCurrentKeyboardLayoutInputSource();
 	if (t)
 	{
 		void* v = TISGetInputSourceProperty(t, kTISPropertyUnicodeKeyLayoutData);
-		
+
 		if (v)
 		{
 			CFDataRef d = (CFDataRef)v;
-			
+
 			UCKeyboardLayout *uchrData = (UCKeyboardLayout*) CFDataGetBytePtr(d);
-			
+
 			// Get Unicode characters for this keycode.
 			UInt32 deadKeyState = 0;
 			UniChar keyChars[16] = {0};
@@ -146,91 +146,14 @@
 			{
 				return nil;
 			}
-			
+
 			// Return NSString with the Unicode characters.
 			result = [NSString stringWithCharacters:(const unichar *)&keyChars length:keyCharsCount];
 		}
-		
+
 		CFRelease(t);
 	}
 	return result;
-
-	#if oldCode
-	
-	// Get current key layout selected in Keyboard menu.
-	KeyboardLayoutRef layout;
-//	TISInputSourceRef inputSource;
-	OSStatus status;
-//	inputSource = TISCopyCurrentKeyboardInputSource();
-	
-	status = KLGetCurrentKeyboardLayout(&layout);
-	if (status)
-	{
-		return nil;
-	}
-	
-	// Get the type of available layout data.
-	KeyboardLayoutKind layoutKind;
-	status = KLGetKeyboardLayoutProperty(layout, kKLKind, (const void **)&layoutKind);
-	if (status)
-	{
-		return nil;
-	}
-	
-	UInt32 deadKeyState = 0;
-	switch (layoutKind)
-	{
-		// Use the Unicode layout if available.
-		case kKLKCHRuchrKind:
-		case kKLuchrKind:
-		{
-			// Get the Unicode 'uchr' key layout data.
-			UCKeyboardLayout * uchrData;
-			status = KLGetKeyboardLayoutProperty(layout, kKLuchrData, (const void **)&uchrData);
-			if (status)
-			{
-				return nil;
-			}
-			
-			// Get Unicode characters for this keycode.
-			UniChar keyChars[16];
-			UniCharCount keyCharsCount;
-			status = UCKeyTranslate(uchrData, keyCode, kUCKeyActionDisplay, 0, LMGetKbdType(), kUCKeyTranslateNoDeadKeysMask, &deadKeyState, sizeof(keyChars), &keyCharsCount, keyChars);
-			if (status)
-			{
-				return nil;
-			}
-			
-			// Return NSString with the Unicode characters.
-			return [NSString stringWithCharacters:(const unichar *)&keyChars length:keyCharsCount];
-		}
-		
-		// Otherwise fall back to the old format.
-		case kKLKCHRKind:
-		{
-			// Get the 'KCHR' resource data.
-			void * kchrData;
-			status = KLGetKeyboardLayoutProperty(layout, kKLKCHRData, (const void **)&kchrData);
-			if (status)
-			{
-				return nil;
-			}
-			
-			// Put a 1 in bit 7 of the keycode param to indicate a down stroke.
-			UInt32 resultChars = KeyTranslate(kchrData, (keyCode & 0x3f) | (1 << 7), &deadKeyState);
-			if (status)
-			{
-				return nil;
-			}
-			
-			// Return the key char as a string.
-			char keyCharString[2] = {0};
-			keyCharString[0] = resultChars & 0xff;
-			return [NSString stringWithUTF8String:keyCharString];
-		}
-	}
-	#endif
-	return nil;
 }
 
 - (void)registerHotKeysWithModifiers:(int)modifiers;
@@ -240,14 +163,14 @@
     {
 		return;
     }
-	
+
 	OSStatus err;
 	EventHotKeyID hotKeyID = { 0, 0 };
 	EventHotKeyRef hotKeyRef;
-	
+
 	[mRegisteredHotKeys release];
 	mRegisteredHotKeys = [[NSMutableDictionary dictionary] retain];
-	
+
 	id range;
 	for (range in mRanges)
 	{
@@ -267,7 +190,7 @@
 					continue;
 				}
 				mHotKeysAreRegistered = YES;
-				
+
 				// save the hotKeyRef as the key in a dictionary, with its keycode as the value
 				[mRegisteredHotKeys setObject:[NSNumber numberWithInt:midiNote] forKey:[NSValue valueWithPointer:hotKeyRef]];
 			}
@@ -288,7 +211,7 @@
     {
 		return;
     }
-	
+
 	id iterator;
 	for (iterator in mRegisteredHotKeys)
 	{
@@ -299,10 +222,10 @@
 			NSLog(@"err %ld unregistering hot key %p", (long) err, hotKeyRef);
         }
 	}
-	
+
 	// clear hot keys dictionary
 	[mRegisteredHotKeys removeAllObjects];
-	
+
 	mHotKeysAreRegistered = NO;
 }
 
