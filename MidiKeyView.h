@@ -35,7 +35,7 @@ typedef struct _key_info {
 {
 	id<MidiKeyViewDelegate> mDelegate;
 	NSImage *octaveImage;
-	char midiKeyStates[KEY_COUNT];
+	uint8_t midiKeyStates[KEY_COUNT];
 	BOOL inited;
 	int numOctaves;
 	int leftOctaves;

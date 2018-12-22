@@ -481,10 +481,14 @@ const key_info_t kNoteInOctaveInfo[] = {
 // sources would hit the same notes
 - (void)turnMidiNoteOn:(int)note
 {
-	if (note < 0 || note > KEY_COUNT-1)
-		return;
-	if (midiKeyStates[note] < 127)
-		midiKeyStates[note]++;
+    if (note < 0 || note > KEY_COUNT-1)
+    {
+        return;
+    }
+    if (midiKeyStates[note] < 254)
+    {
+        midiKeyStates[note]++;
+    }
 	[self setNeedsDisplay:YES];
 }
 
