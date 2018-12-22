@@ -292,6 +292,12 @@
                                     <action selector="sendAllNotesOff:" target="-1" id="261"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Clear Stuck Keys" id="2Dj-op-iR2">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="clearStuckKeys:" target="203" id="kKi-Um-M9J"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

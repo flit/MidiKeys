@@ -704,6 +704,11 @@
 	[[NSUserDefaults standardUserDefaults] setBool:isWindowToggled forKey:kIsWindowToggledPrefKey];
 }
 
+- (IBAction)clearStuckKeys:(id)sender
+{
+	[midiKeys turnAllNotesOff];
+}
+
 @end
 
 @implementation AppController (HotKeys)

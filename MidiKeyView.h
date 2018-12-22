@@ -55,6 +55,7 @@ typedef struct _key_info {
 
 - (void)turnMidiNoteOn:(int)note;
 - (void)turnMidiNoteOff:(int)note;
+- (void)turnAllNotesOff;
 
 - (int)octaveOffset;
 - (void)setOctaveOffset:(int)offset;

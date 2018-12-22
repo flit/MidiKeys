@@ -508,6 +508,12 @@
 	[self setNeedsDisplay:YES];
 }
 
+- (void)turnAllNotesOff
+{
+    memset(&midiKeyStates, 0, sizeof(midiKeyStates));
+    [self setNeedsDisplay:YES];
+}
+
 - (NSColor *)highlightColour
 {
 	return mHighlightColour;

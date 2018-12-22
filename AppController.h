@@ -95,6 +95,7 @@ enum _velocity_up_or_down
 - (IBAction)toggleMidiControls:(id)sender;
 - (IBAction)octaveUp:(id)sender;
 - (IBAction)octaveDown:(id)sender;
+- (IBAction)clearStuckKeys:(id)sender;
 
 @end
 
