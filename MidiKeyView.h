@@ -52,16 +52,12 @@ typedef struct _key_info {
 @property (assign, nullable, weak) id<MidiKeyViewDelegate> delegate;
 
 @property (retain, nonnull) NSColor * highlightColour;
+@property int octaveOffset;
+@property BOOL showKeycaps;
 
 - (void)turnMidiNoteOn:(int)note;
 - (void)turnMidiNoteOff:(int)note;
 - (void)turnAllNotesOff;
-
-- (int)octaveOffset;
-- (void)setOctaveOffset:(int)offset;
-
-- (BOOL)showKeycaps;
-- (void)setShowKeycaps:(BOOL)show;
 
 @end
 

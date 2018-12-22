@@ -294,8 +294,8 @@
 		[defaults setColor:highlightColour forKey:kHighlightColourPrefKey];
 	}
 	
-	[midiKeys setHighlightColour:highlightColour];
-	[midiKeys setShowKeycaps:[defaults boolForKey:kShowKeyCapsPrefKey]];
+	midiKeys.highlightColour = highlightColour;
+	midiKeys.showKeycaps = [defaults boolForKey:kShowKeyCapsPrefKey];
 	
 	// set current velocity and channel
 	currentVelocity = [defaults floatForKey:kVelocityPrefKey];
@@ -305,7 +305,7 @@
 	[channelPopup selectItemWithTag:currentChannel - 1];
 	
 	octaveOffset = (int)[defaults integerForKey:kOctaveOffsetPrefKey];
-	[midiKeys setOctaveOffset:octaveOffset];
+	midiKeys.octaveOffset = octaveOffset;
 	
 	// set up the midi keys window
 	[[midiKeys window] setDelegate:self];
@@ -551,7 +551,7 @@
 		octaveOffset++;
 		[defaults setInteger:octaveOffset forKey:kOctaveOffsetPrefKey];
 	
-		[midiKeys setOctaveOffset:octaveOffset];
+		midiKeys.octaveOffset = octaveOffset;
 		
 		if ([defaults boolForKey:SHOW_OCTAVE_SHIFT_OVERLAYS_PREF_KEY])
 		{
@@ -573,7 +573,7 @@
 		octaveOffset--;
 		[defaults setInteger:octaveOffset forKey:kOctaveOffsetPrefKey];
 		
-		[midiKeys setOctaveOffset:octaveOffset];
+		midiKeys.octaveOffset = octaveOffset;
 		
 		if ([defaults boolForKey:SHOW_OCTAVE_SHIFT_OVERLAYS_PREF_KEY])
 		{
@@ -620,7 +620,7 @@
 	}
 	
 	// update key caps
-	[midiKeys setShowKeycaps:[defaults boolForKey:kShowKeyCapsPrefKey]];
+	midiKeys.showKeycaps = [defaults boolForKey:kShowKeyCapsPrefKey];
 	
 	// reload key map
 	[keyMap release]; // will unregister this keymaps hotkeys
@@ -643,7 +643,7 @@
 	
 	// highlight colour
 	NSColor *highlightColour = [defaults colorForKey:kHighlightColourPrefKey];
-	[midiKeys setHighlightColour:highlightColour];
+	midiKeys.highlightColour = highlightColour;
 }
 
 - (void)setClickThrough:(BOOL)clickThrough
