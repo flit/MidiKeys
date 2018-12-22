@@ -648,21 +648,7 @@
 
 - (void)setClickThrough:(BOOL)clickThrough
 {
-	NSWindow *mainWindow = [midiKeys window];
-	
-	// carbon
-	void *ref = [mainWindow windowRef];
-	if (clickThrough)
-	{
-		ChangeWindowAttributes(ref, kWindowIgnoreClicksAttribute, kWindowNoAttributes);
-	}
-	else
-	{
-		ChangeWindowAttributes(ref, kWindowNoAttributes, kWindowIgnoreClicksAttribute);
-	}
-	
-	// cocoa
-	[mainWindow setIgnoresMouseEvents:clickThrough];
+	midiKeys.window.ignoresMouseEvents = clickThrough;
 }
 
 - (IBAction)toggleMidiControls:(id)sender
