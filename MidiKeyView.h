@@ -18,8 +18,8 @@ typedef struct _key_info {
 	int theOctave;
 	int octaveFirstNote;
 	int noteInOctave;
-	int isWhiteKey;
-	int isBlackKey;
+	BOOL isWhiteKey;
+	BOOL isBlackKey;
 	int numWhiteKeys;
 	int numBlackKeys;
 	BOOL rightIsInset;
@@ -47,6 +47,7 @@ typedef struct _key_info {
 	NSImage *mOctaveUpImage;
 	int mOctaveOffset;
 	BOOL _showKeycaps;
+    key_info_t keyInfo; //!< Shared key info struct.
 }
 
 @property (assign, nullable, weak) id<MidiKeyViewDelegate> delegate;

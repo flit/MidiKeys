@@ -3,7 +3,7 @@
 //  MidiKeys
 //
 //  Created by Chris Reed on Tue Oct 15 2002.
-//  Copyright (c) 2002 Chris Reed. All rights reserved.
+//  Copyright (c) 2002,2018 Chris Reed. All rights reserved.
 //
 
 #import "MidiKeyView.h"
@@ -21,9 +21,80 @@
 #define kBlackKeyWidth 6.0
 #define kBlackKeyHeight 32.0
 
+//! Table to map note number within octave to details about that key.
+const key_info_t kNoteInOctaveInfo[] = {
+        [0] = { // C
+            .isWhiteKey = YES,
+            .rightIsInset = YES
+        },
+        [1] = { // C#
+            .isBlackKey = YES,
+            .numWhiteKeys = 1
+        },
+        [2] = { // D
+            .isWhiteKey = YES,
+            .numWhiteKeys = 1,
+            .numBlackKeys = 1,
+            .rightIsInset = YES,
+            .leftIsInset = YES,
+        },
+        [3] = { // D#
+            .isBlackKey = YES,
+            .numWhiteKeys = 2,
+            .numBlackKeys = 1,
+        },
+        [4] = {// E
+            .isWhiteKey = YES,
+            .numWhiteKeys = 2,
+            .numBlackKeys = 2,
+            .leftIsInset = YES,
+        },
+        [5] = { // F
+            .isWhiteKey = YES,
+            .numWhiteKeys = 3,
+            .numBlackKeys = 2,
+            .rightIsInset = YES,
+        },
+        [6] = { // F#
+            .isBlackKey = YES,
+            .numWhiteKeys = 4,
+            .numBlackKeys = 2,
+        },
+        [7] = { // G
+            .isWhiteKey = YES,
+            .numWhiteKeys = 4,
+            .numBlackKeys = 3,
+            .rightIsInset = YES,
+            .leftIsInset = YES,
+        },
+        [8] = { // G#
+            .isBlackKey = YES,
+            .numWhiteKeys = 5,
+            .numBlackKeys = 3,
+        },
+        [9] = { // A
+            .isWhiteKey = YES,
+            .numWhiteKeys = 5,
+            .numBlackKeys = 4,
+            .rightIsInset = YES,
+            .leftIsInset = YES,
+        },
+        [10] = { // A#
+            .isBlackKey = YES,
+            .numWhiteKeys = 6,
+            .numBlackKeys = 4,
+        },
+        [11] = { // B
+            .isWhiteKey = YES,
+            .numWhiteKeys = 6,
+            .numBlackKeys = 5,
+            .leftIsInset = YES,
+        },
+};
+
 @interface MidiKeyView (PrivateMethods)
 
-- (key_info_t)getKeyInfoForMidiNote:(int)note;
+- (const key_info_t * _Nonnull)getKeyInfoForMidiNote:(int)note;
 - (void)computeKeyValues;
 - (NSBezierPath *)bezierPathForMidiNote:(int)note;
 - (void)highlightMidiKey:(int)note;
@@ -89,120 +160,38 @@
 	lastMidiNote = KEY_COUNT; //firstMidiNote + int(bounds.size.width / kWhiteKeyWidth);
 }
 
-- (key_info_t)getKeyInfoForMidiNote:(int)note
+- (const key_info_t * _Nonnull)getKeyInfoForMidiNote:(int)note
 {
-	key_info_t info;
 	int theNote = note;
 	int theOctave = (theNote - firstMidiNote) / 12;
 	int octaveFirstNote = firstMidiNote + theOctave * 12;
-	int noteInOctave = theNote - octaveFirstNote;
-	int numWhiteKeys = 0;
-	int numBlackKeys = 0;
-	int isWhiteKey = 0;
-	int isBlackKey = 0;
-	BOOL leftIsInset = NO;
-	BOOL rightIsInset = NO; // black key insets on white keys
-	
-	switch (noteInOctave)
-	{
-		case 0: // C
-			isWhiteKey = 1;
-			rightIsInset = YES;
-			break;
-		case 1:	// C#
-			isBlackKey = 1;
-			numWhiteKeys = 1;
-			break;
-		case 2:	// D
-			isWhiteKey = 1;
-			numWhiteKeys = 1;
-			numBlackKeys = 1;
-			rightIsInset = YES;
-			leftIsInset = YES;
-			break;
-		case 3:	// D#
-			isBlackKey = 1;
-			numWhiteKeys = 2;
-			numBlackKeys = 1;
-			break;
-		case 4:	// E
-			isWhiteKey = 1;
-			numWhiteKeys = 2;
-			numBlackKeys = 2;
-			leftIsInset = YES;
-			break;
-		case 5: // F
-			isWhiteKey = 1;
-			numWhiteKeys = 3;
-			numBlackKeys = 2;
-			rightIsInset = YES;
-			break;
-		case 6: // F#
-			isBlackKey = 1;
-			numWhiteKeys = 4;
-			numBlackKeys = 2;
-			break;
-		case 7: // G
-			isWhiteKey = 1;
-			numWhiteKeys = 4;
-			numBlackKeys = 3;
-			rightIsInset = YES;
-			leftIsInset = YES;
-			break;
-		case 8: // G#
-			isBlackKey = 1;
-			numWhiteKeys = 5;
-			numBlackKeys = 3;
-			break;
-		case 9: // A
-			isWhiteKey = 1;
-			numWhiteKeys = 5;
-			numBlackKeys = 4;
-			rightIsInset = YES;
-			leftIsInset = YES;
-			break;
-		case 10: // A#
-			isBlackKey = 1;
-			numWhiteKeys = 6;
-			numBlackKeys = 4;
-			break;
-		case 11: // B
-			isWhiteKey = 1;
-			numWhiteKeys = 6;
-			numBlackKeys = 5;
-			leftIsInset = YES;
-			break;
-		default:
-			NSLog(@"bad note to key mapping!!! note=%d", note);
-	}
-	
-	info.theOctave = theOctave;
-	info.octaveFirstNote = octaveFirstNote;
-	info.noteInOctave = noteInOctave;
-	info.isWhiteKey = isWhiteKey;
-	info.isBlackKey = isBlackKey;
-	info.numWhiteKeys = numWhiteKeys;
-	info.numBlackKeys = numBlackKeys;
-	info.rightIsInset = rightIsInset;
-	info.leftIsInset = leftIsInset;
-	
-	return info;
+	unsigned noteInOctave = theNote - octaveFirstNote;
+
+    assert(noteInOctave < (sizeof(kNoteInOctaveInfo) / sizeof(key_info_t)));
+    const key_info_t * octaveNoteInfo = &kNoteInOctaveInfo[noteInOctave];
+
+    // Copy const key info, then set a few other fields.
+    keyInfo = *octaveNoteInfo;
+	keyInfo.theOctave = theOctave;
+	keyInfo.octaveFirstNote = octaveFirstNote;
+	keyInfo.noteInOctave = noteInOctave;
+
+	return &keyInfo;
 }
 
 - (NSBezierPath *)bezierPathForMidiNote:(int)note
 {
 	NSSize octaveSize = [octaveImage size];
 
-	// invert middle c
-	int theNote = note;
-	key_info_t info = [self getKeyInfoForMidiNote:theNote];
+	// get key info for the note
+	const key_info_t * _Nonnull info = [self getKeyInfoForMidiNote:note];
 	
-	int theOctave = info.theOctave;
+	int theOctave = info->theOctave;
 	float octaveLeft = theOctave * (octaveSize.width - 1);
-	int numWhiteKeys = info.numWhiteKeys;
-	int isBlackKey = info.isBlackKey;
-	BOOL leftIsInset = info.leftIsInset;
-	BOOL rightIsInset = info.rightIsInset; // black key insets on white keys
+	int numWhiteKeys = info->numWhiteKeys;
+	BOOL isBlackKey = info->isBlackKey;
+	BOOL leftIsInset = info->leftIsInset;
+	BOOL rightIsInset = info->rightIsInset; // black key insets on white keys
 	
 	NSRect keyRect;
 	
@@ -378,10 +367,10 @@
 			int offsetNote = i + mOctaveOffset * 12;
 			if (offsetNote >= firstMidiNote && offsetNote < lastMidiNote)
 			{
-				key_info_t info = [self getKeyInfoForMidiNote:offsetNote];
+				const key_info_t * _Nonnull info = [self getKeyInfoForMidiNote:offsetNote];
 				NSRect pathBounds = [[self bezierPathForMidiNote:offsetNote] bounds];
 				NSMutableDictionary * attributes = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSFont labelFontOfSize:9.0f], NSFontAttributeName, nil];
-				if (info.isWhiteKey)
+				if (info->isWhiteKey)
 				{
 					drawPoint.y = pathBounds.origin.y + 3.0f;
 					drawPoint.x = pathBounds.origin.x + 4.0f;
