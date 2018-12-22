@@ -113,7 +113,7 @@
 //            [NSNumber numberWithFloat:0.12], NSExpansionAttributeName,
             nil, nil];
         
-        NSAttributedString * attributedMessage = [[NSAttributedString alloc] initWithString:_message attributes:attrs];
+        NSAttributedString * attributedMessage = [[[NSAttributedString alloc] initWithString:_message attributes:attrs] autorelease];
         
         // Compute the bounding rect of the message.
         NSRect messageFrame;

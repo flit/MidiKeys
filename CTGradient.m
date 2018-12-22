@@ -55,7 +55,7 @@ static const CGFunctionCallbacks _CTLinearGradientFunction = { 0, &linearEvaluat
   {
   CGFunctionRelease(gradientFunction);
   
-  CTGradientElement *elementToRemove = elementList;
+  CTGradientElement *elementToRemove = nil;
   while(elementList != nil)
 	{
 	elementToRemove = elementList;

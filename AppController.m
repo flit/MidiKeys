@@ -82,7 +82,7 @@
 - (void)updateDestinationMenu
 {
 	// get our endpoint's uid
-	MIDIUniqueID selectedEndpointUID;
+	MIDIUniqueID selectedEndpointUID = 0;
 	BOOL foundSelectedDestination = NO;
 	if (isDestinationConnected)
 	{
@@ -143,7 +143,7 @@
 - (void)updateSourceMenu
 {	
 	// find selected source's uid
-	MIDIUniqueID selectedEndpointUID;
+	MIDIUniqueID selectedEndpointUID = 0;
 	if (isSourceConnected)
 	{
 		MIDIObjectGetIntegerProperty(selectedSource, kMIDIPropertyUniqueID, &selectedEndpointUID);
