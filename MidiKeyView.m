@@ -26,7 +26,7 @@
 //! Table to map note number within octave to details about that key.
 const key_info_t kNoteInOctaveInfo[] = {
         [0] = { // C
-            .isWhiteKey = YES,
+            .isBlackKey = NO,
             .rightIsInset = YES
         },
         [1] = { // C#
@@ -34,7 +34,7 @@ const key_info_t kNoteInOctaveInfo[] = {
             .numWhiteKeys = 1
         },
         [2] = { // D
-            .isWhiteKey = YES,
+            .isBlackKey = NO,
             .numWhiteKeys = 1,
             .numBlackKeys = 1,
             .rightIsInset = YES,
@@ -46,13 +46,13 @@ const key_info_t kNoteInOctaveInfo[] = {
             .numBlackKeys = 1,
         },
         [4] = {// E
-            .isWhiteKey = YES,
+            .isBlackKey = NO,
             .numWhiteKeys = 2,
             .numBlackKeys = 2,
             .leftIsInset = YES,
         },
         [5] = { // F
-            .isWhiteKey = YES,
+            .isBlackKey = NO,
             .numWhiteKeys = 3,
             .numBlackKeys = 2,
             .rightIsInset = YES,
@@ -63,7 +63,7 @@ const key_info_t kNoteInOctaveInfo[] = {
             .numBlackKeys = 2,
         },
         [7] = { // G
-            .isWhiteKey = YES,
+            .isBlackKey = NO,
             .numWhiteKeys = 4,
             .numBlackKeys = 3,
             .rightIsInset = YES,
@@ -75,7 +75,7 @@ const key_info_t kNoteInOctaveInfo[] = {
             .numBlackKeys = 3,
         },
         [9] = { // A
-            .isWhiteKey = YES,
+            .isBlackKey = NO,
             .numWhiteKeys = 5,
             .numBlackKeys = 4,
             .rightIsInset = YES,
@@ -87,7 +87,7 @@ const key_info_t kNoteInOctaveInfo[] = {
             .numBlackKeys = 4,
         },
         [11] = { // B
-            .isWhiteKey = YES,
+            .isBlackKey = NO,
             .numWhiteKeys = 6,
             .numBlackKeys = 5,
             .leftIsInset = YES,
@@ -301,7 +301,7 @@ const key_info_t kNoteInOctaveInfo[] = {
         NSSize capSize = [c sizeWithAttributes:attributes];
         double xOffset = ((pathBounds.size.width - capSize.width) / 2.0) - 0.5;
 
-        if (info->isWhiteKey)
+        if (!info->isBlackKey)
         {
             drawPoint.x = pathBounds.origin.x + xOffset;
             drawPoint.y = pathBounds.origin.y + 4.0;

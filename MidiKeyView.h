@@ -18,12 +18,11 @@ typedef struct _key_info {
 	int theOctave;
 	int octaveFirstNote;
 	int noteInOctave;
-	BOOL isWhiteKey;
+    int numWhiteKeys;
+    int numBlackKeys;
 	BOOL isBlackKey;
-	int numWhiteKeys;
-	int numBlackKeys;
-	BOOL rightIsInset;
-	BOOL leftIsInset;
+    BOOL rightIsInset;
+    BOOL leftIsInset;
 } key_info_t;
 
 @protocol MidiKeyViewDelegate;
