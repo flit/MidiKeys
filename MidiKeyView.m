@@ -117,6 +117,7 @@ const key_info_t kNoteInOctaveInfo[] = {
 		mOctaveUpImage = [[NSImage imageNamed:kOctaveUpImageFile] retain];
 		mOctaveDownImage = [[NSImage imageNamed:kOctaveDownImageFile] retain];
 		mHighlightColour = [NSColor greenColor];
+        _lastKeyPathNote = -1;
     }
     return self;
 }
@@ -163,6 +164,8 @@ const key_info_t kNoteInOctaveInfo[] = {
 
 	// XXX really compute lastMidiNote
 	lastMidiNote = KEY_COUNT; //firstMidiNote + int(bounds.size.width / kWhiteKeyWidth);
+
+    _lastKeyPathNote = -1;
 }
 
 - (const key_info_t * _Nonnull)getKeyInfoForMidiNote:(int)note
@@ -186,6 +189,11 @@ const key_info_t kNoteInOctaveInfo[] = {
 
 - (NSBezierPath *)bezierPathForMidiNote:(int)note
 {
+    if (_lastKeyPathNote == note && _lastKeyPath)
+    {
+        return _lastKeyPath;
+    }
+
     double scaledKeyHeight = kNominalKeyHeight * _scale;
     double scaledWhiteKeyWidth = kWhiteKeyWidth * _scale;
     double scaledBlackKeyWidth = kBlackKeyWidth * _scale;
@@ -252,7 +260,11 @@ const key_info_t kNoteInOctaveInfo[] = {
 	[keyPath lineToPoint:NSMakePoint(x+0.5, y+h)];
 	[keyPath lineToPoint:NSMakePoint(x+0.5, y+0.5)];
 	[keyPath closePath];
-	
+
+    // Cache the bezier path.
+    _lastKeyPath = [keyPath retain];
+    _lastKeyPathNote = note;
+
 	return keyPath;
 }
 

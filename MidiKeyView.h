@@ -48,6 +48,8 @@ typedef struct _key_info {
 	int mOctaveOffset;
 	BOOL _showKeycaps;
     key_info_t _keyInfo; //!< Shared key info struct.
+    NSBezierPath * _lastKeyPath;
+    int _lastKeyPathNote;
 }
 
 @property (assign, nullable, weak) id<MidiKeyViewDelegate> delegate;
