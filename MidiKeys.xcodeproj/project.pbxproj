@@ -34,7 +34,6 @@
 		02BC7071050CE74E00D77426 /* Lisez-Moi.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02BD73A9044E6A7B000C9424 /* Lisez-Moi.rtf */; };
 		02BC7072050CE74E00D77426 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5D5FEF00371F1130140410E /* Localizable.strings */; };
 		02BC7074050CE75000D77426 /* MidiKeys.icns in Resources */ = {isa = PBXBuildFile; fileRef = F5B75228036773F30140410E /* MidiKeys.icns */; };
-		02BC7075050CE75000D77426 /* Octave.png in Resources */ = {isa = PBXBuildFile; fileRef = F551D3FD03621A310101F9C2 /* Octave.png */; };
 		02BC7076050CE75000D77426 /* OctaveDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BFAFAC03EDEA94000CADE3 /* OctaveDown.png */; };
 		02BC7077050CE75100D77426 /* OctaveUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BFAFAD03EDEA94000CADE3 /* OctaveUp.png */; };
 		02BC7079050CE75200D77426 /* ReadMe (Japanese).rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02BD73AA044E6A7B000C9424 /* ReadMe (Japanese).rtf */; };
@@ -122,7 +121,6 @@
 		F546EC7D035D0D950199E6AF /* MidiKeyView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MidiKeyView.h; sourceTree = "<group>"; };
 		F546EC7E035D0D950199E6AF /* MidiKeyView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MidiKeyView.m; sourceTree = "<group>"; };
 		F546ED0A035D17E50199E6AF /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
-		F551D3FD03621A310101F9C2 /* Octave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Octave.png; sourceTree = "<group>"; };
 		F58735E2C5B04BC501FD2FC7 /* ReadMe.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
 		F5B7521E036765350140410E /* EndpointDefaults.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = EndpointDefaults.h; sourceTree = "<group>"; };
 		F5B7521F036765350140410E /* EndpointDefaults.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = EndpointDefaults.m; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 			children = (
 				029ECAE910E7DCCC003648D5 /* dsa_pub.pem */,
 				0255683705D5E8B2002EA660 /* MidiKeys-Info.plist */,
-				F551D3FD03621A310101F9C2 /* Octave.png */,
 				02BFAFAC03EDEA94000CADE3 /* OctaveDown.png */,
 				02BFAFAD03EDEA94000CADE3 /* OctaveUp.png */,
 				F5B75228036773F30140410E /* MidiKeys.icns */,
@@ -329,7 +326,6 @@
 				02BC7071050CE74E00D77426 /* Lisez-Moi.rtf in Resources */,
 				02BC7072050CE74E00D77426 /* Localizable.strings in Resources */,
 				02BC7074050CE75000D77426 /* MidiKeys.icns in Resources */,
-				02BC7075050CE75000D77426 /* Octave.png in Resources */,
 				02BC7076050CE75000D77426 /* OctaveDown.png in Resources */,
 				02BC7077050CE75100D77426 /* OctaveUp.png in Resources */,
 				02BC7079050CE75200D77426 /* ReadMe (Japanese).rtf in Resources */,

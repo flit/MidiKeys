@@ -34,9 +34,9 @@ typedef struct _key_info {
 @interface MidiKeyView : NSView
 {
 	id<MidiKeyViewDelegate> mDelegate;
-	NSImage *octaveImage;
 	uint8_t midiKeyStates[KEY_COUNT];
 	BOOL inited;
+    double _scale;
 	int numOctaves;
 	int leftOctaves;
 	int firstMidiNote;
