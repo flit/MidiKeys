@@ -189,10 +189,14 @@ const key_info_t kNoteInOctaveInfo[] = {
 
 - (NSBezierPath *)bezierPathForMidiNote:(int)note
 {
-    if (_lastKeyPathNote == note && _lastKeyPath)
-    {
-        return _lastKeyPath;
-    }
+//    if (_lastKeyPathNote == note && _lastKeyPath)
+//    {
+//        return _lastKeyPath;
+//    }
+//    else if (_lastKeyPath)
+//    {
+//        [_lastKeyPath release];
+//    }
 
     double scaledKeyHeight = kNominalKeyHeight * _scale;
     double scaledWhiteKeyWidth = kWhiteKeyWidth * _scale;
@@ -262,8 +266,8 @@ const key_info_t kNoteInOctaveInfo[] = {
 	[keyPath closePath];
 
     // Cache the bezier path.
-    _lastKeyPath = [keyPath retain];
-    _lastKeyPathNote = note;
+//    _lastKeyPath = [keyPath retain];
+//    _lastKeyPathNote = note;
 
 	return keyPath;
 }
