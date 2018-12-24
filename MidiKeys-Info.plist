@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>MidiKeys</string>
 	<key>CFBundleGetInfoString</key>
-	<string>1.8, Copyright © 2002-2010 Immo Software.</string>
+	<string>1.9, Copyright © 2002-2018 Immo Software.</string>
 	<key>CFBundleHelpBookName</key>
 	<string>ReadMe.rtf</string>
 	<key>CFBundleIconFile</key>
@@ -29,7 +29,7 @@
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.5.0</string>
+	<string>10.12.0</string>
 	<key>NSAppleEventsUsageDescription</key>
 	<string>MidiKeys</string>
 	<key>NSMainNibFile</key>
