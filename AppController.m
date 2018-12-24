@@ -296,6 +296,7 @@
 	
 	midiKeys.highlightColour = highlightColour;
 	midiKeys.showKeycaps = [defaults boolForKey:kShowKeyCapsPrefKey];
+	midiKeys.showCNotes = [defaults boolForKey:kShowCNotesPrefKey];
 	
 	// set current velocity and channel
 	currentVelocity = [defaults floatForKey:kVelocityPrefKey];
@@ -621,6 +622,7 @@
 	
 	// update key caps
 	midiKeys.showKeycaps = [defaults boolForKey:kShowKeyCapsPrefKey];
+	midiKeys.showCNotes = [defaults boolForKey:kShowCNotesPrefKey];
 	
 	// reload key map
 	[keyMap release]; // will unregister this keymaps hotkeys

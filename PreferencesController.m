@@ -60,6 +60,16 @@ static PreferencesController *_sharedPrefsController = nil;
     NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
     [center addObserver:delegate selector:@selector(preferencesDidChange:) name:kPreferencesChangedNotification object:nil];
 
+    // Hide the force light mode checkbox on systems that don't support dark mode (<10.14).
+    if (@available(macOS 10.14, *))
+    {
+        // nothing
+    }
+    else
+    {
+        [_forceLightModeCheckbox setHidden:YES];
+    }
+
     _toggleHotKeysShortcut.delegate = self;
 //    [_toggleHotKeysShortcut setCanCaptureGlobalHotKeys:YES];
 }
@@ -116,6 +126,8 @@ static PreferencesController *_sharedPrefsController = nil;
 	[windowTransparencySlider setFloatValue:(1.0 - [defaults floatForKey:kWindowTransparencyPrefKey]) * 100.];
 	[solidOnTopCheckbox setIntValue:[defaults boolForKey:kSolidOnTopPrefKey]];
 	[showKeyCapsCheckbox setIntValue:[defaults boolForKey:kShowKeyCapsPrefKey]];
+    [_showCNotesCheckbox setIntValue:[defaults boolForKey:kShowCNotesPrefKey]];
+    [_forceLightModeCheckbox setIntValue:[defaults boolForKey:kForceLightKeyboardPrefKey]];
 	[_clickThroughCheckbox setIntValue:[defaults boolForKey:kClickThroughPrefKey]];
     [self keyboardFloatsDidChange:nil];
 
@@ -193,6 +205,12 @@ static PreferencesController *_sharedPrefsController = nil;
 	
 	// show keycaps
 	[defaults setBool:[showKeyCapsCheckbox intValue] forKey:kShowKeyCapsPrefKey];
+
+    // show c notes
+    [defaults setBool:[_showCNotesCheckbox intValue] forKey:kShowCNotesPrefKey];
+
+    // force light mode
+    [defaults setBool:[_forceLightModeCheckbox intValue] forKey:kForceLightKeyboardPrefKey];
 	
 	// float window checkbox
 	[defaults setBool:[floatWindowCheckbox intValue] forKey:kFloatWindowPrefKey];

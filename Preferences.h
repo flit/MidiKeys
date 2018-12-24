@@ -34,6 +34,8 @@
 #define SHOW_OCTAVE_SHIFT_OVERLAYS_PREF_KEY @"ShowOctaveShiftOverlays"
 #define SHOW_VELOCITY_OVERLAYS_PREF_KEY @"ShowVelocityOverlays"
 #define kShowKeyCapsPrefKey @"ShowKeyCaps"
+#define kShowCNotesPrefKey @"ShowCNotes"
+#define kForceLightKeyboardPrefKey @"ForceLightKeys"
 
 #define kToggleHotKeysShortcutPrefKey @"ToggleHotKeysShortcut"
 

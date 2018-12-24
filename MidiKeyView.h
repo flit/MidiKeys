@@ -46,6 +46,7 @@ typedef struct _key_info {
 	NSImage *mOctaveUpImage;
 	int mOctaveOffset;
 	BOOL _showKeycaps;
+    BOOL _showCNotes;
     key_info_t _keyInfo; //!< Shared key info struct.
     NSBezierPath * _lastKeyPath;
     int _lastKeyPathNote;
@@ -56,6 +57,7 @@ typedef struct _key_info {
 @property (retain, nonnull) NSColor * highlightColour;
 @property int octaveOffset;
 @property BOOL showKeycaps;
+@property BOOL showCNotes;
 
 - (void)turnMidiNoteOn:(int)note;
 - (void)turnMidiNoteOff:(int)note;

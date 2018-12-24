@@ -27,6 +27,8 @@
 	IBOutlet NSButton *commandModifierCheckbox;
 	IBOutlet NSButton *solidOnTopCheckbox;
 	IBOutlet NSButton * showKeyCapsCheckbox;
+    IBOutlet NSButton * _showCNotesCheckbox;
+    IBOutlet NSButton * _forceLightModeCheckbox;
 	IBOutlet NSButton * _clickThroughCheckbox;
 	IBOutlet SRRecorderControl * _toggleHotKeysShortcut;
     IBOutlet NSButton * _hotKeysOverlaysCheckbox;
