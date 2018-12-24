@@ -251,7 +251,7 @@ const key_info_t kNoteInOctaveInfo[] = {
 
     // upper half of white key
 	y = scaledKeyHeight - scaledBlackKeyHeight - 1 - inset;
-	h = scaledBlackKeyHeight - inset;
+	h = scaledBlackKeyHeight;
 	if (!rightIsInset && leftIsInset)
 	{
 		x += scaledBlackKeyInset - 1;
@@ -285,22 +285,29 @@ const key_info_t kNoteInOctaveInfo[] = {
 
     NSColor * keyOutlineColor;
     NSColor * keyInlineColor;
-    NSColor * keyFillColor;
+    NSColor * keyFillTopColor;
+    NSColor * keyFillBottomColor;
     if (drawDark)
     {
         keyOutlineColor = NSColor.blackColor;
         keyInlineColor = NSColor.grayColor;
-        keyFillColor = keyInfo->isBlackKey
-                        ? NSColor.lightGrayColor
+        keyFillTopColor = keyInfo->isBlackKey
+                        ? [NSColor colorWithWhite:0.5 alpha:1.0]
+                        : [NSColor colorWithWhite:0.2 alpha:1.0];
+        keyFillBottomColor = keyInfo->isBlackKey
+                        ? [NSColor colorWithWhite:0.75 alpha:1.0]
                         : [NSColor colorWithWhite:0.35 alpha:1.0];
     }
     else
     {
         keyOutlineColor = NSColor.blackColor;
         keyInlineColor = NSColor.grayColor;
-        keyFillColor = keyInfo->isBlackKey
+        keyFillTopColor = keyInfo->isBlackKey
                         ? NSColor.blackColor
                         : NSColor.whiteColor;
+        keyFillBottomColor = keyInfo->isBlackKey
+                        ? NSColor.lightGrayColor
+                        : [NSColor colorWithWhite:0.35 alpha:1.0];
     }
 
     [NSGraphicsContext saveGraphicsState];
@@ -312,11 +319,19 @@ const key_info_t kNoteInOctaveInfo[] = {
 
     NSBezierPath *insetPath = [self bezierPathForMidiNote:note withInset:_scale];
 
-    [keyFillColor set];
-    [insetPath fill];
+    [NSGraphicsContext saveGraphicsState];
+
+    [insetPath setClip];
+
+    CTGradient * gradient = [CTGradient
+        gradientWithBeginningColor:keyFillTopColor
+        endingColor:keyFillBottomColor];
+    [gradient fillRect:[insetPath bounds] angle:330.0];
+
+    [NSGraphicsContext restoreGraphicsState];
 
     [keyInlineColor set];
-    insetPath.lineWidth = _scale;
+    insetPath.lineWidth = (_scale - 1.0) * 0.7 + 1.0;
     [insetPath stroke];
 
     [NSGraphicsContext restoreGraphicsState];
@@ -331,28 +346,32 @@ const key_info_t kNoteInOctaveInfo[] = {
     {
         const key_info_t * _Nonnull info = [self getKeyInfoForMidiNote:offsetNote];
         NSRect pathBounds = [[self bezierPathForMidiNote:offsetNote] bounds];
-        NSMutableDictionary * attributes = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSFont labelFontOfSize:9.0 * _scale], NSFontAttributeName, nil];
+        double fontSize = 9.0 * MAX(1.0, _scale / 1.2);
+        NSMutableDictionary * attributes = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSFont labelFontOfSize:fontSize], NSFontAttributeName, nil];
+        if (info->isBlackKey && !drawDark)
+        {
+            [attributes setValue:NSColor.whiteColor forKey:NSForegroundColorAttributeName];
+        }
 
         NSString * c = [mDelegate characterForMidiNote:note];
         NSSize capSize = [c sizeWithAttributes:attributes];
         double xOffset = ((pathBounds.size.width - capSize.width) / 2.0) - 0.5;
+        drawPoint = pathBounds.origin;
+        drawPoint.x += xOffset;
 
         if (!info->isBlackKey)
         {
-            drawPoint.x = pathBounds.origin.x + xOffset;
-            drawPoint.y = pathBounds.origin.y + 4.0;
+            drawPoint.y += 4.0;
         }
         else
         {
-            drawPoint.x = pathBounds.origin.x + xOffset;// - 0.5;
-            drawPoint.y = pathBounds.origin.y + 3.0;
-            if (!drawDark)
-            {
-                [attributes setValue:NSColor.whiteColor forKey:NSForegroundColorAttributeName];
-            }
+            drawPoint.y += 3.0;
         }
 
-        [c drawAtPoint:drawPoint withAttributes:attributes];
+        if (_showKeycaps)
+        {
+            [c drawAtPoint:drawPoint withAttributes:attributes];
+        }
     }
 }
 
@@ -444,13 +463,6 @@ const key_info_t kNoteInOctaveInfo[] = {
 		inited = YES;
 	}
 
-    // clear background
-//    NSDrawWhiteBezel(self.frame, rect);
-
-	// determine whether to show key caps
-	BOOL drawKeyCaps = _showKeycaps && mDelegate
-            && [(NSObject *)mDelegate respondsToSelector:@selector(characterForMidiNote:)];
-
 	// draw the keyboard one key at a time, starting with the leftmost visible note
 	int i;
 	for (i = firstMidiNote; i < lastMidiNote; ++i)
@@ -464,11 +476,8 @@ const key_info_t kNoteInOctaveInfo[] = {
 			[self highlightMidiKey:i];
 		}
 
-		// Draw the key cap for this key.
-		if (drawKeyCaps)
-		{
-            [self drawKeyCapForNote:i];
-		}
+		// Draw the key caps for this key.
+        [self drawKeyCapForNote:i];
 	}
 
 	[self drawOctaveOffsetIndicator];

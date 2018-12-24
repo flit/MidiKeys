@@ -67,8 +67,6 @@ typedef struct _key_info {
 
 @protocol MidiKeyViewDelegate
 
-@optional
-
 - (void)processMidiKeyWithCode:(int)keycode turningOn:(BOOL)isTurningOn;
 - (void)processMidiKeyClickWithNote:(int)note turningOn:(BOOL)isTurningOn;
 
