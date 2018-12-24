@@ -1185,11 +1185,8 @@
 //! into the CoreMIDI thread.
 - (void)receiveMidiPacketList:(const MIDIPacketList *)packetList
 {
-	NSAutoreleasePool *pool = nil;
-	@try
+	@autoreleasepool
 	{
-		pool = [[NSAutoreleasePool alloc] init];
-		
 		// handle MIDI thru
 		if (performMidiThru)
 		{
@@ -1235,10 +1232,6 @@
 				}
 			}
 		}
-	}
-	@finally
-	{
-		[pool release];
 	}
 }
 
