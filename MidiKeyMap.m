@@ -147,6 +147,20 @@
 				return nil;
 			}
 
+            // Substitute some control key chars.
+            switch (keyChars[0])
+            {
+                case 0x08: // backspace
+                    keyChars[0] = 0x232b;
+                    break;
+                case 0x09: // tab
+                    keyChars[0] = 0x21e5;
+                    break;
+                case 0x0d: // return
+                    keyChars[0] = 0x21a9;
+                    break;
+            }
+
 			// Return NSString with the Unicode characters.
 			result = [NSString stringWithCharacters:(const unichar *)&keyChars length:keyCharsCount];
 		}
