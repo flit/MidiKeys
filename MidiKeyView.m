@@ -9,6 +9,7 @@
 #import "MidiKeyView.h"
 #import "AppController.h"
 #import "CTGradient.h"
+#import "Preferences.h"
 
 // image file name
 #define kOctaveDownImageFile @"OctaveDown.png"
@@ -105,6 +106,7 @@ const key_info_t kNoteInOctaveInfo[] = {
 - (void)highlightMidiKey:(int)note;
 - (int)midiNoteForMouse:(NSPoint)location;
 - (void)drawOctaveOffsetIndicator;
+- (BOOL)drawDark;
 
 @end
 
@@ -278,46 +280,70 @@ const key_info_t kNoteInOctaveInfo[] = {
 	return keyPath;
 }
 
+- (BOOL)drawDark
+{
+    if (@available(macOS 10.14, *))
+    {
+        return [[[NSAppearance currentAppearance] name] isEqualToString:NSAppearanceNameDarkAqua]
+            && ![[NSUserDefaults standardUserDefaults] boolForKey:kForceLightKeyboardPrefKey];
+    }
+    else
+    {
+        return NO;
+    }
+}
+
 - (void)drawKeyForNote:(int)note
 {
-    BOOL drawDark = YES;
+    BOOL drawDark = [self drawDark];
+
     const key_info_t * _Nonnull keyInfo = [self getKeyInfoForMidiNote:note];
 
     NSColor * keyOutlineColor;
     NSColor * keyInlineColor;
     NSColor * keyFillTopColor;
     NSColor * keyFillBottomColor;
+    double maxLineWidth;
+    double insetAmount = (_scale - 1.0) * 0.6 + 1.0;
     if (drawDark)
     {
         keyOutlineColor = NSColor.blackColor;
-        keyInlineColor = NSColor.grayColor;
+        keyInlineColor = keyInfo->isBlackKey
+                        ? [NSColor colorWithWhite:0.55 alpha:1.0]
+                        : [NSColor colorWithWhite:0.15 alpha:1.0];
         keyFillTopColor = keyInfo->isBlackKey
                         ? [NSColor colorWithWhite:0.5 alpha:1.0]
                         : [NSColor colorWithWhite:0.2 alpha:1.0];
         keyFillBottomColor = keyInfo->isBlackKey
                         ? [NSColor colorWithWhite:0.75 alpha:1.0]
                         : [NSColor colorWithWhite:0.35 alpha:1.0];
+        maxLineWidth = 4.0;
     }
     else
     {
         keyOutlineColor = NSColor.blackColor;
-        keyInlineColor = NSColor.grayColor;
+        keyInlineColor = keyInfo->isBlackKey
+                        ? [NSColor colorWithWhite:0.25 alpha:1.0]
+                        : NSColor.grayColor;
         keyFillTopColor = keyInfo->isBlackKey
                         ? NSColor.blackColor
-                        : NSColor.whiteColor;
+                        : [NSColor colorWithWhite:0.65 alpha:1.0];
         keyFillBottomColor = keyInfo->isBlackKey
-                        ? NSColor.lightGrayColor
-                        : [NSColor colorWithWhite:0.35 alpha:1.0];
+                        ? [NSColor colorWithWhite:0.35 alpha:1.0]
+                        : NSColor.whiteColor;
+        maxLineWidth = keyInfo->isBlackKey
+                        ? 2.0
+                        : 4.0;
     }
 
     [NSGraphicsContext saveGraphicsState];
 
     // Draw frame around the key
     NSBezierPath *keyPath = [self bezierPathForMidiNote:note];
+    NSBezierPath *insetPath = [self bezierPathForMidiNote:note withInset:insetAmount];
+
     [keyOutlineColor set];
     [keyPath stroke];
-
-    NSBezierPath *insetPath = [self bezierPathForMidiNote:note withInset:_scale];
 
     [NSGraphicsContext saveGraphicsState];
 
@@ -331,7 +357,7 @@ const key_info_t kNoteInOctaveInfo[] = {
     [NSGraphicsContext restoreGraphicsState];
 
     [keyInlineColor set];
-    insetPath.lineWidth = (_scale - 1.0) * 0.7 + 1.0;
+    insetPath.lineWidth = MIN(maxLineWidth, (_scale - 1.0) * 0.7 + 1.0);
     [insetPath stroke];
 
     [NSGraphicsContext restoreGraphicsState];
@@ -339,39 +365,53 @@ const key_info_t kNoteInOctaveInfo[] = {
 
 - (void)drawKeyCapForNote:(int)note
 {
-    BOOL drawDark = YES;
-    NSPoint drawPoint;
-    int offsetNote = note + mOctaveOffset * 12;
-    if (offsetNote >= firstMidiNote && offsetNote < lastMidiNote)
+    BOOL drawDark = [self drawDark];
+    int offsetNote = note - mOctaveOffset * 12;
+    const key_info_t * _Nonnull info = [self getKeyInfoForMidiNote:note];
+    NSRect pathBounds = [[self bezierPathForMidiNote:note] bounds];
+    double fontSize = 9.0 * MAX(1.0, _scale / 1.2);
+    NSMutableDictionary * attributes = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSFont labelFontOfSize:fontSize], NSFontAttributeName, nil];
+    if (info->isBlackKey && !drawDark)
     {
-        const key_info_t * _Nonnull info = [self getKeyInfoForMidiNote:offsetNote];
-        NSRect pathBounds = [[self bezierPathForMidiNote:offsetNote] bounds];
-        double fontSize = 9.0 * MAX(1.0, _scale / 1.2);
-        NSMutableDictionary * attributes = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSFont labelFontOfSize:fontSize], NSFontAttributeName, nil];
-        if (info->isBlackKey && !drawDark)
-        {
-            [attributes setValue:NSColor.whiteColor forKey:NSForegroundColorAttributeName];
-        }
+        [attributes setValue:NSColor.whiteColor forKey:NSForegroundColorAttributeName];
+    }
+    else if (!info->isBlackKey && drawDark)
+    {
+        [attributes setValue:[NSColor colorWithWhite:0.75 alpha:1.0]
+            forKey:NSForegroundColorAttributeName];
+    }
 
-        NSString * c = [mDelegate characterForMidiNote:note];
-        NSSize capSize = [c sizeWithAttributes:attributes];
-        double xOffset = ((pathBounds.size.width - capSize.width) / 2.0) - 0.5;
+    NSString * c = [mDelegate characterForMidiNote:offsetNote];
+    NSSize capSize = [c sizeWithAttributes:attributes];
+    double xOffset = ((pathBounds.size.width - capSize.width) / 2.0) - 0.5;
+    NSPoint drawPoint = pathBounds.origin;
+    drawPoint.x += xOffset;
+
+    if (!info->isBlackKey)
+    {
+        drawPoint.y += 4.0;
+    }
+    else
+    {
+        drawPoint.y += 3.0;
+    }
+
+    if (_showKeycaps && [c length] > 0)
+    {
+        [c drawAtPoint:drawPoint withAttributes:attributes];
+    }
+
+    if (_showCNotes && info->noteInOctave == 0)
+    {
+        [attributes setValue:[NSFont labelFontOfSize:(fontSize * 2) / 3] forKey:NSFontAttributeName];
+        c = [NSString stringWithFormat:@"C%d", (note / 12) - 2];
+        NSSize noteCapSize = [c sizeWithAttributes:attributes];
+        xOffset = ((pathBounds.size.width - noteCapSize.width) / 2.0) - 0.5;
         drawPoint = pathBounds.origin;
         drawPoint.x += xOffset;
+        drawPoint.y += capSize.height + 3.0;
 
-        if (!info->isBlackKey)
-        {
-            drawPoint.y += 4.0;
-        }
-        else
-        {
-            drawPoint.y += 3.0;
-        }
-
-        if (_showKeycaps)
-        {
-            [c drawAtPoint:drawPoint withAttributes:attributes];
-        }
+        [c drawAtPoint:drawPoint withAttributes:attributes];
     }
 }
 
