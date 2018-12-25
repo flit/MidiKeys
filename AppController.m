@@ -228,6 +228,8 @@
 		[NSNumber numberWithBool:YES], SHOW_OCTAVE_SHIFT_OVERLAYS_PREF_KEY,
 		[NSNumber numberWithBool:YES], SHOW_VELOCITY_OVERLAYS_PREF_KEY,
 		[NSNumber numberWithBool:YES], kShowKeyCapsPrefKey,
+		@(YES), kShowCNotesPrefKey,
+		@(NO), kForceLightKeyboardPrefKey,
 		nil, nil];
 	
 	[defaults registerDefaults:defaultsDefaults];
