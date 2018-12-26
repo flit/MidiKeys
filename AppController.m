@@ -658,35 +658,57 @@
 - (IBAction)toggleMidiControls:(id)sender
 {
 	// resize window
-	NSWindow *window = [toggleView window];
-	NSRect newFrame = [window frame];
-	NSPoint newOrigin = [hiddenItemsView frame].origin;
+	NSWindow *window = toggleView.window;
+	NSSize windowMinSize = window.minSize;
+	NSView * contentView = window.contentView;
+	NSRect newFrame = window.frame;
 	if (isWindowToggled)
 	{
 		// move items back into place first, so they appear as the window
 		// is animated
-		newOrigin.x = 0;
-		[hiddenItemsView setFrameOrigin:newOrigin];
-		
-		// increase window size
+		[window.contentView addSubview:hiddenItemsView];
+		[hiddenItemsView release];
+		[hiddenItemsView setFrameOrigin:NSMakePoint(0, toggleView.frame.size.height)];
+
+		// turn off auto resizing while we adjust the window height
+		contentView.autoresizesSubviews = NO;
+		toggleView.autoresizesSubviews = NO;
+
+		// increase window current height and min height
 		newFrame.size.height += toggleDelta;
 		[window setFrame:newFrame display:YES animate:YES];
-		
+		windowMinSize.height += toggleDelta;
+		window.minSize = windowMinSize;
+
+		// turn auto resizing back on
+		toggleView.autoresizesSubviews = YES;
+		contentView.autoresizesSubviews = YES;
+
 		isWindowToggled = NO;
 	}
 	else
 	{
 		// shrink window size
-		toggleDelta = NSHeight([[window contentView] frame]) - NSHeight([toggleView frame]);
-		
+		toggleDelta = NSHeight(hiddenItemsView.frame);
+
+		// turn off auto resizing while we adjust the window height
+		contentView.autoresizesSubviews = NO;
+		toggleView.autoresizesSubviews = NO;
+
+		// decrease window current height and min height
 		newFrame.size.height -= toggleDelta;
 		[window setFrame:newFrame display:YES animate:YES];
+		windowMinSize.height -= toggleDelta;
+		window.minSize = windowMinSize;
 		
-		// move items out of the way so they don't interfere with the title
-		// bar when used for dragging (they will trap clicks in the title)
-		newOrigin.x = NSWidth([window frame]);
-		[hiddenItemsView setFrameOrigin:newOrigin];
-		
+		// remove the hidden items view from the window
+		[hiddenItemsView retain];
+		[hiddenItemsView removeFromSuperview];
+
+		// turn auto resizing back on
+		toggleView.autoresizesSubviews = YES;
+		contentView.autoresizesSubviews = YES;
+
 		isWindowToggled = YES;
 	}
 	
