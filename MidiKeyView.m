@@ -162,18 +162,18 @@ const key_info_t kNoteInOctaveInfo[] = {
     double height = NSHeight(bounds);
     _scale = height / kNominalKeyHeight;
 
-    numOctaves = width / ((kWhiteKeyWidth * kWhiteKeysPerOctave * _scale) - 1.0);
+    numOctaves = MIN(10, width / ((kWhiteKeyWidth * kWhiteKeysPerOctave * _scale) - 1.0));
 
 //	NSLog(@"numOctaves = %d", numOctaves);
 
 	// put middle c=60 in approx. center octave
 	leftOctaves = numOctaves/2;
-	firstMidiNote = 60 - (leftOctaves * 12);
+	firstMidiNote = MAX(0, 60 - (leftOctaves * 12));
 
 //	NSLog(@"firstMidiNote = %d", firstMidiNote);
 
 	// XXX really compute lastMidiNote
-	lastMidiNote = KEY_COUNT; //firstMidiNote + int(bounds.size.width / kWhiteKeyWidth);
+    lastMidiNote = MIN(KEY_COUNT, firstMidiNote + (numOctaves + 1) * 12);
 
     _lastKeyPathNote = -1;
 }
