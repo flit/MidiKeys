@@ -20,6 +20,9 @@
 #define MAX_OCTAVE_OFFSET (4)
 #define MIN_OCTAVE_OFFSET (-4)
 
+static void MyNotifyProc(const MIDINotification *message, void *refCon);
+static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *connRefCon);
+
 @interface AppController ()
 
 - (void)setupRegisteredDefaults;
@@ -1176,6 +1179,36 @@
 		[midiKeys turnMidiNoteOff:note];
 }
 
+- (void)sendMidi:(const MIDIPacketList *)packetList
+{
+	if (isDestinationConnected)
+	{
+		// send over output port
+		MIDISend(outputPort, selectedDestination, packetList);
+	}
+	else
+	{
+		// send over virtual source
+		MIDIReceived(virtualSourceEndpoint, packetList);
+	}
+}
+
+- (void)processMidiChannelAftertouch:(int)pressure
+{
+	// build the midi channel aftertouch event
+	MIDIPacketList packetList;
+	MIDIPacket *packetPtr = MIDIPacketListInit(&packetList);
+	uint8_t midiData[2];
+	midiData[0] = 0xd0 | (currentChannel - 1);
+	midiData[1] = pressure;
+	packetPtr = MIDIPacketListAdd(&packetList, sizeof packetList, packetPtr,
+	 	AudioGetCurrentHostTime(), 2, (const Byte *)&midiData);
+	if (packetPtr)
+	{
+		[self sendMidi:&packetList];
+	}
+}
+
 //! Send a MIDI note on event out the virtual source or our output port.
 //! A velocity of 0 is used to send a note off event.
 - (void)sendMidiNote:(int)midiNote channel:(int)channel velocity:(int)velocity
@@ -1190,16 +1223,7 @@
 	packetPtr = MIDIPacketListAdd(&packetList, sizeof packetList, packetPtr, AudioGetCurrentHostTime(), 3, (const Byte *)&midiData);
 	if (packetPtr)
 	{
-		if (isDestinationConnected)
-		{
-			// send over output port
-			MIDISend(outputPort, selectedDestination, &packetList);
-		}
-		else
-		{
-			// send over virtual source
-			MIDIReceived(virtualSourceEndpoint, &packetList);
-		}
+		[self sendMidi:&packetList];
 	}
 }
 
@@ -1214,16 +1238,7 @@
 		// handle MIDI thru
 		if (performMidiThru)
 		{
-			if (isDestinationConnected)
-			{
-				// send over output port
-				MIDISend(outputPort, selectedDestination, packetList);
-			}
-			else
-			{
-				// send over virtual source
-				MIDIReceived(virtualSourceEndpoint, packetList);
-			}
+			[self sendMidi:packetList];
 		}
 		
 		// process the received packet

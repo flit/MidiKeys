@@ -120,7 +120,14 @@ const key_info_t kNoteInOctaveInfo[] = {
 		mOctaveUpImage = [[NSImage imageNamed:kOctaveUpImageFile] retain];
 		mOctaveDownImage = [[NSImage imageNamed:kOctaveDownImageFile] retain];
 		mHighlightColour = [NSColor greenColor];
+        mClickedNote = -1;
         _lastKeyPathNote = -1;
+        _lastAftertouchPressure = -1;
+
+        // Set the view to respond to pressure with a large dynamic range and
+        // with deep click turned off.
+        self.pressureConfiguration = [[[NSPressureConfiguration alloc]
+            initWithPressureBehavior:NSPressureBehaviorPrimaryGeneric] autorelease];
     }
     return self;
 }
@@ -566,6 +573,7 @@ const key_info_t kNoteInOctaveInfo[] = {
 	mClickedNote = [self midiNoteForMouse:[self convertPoint:[theEvent locationInWindow] fromView:nil]];
 	if (mClickedNote != -1)
     {
+        _lastAftertouchPressure = -1;
 		[mDelegate processMidiKeyClickWithNote:mClickedNote turningOn:YES];
     }
 }
@@ -595,7 +603,22 @@ const key_info_t kNoteInOctaveInfo[] = {
 	{
 		[mDelegate processMidiKeyClickWithNote:mClickedNote turningOn:NO];
 		mClickedNote = -1;
+        _lastAftertouchPressure = -1;
 	}
+}
+
+- (void)pressureChangeWithEvent:(NSEvent *)event
+{
+//    NSLog(@"pressureChangeWithEvent: %@", event);
+    if (mClickedNote != -1)
+    {
+        uint8_t intPressure = MIN(127, (uint8_t)(event.pressure * 127.0));
+        if (intPressure != _lastAftertouchPressure)
+        {
+            [mDelegate processMidiChannelAftertouch:intPressure];
+            _lastAftertouchPressure = intPressure;
+        }
+    }
 }
 
 // let the mDelegate object handle all the midi logic

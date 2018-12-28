@@ -50,6 +50,7 @@ typedef struct _key_info {
     key_info_t _keyInfo; //!< Shared key info struct.
     NSBezierPath * _lastKeyPath;
     int _lastKeyPathNote;
+    int _lastAftertouchPressure;
 }
 
 @property (assign, nullable, weak) id<MidiKeyViewDelegate> delegate;
@@ -69,6 +70,7 @@ typedef struct _key_info {
 
 - (void)processMidiKeyWithCode:(int)keycode turningOn:(BOOL)isTurningOn;
 - (void)processMidiKeyClickWithNote:(int)note turningOn:(BOOL)isTurningOn;
+- (void)processMidiChannelAftertouch:(int)pressure;
 
 - (NSString * _Nonnull)characterForMidiNote:(int)note;
 

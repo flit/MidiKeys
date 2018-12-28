@@ -45,7 +45,7 @@ enum _velocity_up_or_down
  * Manages the keyboard window, all MIDI events, hot keys, menu items, and pretty much every
  * thing else except for preferences.
  */
-@interface AppController : NSObject <NSWindowDelegate, NSApplicationDelegate, MidiKeyViewDelegate>
+@interface AppController : NSObject <NSWindowDelegate, NSApplicationDelegate>
 {
 	IBOutlet NSPopUpButton *destinationPopup;
 	IBOutlet NSPopUpButton *sourcePopup;
@@ -125,11 +125,12 @@ enum _velocity_up_or_down
 
 @end
 
-@interface AppController (MIDI)
+@interface AppController (MIDI) <MidiKeyViewDelegate>
 
 - (NSString *)nameForMidiEndpoint:(MIDIEndpointRef)theEndpoint;
 
 // use vel=0 for off
+- (void)sendMidi:(const MIDIPacketList *)packetList;
 - (void)sendMidiNote:(int)midiNote channel:(int)channel velocity:(int)velocity;
 - (void)handleMidiNotification:(const MIDINotification *)message;
 - (void)receiveMidiPacketList:(const MIDIPacketList *)packetList;
@@ -142,6 +143,4 @@ enum _velocity_up_or_down
 
 @end
 
-void MyNotifyProc(const MIDINotification *message, void *refCon);
-void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *connRefCon);
 
