@@ -295,6 +295,8 @@
 				LastUpgradeCheck = 0940;
 				TargetAttributes = {
 					02BC7052050CE14900D77426 = {
+						DevelopmentTeam = 7V78BSKXHX;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HardenedRuntime = {
 								enabled = 1;
@@ -456,7 +458,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = MidiKeys.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7V78BSKXHX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,6 +487,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.immosw.MidiKeys;
 				PRODUCT_NAME = MidiKeys;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WARNING_CFLAGS = "-Wmost";
 			};
 			name = Debug;
@@ -492,7 +498,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = MidiKeys.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 7V78BSKXHX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -515,6 +524,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.immosw.MidiKeys;
 				PRODUCT_NAME = MidiKeys;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WARNING_CFLAGS = "-Wmost";
 			};
 			name = Release;
