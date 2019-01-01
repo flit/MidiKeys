@@ -70,6 +70,7 @@
 		0255683705D5E8B2002EA660 /* MidiKeys-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MidiKeys-Info.plist"; sourceTree = "<group>"; };
 		028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		028AD5BE21D054960044ED26 /* MidiKeys.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MidiKeys.entitlements; sourceTree = "<group>"; };
+		028AD5C121DAD8380044ED26 /* version_history.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = version_history.md; sourceTree = "<group>"; };
 		028FE9A303B6D8B5006ABE44 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
 		028FE9A703B6D8DC006ABE44 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = German.lproj/Credits.html; sourceTree = "<group>"; };
 		028FE9A803B6DA6C006ABE44 /* MidiKeys_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiKeys_Prefix.h; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		02BD73A8044E6A7B000C9424 /* LiesMich.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = LiesMich.rtf; sourceTree = "<group>"; };
 		02BD73A9044E6A7B000C9424 /* Lisez-Moi.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Lisez-Moi.rtf"; sourceTree = "<group>"; };
 		02BD73AA044E6A7B000C9424 /* ReadMe (Japanese).rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "ReadMe (Japanese).rtf"; sourceTree = "<group>"; };
-		02BD73AE044E6A97000C9424 /* Version history.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Version history.rtf"; sourceTree = "<group>"; };
 		02BFAFAC03EDEA94000CADE3 /* OctaveDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OctaveDown.png; sourceTree = "<group>"; };
 		02BFAFAD03EDEA94000CADE3 /* OctaveUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OctaveUp.png; sourceTree = "<group>"; };
 		02E533C20C122A2800CBD4A5 /* CTGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTGradient.h; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 				F5D5FEF00371F1130140410E /* Localizable.strings */,
 				F5D503210371FB6A0140410E /* KeyMapNames.strings */,
 				02AEA56504A01467003989A9 /* Documentation */,
-				02BD73AE044E6A97000C9424 /* Version history.rtf */,
+				028AD5C121DAD8380044ED26 /* version_history.md */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
