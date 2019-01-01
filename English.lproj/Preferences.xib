@@ -89,7 +89,7 @@ Gw
                                         <button imageHugsTitle="YES" id="17">
                                             <rect key="frame" x="15" y="113" width="239" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Keyboard window is always on top" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="132">
+                                            <buttonCell key="cell" type="check" title="Keyboard window is always on top" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="132">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -129,7 +129,7 @@ Gw
                                         <button imageHugsTitle="YES" id="76">
                                             <rect key="frame" x="30" y="30" width="202" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Opaque when MidiKeys is in front" bezelStyle="regularSquare" imagePosition="leading" alignment="left" controlSize="small" inset="2" id="136">
+                                            <buttonCell key="cell" type="check" title="Opaque when MidiKeys is in front" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="136">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -137,7 +137,7 @@ Gw
                                         <button imageHugsTitle="YES" id="215">
                                             <rect key="frame" x="30" y="170" width="118" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Toggling hot keys" bezelStyle="regularSquare" imagePosition="leading" alignment="left" controlSize="small" inset="2" id="216">
+                                            <buttonCell key="cell" type="check" title="Toggling hot keys" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="216">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -145,7 +145,7 @@ Gw
                                         <button imageHugsTitle="YES" id="217">
                                             <rect key="frame" x="30" y="150" width="86" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Octave shift" bezelStyle="regularSquare" imagePosition="leading" alignment="left" controlSize="small" inset="2" id="218">
+                                            <buttonCell key="cell" type="check" title="Octave shift" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="218">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -153,7 +153,7 @@ Gw
                                         <button toolTip="Show key characters on the MIDI keyboard keys." imageHugsTitle="YES" id="80">
                                             <rect key="frame" x="15" y="277" width="114" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Show key caps" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="138">
+                                            <buttonCell key="cell" type="check" title="Show key caps" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="138">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -161,7 +161,7 @@ Gw
                                         <button imageHugsTitle="YES" id="127">
                                             <rect key="frame" x="30" y="91" width="191" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Click through when not in front" bezelStyle="regularSquare" imagePosition="leading" alignment="left" controlSize="small" inset="2" id="139">
+                                            <buttonCell key="cell" type="check" title="Click through when not in front" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="139">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -230,7 +230,7 @@ Gw
                                         <button imageHugsTitle="YES" id="101">
                                             <rect key="frame" x="16" y="266" width="218" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Keys are system-wide hot keys" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="142">
+                                            <buttonCell key="cell" type="check" title="Keys are system-wide hot keys" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="142">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -241,7 +241,7 @@ Gw
                                         <button imageHugsTitle="YES" id="102">
                                             <rect key="frame" x="30" y="244" width="74" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="⌃ Control" bezelStyle="regularSquare" imagePosition="leading" alignment="left" controlSize="small" inset="2" id="143">
+                                            <buttonCell key="cell" type="check" title="⌃ Control" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="143">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -252,7 +252,7 @@ Gw
                                         <button imageHugsTitle="YES" id="103">
                                             <rect key="frame" x="30" y="224" width="61" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="⇧ Shift" bezelStyle="regularSquare" imagePosition="leading" alignment="left" controlSize="small" inset="2" id="144">
+                                            <buttonCell key="cell" type="check" title="⇧ Shift" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="144">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -263,7 +263,7 @@ Gw
                                         <button imageHugsTitle="YES" id="104">
                                             <rect key="frame" x="30" y="204" width="73" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="⌥ Option" bezelStyle="regularSquare" imagePosition="leading" alignment="left" controlSize="small" inset="2" id="145">
+                                            <buttonCell key="cell" type="check" title="⌥ Option" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="145">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -274,7 +274,7 @@ Gw
                                         <button imageHugsTitle="YES" id="105">
                                             <rect key="frame" x="30" y="184" width="92" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="⌘ Command" bezelStyle="regularSquare" imagePosition="leading" alignment="left" controlSize="small" inset="2" id="146">
+                                            <buttonCell key="cell" type="check" title="⌘ Command" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="146">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -312,7 +312,7 @@ Gw
                                         <button imageHugsTitle="YES" id="194">
                                             <rect key="frame" x="15" y="304" width="225" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="leading" alignment="left" state="on" inset="2" id="195">
+                                            <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="195">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
