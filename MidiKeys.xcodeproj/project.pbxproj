@@ -477,7 +477,7 @@
 				INFOPLIST_FILE = "MidiKeys-Info.plist";
 				INSTALL_PATH = "$(USER_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -515,7 +515,7 @@
 				INFOPLIST_FILE = "MidiKeys-Info.plist";
 				INSTALL_PATH = "$(USER_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,

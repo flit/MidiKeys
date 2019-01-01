@@ -1,6 +1,6 @@
 ### Version 1.9
 - MidiKeys is now 64-bit compliant. (And no longer a universal binary.)
-- Minimum system version is 10.12.
+- Minimum system version is 10.9.
 - Keys window is resizable (probably the most asked-for feature request).
 - Support for dark mode in Mojave, including a dark mode keyboard. A "force light keyboard" preference is visible in Mojave to allow you to revert the keyboard to a traditional appearance.
 - Added Clear Stuck Keys command.
