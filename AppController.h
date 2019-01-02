@@ -130,7 +130,10 @@ enum _velocity_up_or_down
 - (NSString *)nameForMidiEndpoint:(MIDIEndpointRef)theEndpoint;
 
 // use vel=0 for off
-- (void)sendMidi:(const MIDIPacketList *)packetList;
+- (void)sendMidiPackets:(const MIDIPacketList *)packetList;
+- (void)sendMidiBytes:(int)count :(uint8_t)byte0 :(uint8_t)byte1 :(uint8_t)byte2;
+- (void)sendMidiBytes:(uint8_t)byte0 :(uint8_t)byte1 :(uint8_t)byte2;
+- (void)sendMidiBytes:(uint8_t)byte0 :(uint8_t)byte1;
 - (void)sendMidiNote:(int)midiNote channel:(int)channel velocity:(int)velocity;
 - (void)handleMidiNotification:(const MIDINotification *)message;
 - (void)receiveMidiPacketList:(const MIDIPacketList *)packetList;

@@ -15,6 +15,7 @@
 #import "PreferencesController.h"
 #import "MidiParser.h"
 #import "OverlayIndicator.h"
+#import "MIDI.h"
 #import <CoreAudio/HostTime.h>
 
 #define MAX_OCTAVE_OFFSET (4)
@@ -1179,7 +1180,7 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 		[midiKeys turnMidiNoteOff:note];
 }
 
-- (void)sendMidi:(const MIDIPacketList *)packetList
+- (void)sendMidiPackets:(const MIDIPacketList *)packetList
 {
 	if (isDestinationConnected)
 	{
@@ -1193,38 +1194,51 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 	}
 }
 
-- (void)processMidiChannelAftertouch:(int)pressure
-{
-	// build the midi channel aftertouch event
-	MIDIPacketList packetList;
-	MIDIPacket *packetPtr = MIDIPacketListInit(&packetList);
-	uint8_t midiData[2];
-	midiData[0] = 0xd0 | (currentChannel - 1);
-	midiData[1] = pressure;
-	packetPtr = MIDIPacketListAdd(&packetList, sizeof packetList, packetPtr,
-	 	AudioGetCurrentHostTime(), 2, (const Byte *)&midiData);
-	if (packetPtr)
-	{
-		[self sendMidi:&packetList];
-	}
-}
-
-//! Send a MIDI note on event out the virtual source or our output port.
-//! A velocity of 0 is used to send a note off event.
-- (void)sendMidiNote:(int)midiNote channel:(int)channel velocity:(int)velocity
+- (void)sendMidiBytes:(int)count :(uint8_t)byte0 :(uint8_t)byte1 :(uint8_t)byte2
 {
 	// send the midi note on out our virtual source
 	MIDIPacketList packetList;
 	MIDIPacket *packetPtr = MIDIPacketListInit(&packetList);
 	unsigned char midiData[3];
-	midiData[0] = 0x90 | channel;
-	midiData[1] = midiNote;
-	midiData[2] = velocity;
-	packetPtr = MIDIPacketListAdd(&packetList, sizeof packetList, packetPtr, AudioGetCurrentHostTime(), 3, (const Byte *)&midiData);
+	midiData[0] = byte0;
+	midiData[1] = byte1;
+	midiData[2] = byte2;
+	packetPtr = MIDIPacketListAdd(&packetList, sizeof packetList, packetPtr,
+		AudioGetCurrentHostTime(), count, (const Byte *)&midiData);
 	if (packetPtr)
 	{
-		[self sendMidi:&packetList];
+		[self sendMidiPackets:&packetList];
 	}
+}
+
+- (void)sendMidiBytes:(uint8_t)byte0 :(uint8_t)byte1 :(uint8_t)byte2
+{
+	[self sendMidiBytes:3 :byte0 :byte1 :byte2];
+}
+
+- (void)sendMidiBytes:(uint8_t)byte0 :(uint8_t)byte1
+{
+	[self sendMidiBytes:2 :byte0 :byte1 :0];
+}
+
+- (void)processMidiChannelAftertouch:(int)pressure
+{
+	// send the midi channel aftertouch event
+	[self sendMidiBytes:(kMIDIChannelPressure | (currentChannel - 1))
+			:pressure];
+}
+
+//! Send a MIDI note on event out the virtual source or our output port.
+//! If the velocity is 0, a note off event is sent instead of note on.
+- (void)sendMidiNote:(int)midiNote channel:(int)channel velocity:(int)velocity
+{
+	// send the midi note on or off
+	uint8_t event = (velocity == 0)
+					? kMIDINoteOff
+					: kMIDINoteOn;
+	[self sendMidiBytes:(event | channel)
+			:midiNote
+			:velocity];
 }
 
 //! We need an autorelease pool because this method can be called from a CoreMIDI thread
@@ -1238,7 +1252,7 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 		// handle MIDI thru
 		if (performMidiThru)
 		{
-			[self sendMidi:packetList];
+			[self sendMidiPackets:packetList];
 		}
 		
 		// process the received packet
@@ -1250,9 +1264,9 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 			if (packet->length == 3)
 			{
 				int note = packet->data[1];
-				switch (packet->data[0] & 0xf0)
+				switch (packet->data[0] & kMIDIChannelMessageStatusMask)
 				{
-					case 0x90:
+					case kMIDINoteOff:
 						if (packet->data[2] > 0)
 						{
 							// note on
@@ -1265,7 +1279,7 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 						}
 						break;
 						
-					case 0x80:
+					case kMIDINoteOn:
 						[midiKeys turnMidiNoteOff:note];
 						break;
 				}
@@ -1296,6 +1310,14 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 {
 	int note;
 	int channel;
+	// first send an all notes off channel messages
+	for (channel=0; channel < 16; ++channel)
+	{
+		[self sendMidiBytes:(kMIDIControlChange | channel)
+		 		:kMIDIAllNotesOff
+		 		:0];
+	}
+	// now send note offs for every single note on all channels
 	for (channel=0; channel < 16; ++channel)
 	{
 		for (note=0; note < 128; ++note)

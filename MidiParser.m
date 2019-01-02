@@ -7,6 +7,7 @@
 //
 
 #import "MidiParser.h"
+#import "MIDI.h"
 
 #define kInSysEx -1
 
@@ -45,16 +46,16 @@
 	if (theByte & 0x80)
 	{
 		// status byte
-		if (theByte >= 0xf8)
+		if (theByte >= kMIDIFirstRealTimeMessage)
 		{
 			// realtime message
 			switch (theByte)
 			{
-				case 0xf8:	// clock
-				case 0xfa:	// start
-				case 0xfb:	// continue
-				case 0xfc:	// stop
-				case 0xff:	// system reset
+				case kMIDIRealTimeClock:	// clock
+				case kMIDIRealTimeStart:	// start
+				case kMIDIRealTimeContinue:	// continue
+				case kMIDIRealTimeStop:	// stop
+				case kMIDIRealTimeSystemReset:	// system reset
 					// fill in the realtime packet and return it
 					_realtimePacket.timeStamp = _packet->timeStamp;
 					_realtimePacket.length = 1;
@@ -62,7 +63,7 @@
 					++_byteNum; // start at next byte next time through
 					return &_realtimePacket;
 					
-				case 0xfe:	// active sensing (ignored)
+				case kMIDIRealTimeActiveSensing:	// active sensing (ignored)
 				default:
 					break;
 			}
@@ -71,40 +72,42 @@
 		{
 			// non realtime message. always begins packet
 			
-			// XXX handle status cancleling sysex
+			// XXX handle status canceling sysex
 			
 			// set up resulting packet
 			_resultPacket.timeStamp = _packet->timeStamp;
 			_resultPacket.length = 1;
 			_resultPacket.data[0] = theByte;
-			
+
 			if (theByte < 0xf0)
 			{
 				// channel message
-				_dataBytesRequired = ((theByte & 0xe0) == 0xc0) ? 1 : 2;
+                uint8_t status = theByte & kMIDIChannelMessageStatusMask;
+				_dataBytesRequired = (status == kMIDIProgramChange || status == kMIDIChannelPressure)
+                                        ? 1 : 2;
 			}
 			else
 			{
 				// system message
 				switch (theByte)
 				{
-					case 0xf0:
+					case kMIDISysExStart:
 						_dataBytesRequired = kInSysEx;
 						break;
-					case 0xf1:	// MTC quarter frame
-					case 0xf3:	// song select
+					case kMIDITimeCodeQuarterFrame:	// MTC quarter frame
+					case kMIDISongSelect:	// song select
 						_dataBytesRequired = 1;
 						break;
-					case 0xf2:	// song ptr
+					case kMIDISongPositionPointer:	// song ptr
 						_dataBytesRequired = 2;
 						break;
-					case 0xf6:	// tune request
+					case kMIDITuneRequest:	// tune request
 						_dataBytesRequired = 0;
 						++_byteNum;
 						return &_resultPacket;
-					case 0xf4:	// undefined
-					case 0xf5:	// undefined
-					case 0xf7:	// EOX handled above
+					case kMIDISystemCommonUndefined1:	// undefined
+					case kMIDISystemCommonUndefined2:	// undefined
+					case kMIDISysExEnd:	// EOX handled above
 						_dataBytesRequired = 0;
 						break;
 				}

@@ -68,6 +68,7 @@
 		020D980F03EB1FDE0031FAE0 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/KeyMapNames.strings; sourceTree = "<group>"; };
 		020D981003EB1FDE0031FAE0 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0255683705D5E8B2002EA660 /* MidiKeys-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MidiKeys-Info.plist"; sourceTree = "<group>"; };
+		02811A9321DC2B9100D97572 /* MIDI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDI.h; sourceTree = "<group>"; };
 		028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		028AD5BE21D054960044ED26 /* MidiKeys.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MidiKeys.entitlements; sourceTree = "<group>"; };
 		028AD5C121DAD8380044ED26 /* version_history.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = version_history.md; sourceTree = "<group>"; };
@@ -194,6 +195,7 @@
 				02F45D0103CE8BB00067B094 /* Preferences.h */,
 				F508BCF9036B5A4801EFE74C /* PreferencesController.h */,
 				F508BCFA036B5A4801EFE74C /* PreferencesController.m */,
+				02811A9321DC2B9100D97572 /* MIDI.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
