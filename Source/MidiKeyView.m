@@ -11,6 +11,9 @@
 #import "CTGradient.h"
 #import "Preferences.h"
 
+//! Maximum number of keys to show.
+#define KEY_COUNT 120
+
 // image file name
 #define kOctaveDownImageFile @"OctaveDown.png"
 #define kOctaveUpImageFile @"OctaveUp.png"
@@ -23,6 +26,20 @@
 #define kBlackKeyHeight (32.0)
 
 #define kWhiteKeysPerOctave (7)
+
+/*!
+ * @brief Information about a key on a musical keyboard.
+ */
+typedef struct _key_info {
+    int theOctave;
+    int octaveFirstNote;
+    int noteInOctave;
+    int numWhiteKeys;
+    int numBlackKeys;
+    BOOL isBlackKey;
+    BOOL rightIsInset;
+    BOOL leftIsInset;
+} key_info_t;
 
 //! Table to map note number within octave to details about that key.
 const key_info_t kNoteInOctaveInfo[] = {
@@ -112,6 +129,27 @@ const key_info_t kNoteInOctaveInfo[] = {
 @end
 
 @implementation MidiKeyView
+{
+    id<MidiKeyViewDelegate> mDelegate;
+    uint8_t midiKeyStates[KEY_COUNT];
+    BOOL inited;
+    double _scale;
+    int numOctaves;
+    int leftOctaves;
+    int firstMidiNote;
+    int lastMidiNote;
+    NSColor *mHighlightColour;
+    int mClickedNote;
+    NSImage *mOctaveDownImage;
+    NSImage *mOctaveUpImage;
+    int mOctaveOffset;
+    BOOL _showKeycaps;
+    BOOL _showCNotes;
+    key_info_t _keyInfo; //!< Shared key info struct.
+    NSBezierPath * _lastKeyPath;
+    int _lastKeyPathNote;
+    int _lastAftertouchPressure;
+}
 
 - (id)initWithFrame:(NSRect)frame
 {
