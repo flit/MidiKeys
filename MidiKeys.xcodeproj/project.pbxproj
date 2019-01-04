@@ -71,7 +71,7 @@
 		02811A9321DC2B9100D97572 /* MIDI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDI.h; sourceTree = "<group>"; };
 		028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		028AD5BE21D054960044ED26 /* MidiKeys.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MidiKeys.entitlements; sourceTree = "<group>"; };
-		028AD5C121DAD8380044ED26 /* version_history.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = version_history.md; sourceTree = "<group>"; };
+		028AD5C121DAD8380044ED26 /* version_history.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = version_history.md; path = Resources/version_history.md; sourceTree = SOURCE_ROOT; };
 		028FE9A303B6D8B5006ABE44 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
 		028FE9A703B6D8DC006ABE44 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = German.lproj/Credits.html; sourceTree = "<group>"; };
 		028FE9A803B6DA6C006ABE44 /* MidiKeys_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiKeys_Prefix.h; sourceTree = "<group>"; };
@@ -95,9 +95,9 @@
 		02BD73A5044E6A0D000C9424 /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Spanish; path = Spanish.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02BD73A6044E6A20000C9424 /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Spanish; path = Spanish.lproj/KeyMapNames.strings; sourceTree = "<group>"; };
 		02BD73A7044E6A2A000C9424 /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Spanish; path = Spanish.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		02BD73A8044E6A7B000C9424 /* LiesMich.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = LiesMich.rtf; sourceTree = "<group>"; };
-		02BD73A9044E6A7B000C9424 /* Lisez-Moi.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Lisez-Moi.rtf"; sourceTree = "<group>"; };
-		02BD73AA044E6A7B000C9424 /* ReadMe (Japanese).rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "ReadMe (Japanese).rtf"; sourceTree = "<group>"; };
+		02BD73A8044E6A7B000C9424 /* LiesMich.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = LiesMich.rtf; sourceTree = SOURCE_ROOT; };
+		02BD73A9044E6A7B000C9424 /* Lisez-Moi.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Lisez-Moi.rtf"; sourceTree = SOURCE_ROOT; };
+		02BD73AA044E6A7B000C9424 /* ReadMe (Japanese).rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "ReadMe (Japanese).rtf"; sourceTree = SOURCE_ROOT; };
 		02BFAFAC03EDEA94000CADE3 /* OctaveDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OctaveDown.png; sourceTree = "<group>"; };
 		02BFAFAD03EDEA94000CADE3 /* OctaveUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OctaveUp.png; sourceTree = "<group>"; };
 		02E533C20C122A2800CBD4A5 /* CTGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTGradient.h; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		F546EC7D035D0D950199E6AF /* MidiKeyView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MidiKeyView.h; sourceTree = "<group>"; };
 		F546EC7E035D0D950199E6AF /* MidiKeyView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MidiKeyView.m; sourceTree = "<group>"; };
 		F546ED0A035D17E50199E6AF /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
-		F58735E2C5B04BC501FD2FC7 /* ReadMe.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
+		F58735E2C5B04BC501FD2FC7 /* ReadMe.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = SOURCE_ROOT; };
 		F5B7521E036765350140410E /* EndpointDefaults.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = EndpointDefaults.h; sourceTree = "<group>"; };
 		F5B7521F036765350140410E /* EndpointDefaults.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = EndpointDefaults.m; sourceTree = "<group>"; };
 		F5B75228036773F30140410E /* MidiKeys.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MidiKeys.icns; sourceTree = "<group>"; };
@@ -161,12 +161,14 @@
 		02AEA56504A01467003989A9 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				028AD5C121DAD8380044ED26 /* version_history.md */,
 				F58735E2C5B04BC501FD2FC7 /* ReadMe.rtf */,
 				02BD73A9044E6A7B000C9424 /* Lisez-Moi.rtf */,
 				02BD73A8044E6A7B000C9424 /* LiesMich.rtf */,
 				02BD73AA044E6A7B000C9424 /* ReadMe (Japanese).rtf */,
 			);
 			name = Documentation;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
@@ -198,6 +200,7 @@
 				02811A9321DC2B9100D97572 /* MIDI.h */,
 			);
 			name = Classes;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -214,6 +217,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				02AEA56504A01467003989A9 /* Documentation */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -227,6 +231,7 @@
 				028FE9A803B6DA6C006ABE44 /* MidiKeys_Prefix.h */,
 			);
 			name = "Other Sources";
+			path = Source;
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
@@ -245,10 +250,8 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				F5D5FEF00371F1130140410E /* Localizable.strings */,
 				F5D503210371FB6A0140410E /* KeyMapNames.strings */,
-				02AEA56504A01467003989A9 /* Documentation */,
-				028AD5C121DAD8380044ED26 /* version_history.md */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -459,7 +462,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = MidiKeys.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/MidiKeys.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
@@ -472,11 +475,11 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = MidiKeys_Prefix.h;
+				GCC_PREFIX_HEADER = Source/MidiKeys_Prefix.h;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"";
-				INFOPLIST_FILE = "MidiKeys-Info.plist";
+				INFOPLIST_FILE = "Resources/MidiKeys-Info.plist";
 				INSTALL_PATH = "$(USER_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -499,7 +502,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = MidiKeys.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/MidiKeys.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
@@ -510,11 +513,11 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = MidiKeys_Prefix.h;
+				GCC_PREFIX_HEADER = Source/MidiKeys_Prefix.h;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"";
-				INFOPLIST_FILE = "MidiKeys-Info.plist";
+				INFOPLIST_FILE = "Resources/MidiKeys-Info.plist";
 				INSTALL_PATH = "$(USER_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
