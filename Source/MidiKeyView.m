@@ -107,6 +107,7 @@ const key_info_t kNoteInOctaveInfo[] = {
 - (int)midiNoteForMouse:(NSPoint)location;
 - (void)drawOctaveOffsetIndicator;
 - (BOOL)drawDark;
+- (void)forceDisplay;
 
 @end
 
@@ -639,6 +640,11 @@ const key_info_t kNoteInOctaveInfo[] = {
 	[mDelegate processMidiKeyWithCode:[theEvent keyCode] turningOn:NO];
 }
 
+- (void)forceDisplay
+{
+    [self setNeedsDisplay:YES];
+}
+
 // we use counting for these methods instead of setting the states
 // to boolean values because it is easily conceivable that multiple input
 // sources would hit the same notes
@@ -652,7 +658,7 @@ const key_info_t kNoteInOctaveInfo[] = {
     {
         midiKeyStates[note]++;
     }
-	[self setNeedsDisplay:YES];
+    [self performSelectorOnMainThread:@selector(forceDisplay) withObject:nil waitUntilDone:NO];
 }
 
 - (void)turnMidiNoteOff:(int)note
@@ -665,7 +671,7 @@ const key_info_t kNoteInOctaveInfo[] = {
     {
 		midiKeyStates[note]--;
     }
-	[self setNeedsDisplay:YES];
+    [self performSelectorOnMainThread:@selector(forceDisplay) withObject:nil waitUntilDone:NO];
 }
 
 - (void)turnAllNotesOff
