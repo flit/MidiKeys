@@ -34,80 +34,80 @@ typedef struct _key_info {
     int theOctave;
     int octaveFirstNote;
     int noteInOctave;
-    int numWhiteKeys;
-    int numBlackKeys;
+    int precedingWhiteKeysInOctave;
+    int precedingBlackKeysInOctave;
     BOOL isBlackKey;
     BOOL rightIsInset;
     BOOL leftIsInset;
 } key_info_t;
 
 //! Table to map note number within octave to details about that key.
-const key_info_t kNoteInOctaveInfo[] = {
+static const key_info_t kNoteInOctaveInfo[] = {
         [0] = { // C
             .isBlackKey = NO,
             .rightIsInset = YES
         },
         [1] = { // C#
             .isBlackKey = YES,
-            .numWhiteKeys = 1
+            .precedingWhiteKeysInOctave = 1
         },
         [2] = { // D
             .isBlackKey = NO,
-            .numWhiteKeys = 1,
-            .numBlackKeys = 1,
+            .precedingWhiteKeysInOctave = 1,
+            .precedingBlackKeysInOctave = 1,
             .rightIsInset = YES,
             .leftIsInset = YES,
         },
         [3] = { // D#
             .isBlackKey = YES,
-            .numWhiteKeys = 2,
-            .numBlackKeys = 1,
+            .precedingWhiteKeysInOctave = 2,
+            .precedingBlackKeysInOctave = 1,
         },
         [4] = {// E
             .isBlackKey = NO,
-            .numWhiteKeys = 2,
-            .numBlackKeys = 2,
+            .precedingWhiteKeysInOctave = 2,
+            .precedingBlackKeysInOctave = 2,
             .leftIsInset = YES,
         },
         [5] = { // F
             .isBlackKey = NO,
-            .numWhiteKeys = 3,
-            .numBlackKeys = 2,
+            .precedingWhiteKeysInOctave = 3,
+            .precedingBlackKeysInOctave = 2,
             .rightIsInset = YES,
         },
         [6] = { // F#
             .isBlackKey = YES,
-            .numWhiteKeys = 4,
-            .numBlackKeys = 2,
+            .precedingWhiteKeysInOctave = 4,
+            .precedingBlackKeysInOctave = 2,
         },
         [7] = { // G
             .isBlackKey = NO,
-            .numWhiteKeys = 4,
-            .numBlackKeys = 3,
+            .precedingWhiteKeysInOctave = 4,
+            .precedingBlackKeysInOctave = 3,
             .rightIsInset = YES,
             .leftIsInset = YES,
         },
         [8] = { // G#
             .isBlackKey = YES,
-            .numWhiteKeys = 5,
-            .numBlackKeys = 3,
+            .precedingWhiteKeysInOctave = 5,
+            .precedingBlackKeysInOctave = 3,
         },
         [9] = { // A
             .isBlackKey = NO,
-            .numWhiteKeys = 5,
-            .numBlackKeys = 4,
+            .precedingWhiteKeysInOctave = 5,
+            .precedingBlackKeysInOctave = 4,
             .rightIsInset = YES,
             .leftIsInset = YES,
         },
         [10] = { // A#
             .isBlackKey = YES,
-            .numWhiteKeys = 6,
-            .numBlackKeys = 4,
+            .precedingWhiteKeysInOctave = 6,
+            .precedingBlackKeysInOctave = 4,
         },
         [11] = { // B
             .isBlackKey = NO,
-            .numWhiteKeys = 6,
-            .numBlackKeys = 5,
+            .precedingWhiteKeysInOctave = 6,
+            .precedingBlackKeysInOctave = 5,
             .leftIsInset = YES,
         },
 };
@@ -263,7 +263,7 @@ const key_info_t kNoteInOctaveInfo[] = {
 
 	int theOctave = info->theOctave;
     double octaveLeft = (double)theOctave * ((scaledWhiteKeyWidth * kWhiteKeysPerOctave) - 1.0);
-	int numWhiteKeys = info->numWhiteKeys;
+	int numWhiteKeys = info->precedingWhiteKeysInOctave;
 	BOOL isBlackKey = info->isBlackKey;
 	BOOL leftIsInset = info->leftIsInset;
 	BOOL rightIsInset = info->rightIsInset; // black key insets on white keys
