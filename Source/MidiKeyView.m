@@ -12,7 +12,7 @@
 #import "Preferences.h"
 
 //! Maximum number of keys to show.
-#define KEY_COUNT 120
+#define MAX_KEY_COUNT 120
 
 // image file name
 #define kOctaveDownImageFile @"OctaveDown.png"
@@ -131,7 +131,7 @@ const key_info_t kNoteInOctaveInfo[] = {
 @implementation MidiKeyView
 {
     id<MidiKeyViewDelegate> mDelegate;
-    uint8_t midiKeyStates[KEY_COUNT];
+    uint8_t midiKeyStates[MAX_KEY_COUNT];
     BOOL inited;
     double _scale;
     int numOctaves;
@@ -212,7 +212,7 @@ const key_info_t kNoteInOctaveInfo[] = {
 //	NSLog(@"firstMidiNote = %d", firstMidiNote);
 
 	// XXX really compute lastMidiNote
-    lastMidiNote = MIN(KEY_COUNT, firstMidiNote + (numOctaves + 1) * 12);
+    lastMidiNote = MIN(MAX_KEY_COUNT, firstMidiNote + (numOctaves + 1) * 12);
 
     _lastKeyPathNote = -1;
 }
@@ -688,7 +688,7 @@ const key_info_t kNoteInOctaveInfo[] = {
 // sources would hit the same notes
 - (void)turnMidiNoteOn:(int)note
 {
-    if (note < 0 || note > KEY_COUNT-1)
+    if (note < 0 || note > MAX_KEY_COUNT-1)
     {
         return;
     }
@@ -701,7 +701,7 @@ const key_info_t kNoteInOctaveInfo[] = {
 
 - (void)turnMidiNoteOff:(int)note
 {
-	if (note < 0 || note > KEY_COUNT-1)
+	if (note < 0 || note > MAX_KEY_COUNT-1)
     {
 		return;
     }
