@@ -1266,7 +1266,7 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 				int note = packet->data[1];
 				switch (packet->data[0] & kMIDIChannelMessageStatusMask)
 				{
-					case kMIDINoteOff:
+					case kMIDINoteOn:
 						if (packet->data[2] > 0)
 						{
 							// note on
@@ -1279,7 +1279,7 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 						}
 						break;
 						
-					case kMIDINoteOn:
+					case kMIDINoteOff:
 						[midiKeys turnMidiNoteOff:note];
 						break;
 				}
