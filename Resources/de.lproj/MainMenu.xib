@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="371" height="87"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
-                            <userLayoutGuide location="71" affinity="minY"/>
+                            <userLayoutGuide location="72" affinity="minY"/>
                         </userGuides>
                         <subviews>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" imageHugsTitle="YES" id="275">
@@ -41,6 +40,15 @@
                                     <action selector="toggleMidiControls:" target="203" id="277"/>
                                 </connections>
                             </button>
+                            <textField verticalHuggingPriority="750" id="211">
+                                <rect key="frame" x="147" y="66" width="50" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Härte Anschlag:" id="264">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <slider verticalHuggingPriority="750" id="210">
                                 <rect key="frame" x="212" y="67" width="102" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -57,7 +65,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>
                             <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="287">
-                                <rect key="frame" x="19" y="68" width="73" height="15"/>
+                                <rect key="frame" x="19" y="68" width="109" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Kanal 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="291" id="288">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -114,15 +122,6 @@
                                     <outlet property="nextKeyView" destination="217" id="294"/>
                                 </connections>
                             </popUpButton>
-                            <textField verticalHuggingPriority="750" id="211">
-                                <rect key="frame" x="112" y="65" width="94" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Härte Anschlag:" id="264">
-                                    <font key="font" metaFont="smallSystem"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                     </customView>
                     <customView id="254">
@@ -130,7 +129,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <subviews>
                             <button imageHugsTitle="YES" id="256">
-                                <rect key="frame" x="286" y="22" width="81" height="18"/>
+                                <rect key="frame" x="304" y="20" width="49" height="18"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <buttonCell key="cell" type="check" title="Weiterleitung" bezelStyle="regularSquare" imagePosition="leading" alignment="left" controlSize="mini" inset="2" id="272">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -150,16 +149,16 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" id="219">
-                                <rect key="frame" x="17" y="14" width="45" height="11"/>
+                                <rect key="frame" x="17" y="14" width="66" height="11"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="Höre auf:" id="270">
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="Höre auf Anschluss:" id="270">
                                     <font key="font" metaFont="miniSystem"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="217">
-                                <rect key="frame" x="79" y="12" width="194" height="15"/>
+                                <rect key="frame" x="90" y="12" width="211" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="214" id="269">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -177,7 +176,7 @@
                                 </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="198">
-                                <rect key="frame" x="79" y="34" width="194" height="15"/>
+                                <rect key="frame" x="90" y="34" width="211" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="200" id="268">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>

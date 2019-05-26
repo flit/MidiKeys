@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferencesController">
+            <connections>
+                <outlet property="_clickThroughCheckbox" destination="127" id="128"/>
+                <outlet property="_forceLightModeCheckbox" destination="oil-vE-9ee" id="f4I-mw-qs7"/>
+                <outlet property="_hotKeysOverlaysCheckbox" destination="215" id="231"/>
+                <outlet property="_octaveShiftOverlaysCheckbox" destination="217" id="232"/>
+                <outlet property="_prefsWindow" destination="5" id="124"/>
+                <outlet property="_showCNotesCheckbox" destination="5CD-fs-Ca2" id="4Hh-LF-j31"/>
+                <outlet property="_toggleHotKeysShortcut" destination="244" id="RJT-9l-eEw"/>
+                <outlet property="commandModifierCheckbox" destination="105" id="123"/>
+                <outlet property="controlModifierCheckbox" destination="102" id="120"/>
+                <outlet property="floatWindowCheckbox" destination="17" id="25"/>
+                <outlet property="highlightColourWell" destination="7" id="24"/>
+                <outlet property="keymapPopup" destination="94" id="118"/>
+                <outlet property="optionModifierCheckbox" destination="104" id="122"/>
+                <outlet property="shiftModifierCheckbox" destination="103" id="121"/>
+                <outlet property="showKeyCapsCheckbox" destination="80" id="81"/>
+                <outlet property="solidOnTopCheckbox" destination="76" id="77"/>
+                <outlet property="useHotKeysCheckbox" destination="101" id="119"/>
+                <outlet property="window" destination="5" id="241"/>
+                <outlet property="windowTransparencySlider" destination="33" id="35"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Préférences MidiKeys" allowsToolTipsWhenApplicationIsInactive="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="PreferencesPanel">
+            <windowStyleMask key="styleMask" titled="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="509" y="261" width="397" height="445"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="213" height="107"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="397" height="445"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="36">
+                        <rect key="frame" x="299" y="12" width="84" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="130">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="ok:" target="-2" id="40"/>
+                            <outlet property="nextKeyView" destination="7" id="72"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="37">
+                        <rect key="frame" x="215" y="12" width="84" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="push" title="Annuler" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="131">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancel:" target="-2" id="41"/>
+                            <outlet property="nextKeyView" destination="36" id="50"/>
+                        </connections>
+                    </button>
+                    <tabView initialItem="90" id="89">
+                        <rect key="frame" x="13" y="40" width="371" height="391"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems>
+                            <tabViewItem label="Affichage" identifier="" id="90">
+                                <view key="view" id="92">
+                                    <rect key="frame" x="10" y="33" width="351" height="345"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <colorWell id="7">
+                                            <rect key="frame" x="17" y="301" width="38" height="26"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </colorWell>
+                                        <button imageHugsTitle="YES" id="17">
+                                            <rect key="frame" x="15" y="113" width="239" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Fenêtre clavier toujours devant" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="132">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="keyboardFloatsDidChange:" target="-2" id="235"/>
+                                                <outlet property="nextKeyView" destination="33" id="74"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" id="29">
+                                            <rect key="frame" x="60" y="305" width="165" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Couleur de la touche active" id="133">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <slider verticalHuggingPriority="750" id="33">
+                                            <rect key="frame" x="118" y="56" width="216" height="12"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <sliderCell key="cell" controlSize="mini" continuous="YES" alignment="left" maxValue="90" doubleValue="25" tickMarkPosition="below" sliderType="linear" id="134">
+                                                <font key="font" size="12" name="Helvetica"/>
+                                            </sliderCell>
+                                            <connections>
+                                                <outlet property="nextKeyView" destination="37" id="49"/>
+                                            </connections>
+                                        </slider>
+                                        <textField verticalHuggingPriority="750" id="66">
+                                            <rect key="frame" x="14" y="54" width="93" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Transparence:" id="135">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button imageHugsTitle="YES" id="76">
+                                            <rect key="frame" x="30" y="30" width="202" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Opaque quand MidiKeys est à l'avant-plan" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="136">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button imageHugsTitle="YES" id="215">
+                                            <rect key="frame" x="30" y="170" width="118" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Alterne raccourcis clavier" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="216">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button imageHugsTitle="YES" id="217">
+                                            <rect key="frame" x="30" y="150" width="86" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Décalage octave" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="218">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button toolTip="Affiche caracteres sur les touches du clavier MIDI." imageHugsTitle="YES" id="80">
+                                            <rect key="frame" x="15" y="277" width="114" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Affichage majuscules" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="138">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button imageHugsTitle="YES" id="127">
+                                            <rect key="frame" x="30" y="91" width="191" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Click through when not in front" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="139">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" id="237">
+                                            <rect key="frame" x="14" y="193" width="195" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Affiche notifications pour:" id="238">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" id="oil-vE-9ee">
+                                            <rect key="frame" x="14" y="237" width="229" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Clavier clair en mode foncé" bezelStyle="regularSquare" imagePosition="left" inset="2" id="70k-Ak-QcI">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button verticalHuggingPriority="750" id="5CD-fs-Ca2">
+                                            <rect key="frame" x="15" y="257" width="203" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Affiche la note C pour chaque octave" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1kn-Nr-gC3">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Clefs" identifier="" id="91">
+                                <view key="view" id="93">
+                                    <rect key="frame" x="10" y="33" width="351" height="345"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="94">
+                                            <rect key="frame" x="80" y="298" width="164" height="26"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <popUpButtonCell key="cell" type="push" title="Anglais-US" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="99" id="140">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" title="Autre vues" id="95">
+                                                    <items>
+                                                        <menuItem title="Anglais-US" state="on" id="99"/>
+                                                        <menuItem title="Anglais-UK" id="98"/>
+                                                        <menuItem title="Allemand" id="96"/>
+                                                        <menuItem title="Français" id="97"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <outlet property="nextKeyView" destination="101" id="111"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <textField verticalHuggingPriority="750" id="100">
+                                            <rect key="frame" x="15" y="304" width="63" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Key map:" id="141">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button imageHugsTitle="YES" id="101">
+                                            <rect key="frame" x="16" y="266" width="218" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Touches système" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="142">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <outlet property="nextKeyView" destination="102" id="109"/>
+                                            </connections>
+                                        </button>
+                                        <button imageHugsTitle="YES" id="102">
+                                            <rect key="frame" x="30" y="244" width="74" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="⌃ Control" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="143">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <outlet property="nextKeyView" destination="103" id="108"/>
+                                            </connections>
+                                        </button>
+                                        <button imageHugsTitle="YES" id="103">
+                                            <rect key="frame" x="30" y="224" width="61" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="⇧ Shift" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="144">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <outlet property="nextKeyView" destination="104" id="110"/>
+                                            </connections>
+                                        </button>
+                                        <button imageHugsTitle="YES" id="104">
+                                            <rect key="frame" x="30" y="204" width="73" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="⌥ Option" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="145">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <outlet property="nextKeyView" destination="105" id="112"/>
+                                            </connections>
+                                        </button>
+                                        <button imageHugsTitle="YES" id="105">
+                                            <rect key="frame" x="30" y="184" width="92" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="⌘ Command" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="146">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" id="186">
+                                            <rect key="frame" x="15" y="147" width="109" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Alterner raccourcis clavier:" id="188">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="189">
+                                            <rect key="frame" x="15" y="108" width="268" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Note: les fleches controlent les octaves et la vélocité." id="190">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <customView id="244" customClass="SRRecorderControl">
+                                            <rect key="frame" x="130" y="143" width="177" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </customView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Mise à jour" identifier="Item 2" id="191">
+                                <view key="view" id="192">
+                                    <rect key="frame" x="10" y="33" width="351" height="345"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button imageHugsTitle="YES" id="194">
+                                            <rect key="frame" x="15" y="304" width="225" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Recherche automatique des mises à jour" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="195">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="193" name="value" keyPath="automaticallyChecksForUpdates" id="208"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" id="196">
+                                            <rect key="frame" x="14" y="266" width="145" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Intervalle des mises à jour:" id="197">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="198">
+                                            <rect key="frame" x="161" y="260" width="100" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="par heure" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="3600" imageScaling="proportionallyDown" inset="2" selectedItem="201" id="199">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" title="Autres vues" id="200">
+                                                    <items>
+                                                        <menuItem title="par heure" state="on" tag="3600" id="201"/>
+                                                        <menuItem title="par jour" tag="86400" id="202"/>
+                                                        <menuItem title="par semaine" tag="604800" id="203"/>
+                                                        <menuItem title="par mois" tag="2629800" id="204">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="193" name="enabled" keyPath="automaticallyChecksForUpdates" id="213"/>
+                                                <binding destination="193" name="selectedTag" keyPath="updateCheckInterval" id="212"/>
+                                            </connections>
+                                        </popUpButton>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="18"/>
+                <outlet property="initialFirstResponder" destination="7" id="67"/>
+            </connections>
+            <point key="canvasLocation" x="139.5" y="164.5"/>
+        </window>
+        <customObject id="193" customClass="SUUpdater"/>
+    </objects>
+</document>
