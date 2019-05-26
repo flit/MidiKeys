@@ -435,6 +435,26 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 	[[NSApplication sharedApplication] terminate:self];
 }
 
+//! Limit window width to show only full keys, and not extend beyond the max
+//! number of keys.
+- (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)frameSize
+{
+	NSSize minSize = sender.minSize;
+	NSRect contentRect = [sender contentRectForFrameRect:sender.frame];
+
+	NSRect keysBounds = midiKeys.bounds;
+	NSSize proposedSize = frameSize;
+	proposedSize.height -= contentRect.size.height - keysBounds.size.height;
+
+	double maxWidth = [midiKeys maxKeyboardWidthForSize:proposedSize];
+	contentRect.size.width = maxWidth;
+	NSRect modifiedFrameRect = [sender frameRectForContentRect:contentRect];
+
+	NSSize modifiedSize = frameSize;
+	modifiedSize.width = MAX(minSize.width, MIN(frameSize.width, modifiedFrameRect.size.width));
+	return modifiedSize;
+}
+
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
 {
 	if ([[menuItem title] isEqualToString:NSLocalizedString(@"Octave Up", @"Octave Up")])

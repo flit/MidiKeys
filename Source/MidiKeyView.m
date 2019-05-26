@@ -287,7 +287,7 @@ static const key_info_t kNoteInOctaveInfo[] = {
 	const key_info_t * _Nonnull info = [self getKeyInfoForMidiNote:note usingSizeInfo:sizing];
 
 	int theOctave = info->theOctave;
-    double octaveLeft = (double)theOctave * ((scaledWhiteKeyWidth * kWhiteKeysPerOctave) - 1.0);
+    double octaveLeft = (double)theOctave * (scaledWhiteKeyWidth * kWhiteKeysPerOctave);// - 1.0);
 	int numWhiteKeys = info->precedingWhiteKeysInOctave;
 	BOOL isBlackKey = info->isBlackKey;
 	BOOL leftIsInset = info->leftIsInset;
@@ -307,9 +307,9 @@ static const key_info_t kNoteInOctaveInfo[] = {
 
 	// lower half of white key
 	double x, y, w, h;
-	x = octaveLeft + numWhiteKeys * scaledWhiteKeyWidth - 1.0 + inset;
+	x = octaveLeft + numWhiteKeys * scaledWhiteKeyWidth /*- 1.0*/ + inset;
 	y = inset;
-	w = scaledWhiteKeyWidth + 1.0 - (inset * 2.0);
+	w = scaledWhiteKeyWidth /*+ 1.0*/ - (inset * 2.0);
 	h = scaledKeyHeight - scaledBlackKeyHeight - inset * 2;// - 1;
 
 	NSBezierPath *keyPath = [NSBezierPath bezierPath];
@@ -601,6 +601,14 @@ static const key_info_t kNoteInOctaveInfo[] = {
     inited = NO;
     [self setNeedsDisplay:YES];
 	[super resizeWithOldSuperviewSize:oldBoundsSize];
+}
+
+- (double)maxKeyboardWidthForSize:(NSSize)proposedSize
+{
+    keyboard_size_info_t sizing;
+    [self computeSizeInfo:&sizing forSize:proposedSize];
+    NSBezierPath * path = [self bezierPathForMidiNote:MAX_KEY_COUNT-1 withInset:0.0 usingSizeInfo:&sizing];
+    return NSMaxX(path.bounds);
 }
 
 - (BOOL)acceptsFirstResponder
