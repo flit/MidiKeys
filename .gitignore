@@ -84,4 +84,7 @@ EW*.tmp
 Build
 build
 
+# Sparkle private key
+dsa_priv.pem
+
 
