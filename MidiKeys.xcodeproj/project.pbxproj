@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023CEAA822EE647D0071E364 /* Octave.png in Resources */ = {isa = PBXBuildFile; fileRef = 023CEAA722EE647D0071E364 /* Octave.png */; };
 		028AD5BC21CDA27C0044ED26 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */; };
 		028AD5BD21CDA28F0044ED26 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		029ECAD410E7DB9C003648D5 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029ECAD310E7DB9C003648D5 /* Sparkle.framework */; };
@@ -68,6 +69,7 @@
 		020D980F03EB1FDE0031FAE0 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = ja.lproj/KeyMapNames.strings; sourceTree = "<group>"; };
 		020D981003EB1FDE0031FAE0 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0231216A229B49A9006555F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		023CEAA722EE647D0071E364 /* Octave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Octave.png; sourceTree = "<group>"; };
 		0255683705D5E8B2002EA660 /* MidiKeys-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MidiKeys-Info.plist"; sourceTree = "<group>"; };
 		02811A9321DC2B9100D97572 /* MIDI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDI.h; sourceTree = "<group>"; };
 		028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +238,7 @@
 				028AD5BE21D054960044ED26 /* MidiKeys.entitlements */,
 				029ECAE910E7DCCC003648D5 /* dsa_pub.pem */,
 				0255683705D5E8B2002EA660 /* MidiKeys-Info.plist */,
+				023CEAA722EE647D0071E364 /* Octave.png */,
 				02BFAFAC03EDEA94000CADE3 /* OctaveDown.png */,
 				02BFAFAD03EDEA94000CADE3 /* OctaveUp.png */,
 				F5B75228036773F30140410E /* MidiKeys.icns */,
@@ -355,6 +358,7 @@
 				029ECAEA10E7DCCC003648D5 /* dsa_pub.pem in Resources */,
 				029ECBB110E8440B003648D5 /* Preferences.xib in Resources */,
 				029ECBC510E84636003648D5 /* MainMenu.xib in Resources */,
+				023CEAA822EE647D0071E364 /* Octave.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,9 @@
 //! The name we use for our CoreMIDI client and virtual source
 #define kMyClientName CFSTR("MidiKeys")
 
+//! Name of the overlay image of a section of the keyboard.
+#define kKeyboardOverlayImage @"Octave"
+
 //! Name of the octave up overlay image.
 #define kOctaveUpOverlayImage @"OctaveUp"
 

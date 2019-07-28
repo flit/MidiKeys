@@ -9,6 +9,7 @@
 #import "PreferencesController.h"
 #import "ColourDefaults.h"
 #import "KeyMapManager.h"
+#import "ShortcutRecorder/ShortcutRecorder.h"
 #import <Carbon/Carbon.h>
 
 //! The name of the notification sent when preferences changes have been committed.
@@ -146,20 +147,13 @@ static PreferencesController *_sharedPrefsController = nil;
 	[optionModifierCheckbox setIntValue:optionChecked];
 	[commandModifierCheckbox setIntValue:commandChecked];
 	
-    // Update toggle hot keys key combo.
+    // Update toggle hot keys key combo. We must convert the Carbon modifier
+    // mask to the Cocoa modifiers used by ShortcutRecorder.
     NSDictionary * toggleDict = [defaults dictionaryForKey:kToggleHotKeysShortcutPrefKey];
-//    KeyCombo combo;
-//    if (toggleDict)
-//    {
-//        combo.flags = [_toggleHotKeysShortcut carbonToCocoaFlags:[[toggleDict objectForKey:SHORTCUT_FLAGS_KEY] intValue]];
-//        combo.code = [[toggleDict objectForKey:SHORTCUT_KEYCODE_KEY] intValue];
-//    }
-//    else
-//    {
-//        combo.flags = 0;
-//        combo.code = -1;
-//    }
-//    [_toggleHotKeysShortcut setKeyCombo:combo];
+    toggleDict = @{
+        SHORTCUT_FLAGS_KEY: @(SRCarbonToCocoaFlags([toggleDict[SHORTCUT_FLAGS_KEY] intValue])),
+        SHORTCUT_KEYCODE_KEY: toggleDict[SHORTCUT_KEYCODE_KEY],
+        };
     _toggleHotKeysShortcut.objectValue = toggleDict;
 }
 
@@ -233,15 +227,15 @@ static PreferencesController *_sharedPrefsController = nil;
     [defaults setBool:[_octaveShiftOverlaysCheckbox intValue] forKey:SHOW_OCTAVE_SHIFT_OVERLAYS_PREF_KEY];
     [defaults setBool:[_velocityOverlaysCheckbox intValue] forKey:SHOW_VELOCITY_OVERLAYS_PREF_KEY];
     
-    // Toggle hot keys shortcut.
-//    KeyCombo combo = [_toggleHotKeysShortcut keyCombo];
-//    int carbonFlags = (int) [_toggleHotKeysShortcut cocoaToCarbonFlags:combo.flags];
-//    NSDictionary * comboDict = [NSDictionary dictionaryWithObjectsAndKeys:
-//        [NSNumber numberWithInt:carbonFlags], SHORTCUT_FLAGS_KEY,
-//        [NSNumber numberWithInteger:combo.code], SHORTCUT_KEYCODE_KEY,
-//        nil, nil];
-//    [defaults setObject:comboDict forKey:kToggleHotKeysShortcutPrefKey];
-    [defaults setObject:_toggleHotKeysShortcut.objectValue forKey:kToggleHotKeysShortcutPrefKey];
+    // Toggle hot keys shortcut. Instead of simply storing the shortcut object
+    // value as-is, we convert the modifier key mask from Cocoa to Carbon. This
+    // keeps compatibility with previous preferences.
+    NSDictionary *toggleDict = _toggleHotKeysShortcut.objectValue;
+    toggleDict = @{
+        SHORTCUT_FLAGS_KEY: @(SRCocoaToCarbonFlags([toggleDict[SHORTCUT_FLAGS_KEY] intValue])),
+        SHORTCUT_KEYCODE_KEY: toggleDict[SHORTCUT_KEYCODE_KEY],
+        };
+    [defaults setObject:toggleDict forKey:kToggleHotKeysShortcutPrefKey];
 
 	// send notification that the prefs have changed
 	[[NSNotificationCenter defaultCenter] postNotificationName:kPreferencesChangedNotification object:nil];

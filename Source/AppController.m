@@ -964,7 +964,7 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:SHOW_HOT_KEYS_OVERLAYS_PREF_KEY])
 	{
 		[_indicator close];
-		_indicator = [[OverlayIndicator alloc] initWithImage:[NSImage imageNamed:@"Octave.png"]];
+		_indicator = [[OverlayIndicator alloc] initWithImage:[NSImage imageNamed:kKeyboardOverlayImage]];
 		[_indicator setMessage:hotKeysAreRegistered ? NSLocalizedString(@"Hot Keys Enabled", nil) : NSLocalizedString(@"Hot Keys Disabled", nil)];
 		[_indicator setDelegate:self];
 		[_indicator showUntilDate:[NSDate dateWithTimeIntervalSinceNow:[self overlayTimeout]]];
