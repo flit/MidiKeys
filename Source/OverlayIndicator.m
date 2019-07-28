@@ -199,19 +199,9 @@
 	// Fade window out
     CALayer * theLayer = [[_overlayWindow contentView] layer];
 
-//    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"opacity"];
-//    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-//    anim.fromValue = [NSNumber numberWithFloat:1];
-//    anim.toValue = [NSNumber numberWithFloat:0];
-//    anim.duration = 0.4;
-//    // We make ourselves the delegate to get notified when the animation ends
-//    anim.delegate = self;
-//    
-//    [theLayer addAnimation:anim forKey:@"alpha"];
-
     // Create an explicit transaction to animate the opacity change.
     [CATransaction begin];
-    [CATransaction setValue:[NSNumber numberWithFloat:0.5f] forKey:kCATransactionAnimationDuration];
+    [CATransaction setValue:@0.5f forKey:kCATransactionAnimationDuration];
     theLayer.opacity=0.0;
     [CATransaction commit];
 	
@@ -226,7 +216,7 @@
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
-    NSLog(@"anim did stop: %@ flag:%d", anim, (int)flag);
+//    NSLog(@"anim did stop: %@ flag:%d", anim, (int)flag);
 	[_overlayWindow close];
 //    [self close];
 }
