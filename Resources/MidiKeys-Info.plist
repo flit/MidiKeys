@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>MidiKeys</string>
 	<key>CFBundleGetInfoString</key>
-	<string>1.9b1, Copyright © 2002-2019 Immo Software.</string>
+	<string>Copyright © 2002-2019 Immo Software.</string>
 	<key>CFBundleHelpBookName</key>
 	<string>ReadMe.rtf</string>
 	<key>CFBundleIconFile</key>
@@ -21,11 +21,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.9b1</string>
+	<string>1.9b3</string>
 	<key>CFBundleSignature</key>
 	<string>MKéY</string>
 	<key>CFBundleVersion</key>
-	<string>1.9b1</string>
+	<string>42</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
