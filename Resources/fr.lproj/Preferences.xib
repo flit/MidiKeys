@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -98,7 +99,7 @@ Gw
                                             </connections>
                                         </button>
                                         <textField verticalHuggingPriority="750" id="29">
-                                            <rect key="frame" x="60" y="305" width="165" height="17"/>
+                                            <rect key="frame" x="60" y="305" width="183" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Couleur de la touche active" id="133">
                                                 <font key="font" metaFont="system"/>
@@ -126,7 +127,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <button imageHugsTitle="YES" id="76">
-                                            <rect key="frame" x="30" y="30" width="202" height="18"/>
+                                            <rect key="frame" x="30" y="30" width="268" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Opaque quand MidiKeys est à l'avant-plan" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="136">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -134,7 +135,7 @@ Gw
                                             </buttonCell>
                                         </button>
                                         <button imageHugsTitle="YES" id="215">
-                                            <rect key="frame" x="30" y="170" width="118" height="18"/>
+                                            <rect key="frame" x="30" y="170" width="179" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Alterne raccourcis clavier" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="216">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -142,7 +143,7 @@ Gw
                                             </buttonCell>
                                         </button>
                                         <button imageHugsTitle="YES" id="217">
-                                            <rect key="frame" x="30" y="150" width="86" height="18"/>
+                                            <rect key="frame" x="30" y="150" width="145" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Décalage octave" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="218">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -150,7 +151,7 @@ Gw
                                             </buttonCell>
                                         </button>
                                         <button toolTip="Affiche caracteres sur les touches du clavier MIDI." imageHugsTitle="YES" id="80">
-                                            <rect key="frame" x="15" y="277" width="114" height="18"/>
+                                            <rect key="frame" x="15" y="277" width="177" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Affichage majuscules" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="138">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -158,9 +159,9 @@ Gw
                                             </buttonCell>
                                         </button>
                                         <button imageHugsTitle="YES" id="127">
-                                            <rect key="frame" x="30" y="91" width="191" height="18"/>
+                                            <rect key="frame" x="30" y="91" width="295" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Click through when not in front" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="139">
+                                            <buttonCell key="cell" type="check" title="Cliquez à travers la fenêtre quand n'êtes pas devant" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="139">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
@@ -183,7 +184,7 @@ Gw
                                             </buttonCell>
                                         </button>
                                         <button verticalHuggingPriority="750" id="5CD-fs-Ca2">
-                                            <rect key="frame" x="15" y="257" width="203" height="18"/>
+                                            <rect key="frame" x="15" y="257" width="275" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Affiche la note C pour chaque octave" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1kn-Nr-gC3">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -279,7 +280,7 @@ Gw
                                             </buttonCell>
                                         </button>
                                         <textField verticalHuggingPriority="750" id="186">
-                                            <rect key="frame" x="15" y="147" width="109" height="17"/>
+                                            <rect key="frame" x="15" y="147" width="175" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Alterner raccourcis clavier:" id="188">
                                                 <font key="font" metaFont="system"/>
@@ -288,7 +289,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" id="189">
-                                            <rect key="frame" x="15" y="108" width="268" height="17"/>
+                                            <rect key="frame" x="15" y="108" width="310" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Note: les fleches controlent les octaves et la vélocité." id="190">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -297,7 +298,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <customView id="244" customClass="SRRecorderControl">
-                                            <rect key="frame" x="130" y="143" width="177" height="25"/>
+                                            <rect key="frame" x="196" y="143" width="138" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </customView>
                                     </subviews>
@@ -309,7 +310,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button imageHugsTitle="YES" id="194">
-                                            <rect key="frame" x="15" y="304" width="225" height="18"/>
+                                            <rect key="frame" x="15" y="304" width="283" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Recherche automatique des mises à jour" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="195">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -320,7 +321,7 @@ Gw
                                             </connections>
                                         </button>
                                         <textField verticalHuggingPriority="750" id="196">
-                                            <rect key="frame" x="14" y="266" width="145" height="17"/>
+                                            <rect key="frame" x="14" y="266" width="165" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Intervalle des mises à jour:" id="197">
                                                 <font key="font" metaFont="system"/>
@@ -329,7 +330,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="198">
-                                            <rect key="frame" x="161" y="260" width="100" height="26"/>
+                                            <rect key="frame" x="183" y="260" width="100" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="par heure" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="3600" imageScaling="proportionallyDown" inset="2" selectedItem="201" id="199">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
