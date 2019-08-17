@@ -54,7 +54,14 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 
 @end
 
+static AppController *s_instance = nil;
+
 @implementation AppController
+
++ (AppController *)sharedController
+{
+	return s_instance;
+}
 
 - (void)dealloc
 {
@@ -241,6 +248,9 @@ static void MyMidiReadProc(const MIDIPacketList *pktlist, void *refCon, void *co
 
 - (void)awakeFromNib
 {
+	// Save this instance so other classes can access us.
+	s_instance = self;
+
 	// Need to tell Cocoa that we want to support alpha in colors.
 	[NSColor setIgnoresAlpha:NO];
 	

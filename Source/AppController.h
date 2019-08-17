@@ -90,6 +90,8 @@ enum _velocity_up_or_down
 //    NSStatusItem * _hotKeysStatusItem;
 }
 
++ (AppController *)sharedController;
+
 - (IBAction)destinationSelected:(id)sender;
 - (IBAction)sourceSelected:(id)sender;
 - (IBAction)velocitySliderChanged:(id)sender;
