@@ -10,6 +10,7 @@
 #import "ColourDefaults.h"
 #import "KeyMapManager.h"
 #import "ShortcutRecorder/ShortcutRecorder.h"
+#import "AppController.h"
 #import <Carbon/Carbon.h>
 
 //! The name of the notification sent when preferences changes have been committed.
@@ -78,6 +79,16 @@ static PreferencesController *_sharedPrefsController = nil;
 - (BOOL)recorderControl:(SRRecorderControl *)aRecorder shouldUnconditionallyAllowModifierFlags:(NSEventModifierFlags)aModifierFlags forKeyCode:(unsigned short)aKeyCode
 {
     return YES;
+}
+
+- (void)recorderControlDidBeginRecording:(SRRecorderControl *)aControl
+{
+    [[AppController sharedController] unregisterToggleHotKey];
+}
+
+- (void)recorderControlDidEndRecording:(SRRecorderControl *)aControl
+{
+    [[AppController sharedController] registerToggleHotKey];
 }
 
 - (void)showPanel:(id)sender
