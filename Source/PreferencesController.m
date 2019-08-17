@@ -75,7 +75,7 @@ static PreferencesController *_sharedPrefsController = nil;
 //    [_toggleHotKeysShortcut setCanCaptureGlobalHotKeys:YES];
 }
 
-- (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder shouldUnconditionallyAllowModifierFlags:(NSEventModifierFlags)aModifierFlags forKeyCode:(unsigned short)aKeyCode
+- (BOOL)recorderControl:(SRRecorderControl *)aRecorder shouldUnconditionallyAllowModifierFlags:(NSEventModifierFlags)aModifierFlags forKeyCode:(unsigned short)aKeyCode
 {
     return YES;
 }
@@ -154,7 +154,7 @@ static PreferencesController *_sharedPrefsController = nil;
         SHORTCUT_FLAGS_KEY: @(SRCarbonToCocoaFlags([toggleDict[SHORTCUT_FLAGS_KEY] intValue])),
         SHORTCUT_KEYCODE_KEY: toggleDict[SHORTCUT_KEYCODE_KEY],
         };
-    _toggleHotKeysShortcut.objectValue = toggleDict;
+    _toggleHotKeysShortcut.dictionaryValue = toggleDict;
 }
 
 //! @brief Save preferences to defaults and send prefs changed notification.
@@ -230,7 +230,7 @@ static PreferencesController *_sharedPrefsController = nil;
     // Toggle hot keys shortcut. Instead of simply storing the shortcut object
     // value as-is, we convert the modifier key mask from Cocoa to Carbon. This
     // keeps compatibility with previous preferences.
-    NSDictionary *toggleDict = _toggleHotKeysShortcut.objectValue;
+    NSDictionary *toggleDict = _toggleHotKeysShortcut.dictionaryValue;
     toggleDict = @{
         SHORTCUT_FLAGS_KEY: @(SRCocoaToCarbonFlags([toggleDict[SHORTCUT_FLAGS_KEY] intValue])),
         SHORTCUT_KEYCODE_KEY: toggleDict[SHORTCUT_KEYCODE_KEY],

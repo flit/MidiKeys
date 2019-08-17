@@ -40,8 +40,8 @@
 #define kToggleHotKeysShortcutPrefKey @"ToggleHotKeysShortcut"
 
 // Dictionary keys for shortcut preferences.
-#define SHORTCUT_FLAGS_KEY SRShortcutModifierFlagsKey //@"flags"
-#define SHORTCUT_KEYCODE_KEY SRShortcutKeyCode //@"keycode"
+#define SHORTCUT_FLAGS_KEY SRShortcutKeyModifierFlags //@"flags"
+#define SHORTCUT_KEYCODE_KEY SRShortcutKeyKeyCode //@"keycode"
 
 // Hidden preferences
 #define kVelocityRepeatIntervalPrefKey @"VelocityRepeatInterval"
