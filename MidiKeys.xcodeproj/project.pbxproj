@@ -3,308 +3,235 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		023CEAA822EE647D0071E364 /* Octave.png in Resources */ = {isa = PBXBuildFile; fileRef = 023CEAA722EE647D0071E364 /* Octave.png */; };
-		028AD5BC21CDA27C0044ED26 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */; };
-		028AD5BD21CDA28F0044ED26 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		029ECAD410E7DB9C003648D5 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029ECAD310E7DB9C003648D5 /* Sparkle.framework */; };
-		029ECAE210E7DBAD003648D5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 029ECAD310E7DB9C003648D5 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		029ECAEA10E7DCCC003648D5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 029ECAE910E7DCCC003648D5 /* dsa_pub.pem */; };
-		029ECBB110E8440B003648D5 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029ECBAF10E842FD003648D5 /* Preferences.xib */; };
-		029ECBC510E84636003648D5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029ECBBD10E845B5003648D5 /* MainMenu.xib */; };
-		029ECDB210E95822003648D5 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029ECDB110E95822003648D5 /* Quartz.framework */; };
-		02BC7055050CE73B00D77426 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C9F6B5036761780140410E /* main.m */; };
-		02BC7059050CE73F00D77426 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F8BC1103909790013BC55C /* AppController.m */; };
-		02BC705B050CE74000D77426 /* ColourDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = F508BD0B036B783D01EFE74C /* ColourDefaults.m */; };
-		02BC705D050CE74100D77426 /* EndpointDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B7521F036765350140410E /* EndpointDefaults.m */; };
-		02BC705F050CE74200D77426 /* KeyMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F508BD07036B684A01EFE74C /* KeyMapManager.m */; };
-		02BC7061050CE74300D77426 /* MidiKeyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F508BD03036B620801EFE74C /* MidiKeyMap.m */; };
-		02BC7063050CE74400D77426 /* MidiKeysApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BB863E036C79E401281FE2 /* MidiKeysApplication.m */; };
-		02BC7065050CE74500D77426 /* MidiKeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F546EC7E035D0D950199E6AF /* MidiKeyView.m */; };
-		02BC7067050CE74600D77426 /* MidiParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5FEF50371F30D0140410E /* MidiParser.m */; };
-		02BC7069050CE74700D77426 /* OverlayIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AEA56204A00671003989A9 /* OverlayIndicator.m */; };
-		02BC706B050CE74800D77426 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = F508BCFA036B5A4801EFE74C /* PreferencesController.m */; };
-		02BC706C050CE74B00D77426 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 028FE9A503B6D8C1006ABE44 /* Credits.html */; };
-		02BC706D050CE74C00D77426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
-		02BC706E050CE74D00D77426 /* KeyMapNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5D503210371FB6A0140410E /* KeyMapNames.strings */; };
-		02BC706F050CE74D00D77426 /* KeyMaps.plist in Resources */ = {isa = PBXBuildFile; fileRef = F508BD00036B5E0F01EFE74C /* KeyMaps.plist */; };
-		02BC7070050CE74D00D77426 /* LiesMich.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02BD73A8044E6A7B000C9424 /* LiesMich.rtf */; };
-		02BC7071050CE74E00D77426 /* Lisez-Moi.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02BD73A9044E6A7B000C9424 /* Lisez-Moi.rtf */; };
-		02BC7072050CE74E00D77426 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5D5FEF00371F1130140410E /* Localizable.strings */; };
-		02BC7074050CE75000D77426 /* MidiKeys.icns in Resources */ = {isa = PBXBuildFile; fileRef = F5B75228036773F30140410E /* MidiKeys.icns */; };
-		02BC7076050CE75000D77426 /* OctaveDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BFAFAC03EDEA94000CADE3 /* OctaveDown.png */; };
-		02BC7077050CE75100D77426 /* OctaveUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BFAFAD03EDEA94000CADE3 /* OctaveUp.png */; };
-		02BC7079050CE75200D77426 /* ReadMe (Japanese).rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02BD73AA044E6A7B000C9424 /* ReadMe (Japanese).rtf */; };
-		02BC707A050CE75300D77426 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F58735E2C5B04BC501FD2FC7 /* ReadMe.rtf */; };
-		02BC70F0050CE8EB00D77426 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F527A938036C845101ACC053 /* Carbon.framework */; };
-		02BC7184050CE8EB00D77426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		02BC7188050CE8EC00D77426 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F546ED0A035D17E50199E6AF /* CoreAudio.framework */; };
-		02BC7190050CE8EC00D77426 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F546EC63035D01E20199E6AF /* CoreMIDI.framework */; };
-		02E533C90C122A2800CBD4A5 /* CTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E533C30C122A2800CBD4A5 /* CTGradient.m */; };
+		02D2110C2309F2E7007F7B5E /* CTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D210F12309F2E7007F7B5E /* CTGradient.m */; };
+		02D2110D2309F2E7007F7B5E /* MidiKeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D210F32309F2E7007F7B5E /* MidiKeyView.m */; };
+		02D2110E2309F2E7007F7B5E /* KeyMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D210F52309F2E7007F7B5E /* KeyMapManager.m */; };
+		02D2110F2309F2E7007F7B5E /* MidiKeyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D210F72309F2E7007F7B5E /* MidiKeyMap.m */; };
+		02D211102309F2E7007F7B5E /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D210FD2309F2E7007F7B5E /* PreferencesController.m */; };
+		02D211112309F2E7007F7B5E /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D211002309F2E7007F7B5E /* AppController.m */; };
+		02D211122309F2E7007F7B5E /* MidiParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D211012309F2E7007F7B5E /* MidiParser.m */; };
+		02D211132309F2E7007F7B5E /* MidiKeysApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D211032309F2E7007F7B5E /* MidiKeysApplication.m */; };
+		02D211142309F2E7007F7B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D211042309F2E7007F7B5E /* main.m */; };
+		02D211162309F2E7007F7B5E /* ColourDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D211072309F2E7007F7B5E /* ColourDefaults.m */; };
+		02D211172309F2E7007F7B5E /* EndpointDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D211092309F2E7007F7B5E /* EndpointDefaults.m */; };
+		02D211182309F2E7007F7B5E /* OverlayIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D2110A2309F2E7007F7B5E /* OverlayIndicator.m */; };
+		02D2112A2309F540007F7B5E /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D211292309F540007F7B5E /* ShortcutRecorder.framework */; };
+		02D211392309FC4E007F7B5E /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02D211292309F540007F7B5E /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		02D2113D2309FCE0007F7B5E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D2113C2309FCE0007F7B5E /* CoreMIDI.framework */; };
+		02D2113F2309FCEE007F7B5E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D2113E2309FCEE007F7B5E /* CoreAudio.framework */; };
+		02D2115C2309FEA8007F7B5E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02D211462309FEA8007F7B5E /* Localizable.strings */; };
+		02D2115D2309FEA8007F7B5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02D211482309FEA8007F7B5E /* InfoPlist.strings */; };
+		02D2115E2309FEA8007F7B5E /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D2114A2309FEA8007F7B5E /* Preferences.xib */; };
+		02D2115F2309FEA8007F7B5E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D2114C2309FEA8007F7B5E /* MainMenu.xib */; };
+		02D211602309FEA8007F7B5E /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 02D2114E2309FEA8007F7B5E /* Credits.html */; };
+		02D211612309FEA8007F7B5E /* KeyMapNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02D211502309FEA8007F7B5E /* KeyMapNames.strings */; };
+		02D211632309FEA8007F7B5E /* MidiKeys-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02D211542309FEA8007F7B5E /* MidiKeys-Info.plist */; };
+		02D211642309FEA8007F7B5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D211552309FEA8007F7B5E /* Assets.xcassets */; };
+		02D211672309FEA8007F7B5E /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 02D211582309FEA8007F7B5E /* dsa_pub.pem */; };
+		02D211692309FEA8007F7B5E /* KeyMaps.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02D2115A2309FEA8007F7B5E /* KeyMaps.plist */; };
+		02D2116C2309FF8B007F7B5E /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D211412309FD35007F7B5E /* Sparkle.framework */; };
+		02D2116D2309FF8B007F7B5E /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02D211412309FD35007F7B5E /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		027CBF610FFE9E7E0038B96A /* CopyFiles */ = {
+		02D211382309FC35007F7B5E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				028AD5BD21CDA28F0044ED26 /* ShortcutRecorder.framework in CopyFiles */,
-				029ECAE210E7DBAD003648D5 /* Sparkle.framework in CopyFiles */,
+				02D211392309FC4E007F7B5E /* ShortcutRecorder.framework in CopyFiles */,
+				02D2116D2309FF8B007F7B5E /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		020631DF03EA0C5800488331 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = French; path = fr.lproj/Credits.html; sourceTree = "<group>"; };
-		020631E003EA0C5800488331 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		020631E103EA0C5800488331 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = fr.lproj/KeyMapNames.strings; sourceTree = "<group>"; };
-		020631E203EA0C5800488331 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		020D980E03EB1FDE0031FAE0 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		020D980F03EB1FDE0031FAE0 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = ja.lproj/KeyMapNames.strings; sourceTree = "<group>"; };
-		020D981003EB1FDE0031FAE0 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0231216A229B49A9006555F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		023CEAA722EE647D0071E364 /* Octave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Octave.png; sourceTree = "<group>"; };
-		0255683705D5E8B2002EA660 /* MidiKeys-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MidiKeys-Info.plist"; sourceTree = "<group>"; };
-		02811A9321DC2B9100D97572 /* MIDI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDI.h; sourceTree = "<group>"; };
-		028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		028AD5BE21D054960044ED26 /* MidiKeys.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MidiKeys.entitlements; sourceTree = "<group>"; };
-		028AD5C121DAD8380044ED26 /* version_history.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = version_history.md; path = Resources/version_history.md; sourceTree = SOURCE_ROOT; };
-		028FE9A303B6D8B5006ABE44 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = en.lproj/Credits.html; sourceTree = "<group>"; };
-		028FE9A703B6D8DC006ABE44 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = German; path = de.lproj/Credits.html; sourceTree = "<group>"; };
-		028FE9A803B6DA6C006ABE44 /* MidiKeys_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiKeys_Prefix.h; sourceTree = "<group>"; };
-		029ECAD310E7DB9C003648D5 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		029ECAE910E7DCCC003648D5 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		029ECBB010E842FD003648D5 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = English; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
-		029ECBBE10E845B5003648D5 /* German */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = German; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		029ECBCD10E846C9003648D5 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = de.lproj/Preferences.xib; sourceTree = "<group>"; };
-		029ECDB110E95822003648D5 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
-		02A056D0229B419C0062DD9D /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = fr.lproj/Preferences.xib; sourceTree = "<group>"; };
-		02A056D1229B41A10062DD9D /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = fr.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		02AEA56104A00671003989A9 /* OverlayIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayIndicator.h; sourceTree = "<group>"; };
-		02AEA56204A00671003989A9 /* OverlayIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayIndicator.m; sourceTree = "<group>"; };
-		02BC7053050CE14900D77426 /* MidiKeys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MidiKeys.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		02BD73A2044E69CF000C9424 /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Spanish; path = es.lproj/Credits.html; sourceTree = "<group>"; };
-		02BD73A5044E6A0D000C9424 /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Spanish; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		02BD73A6044E6A20000C9424 /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Spanish; path = es.lproj/KeyMapNames.strings; sourceTree = "<group>"; };
-		02BD73A7044E6A2A000C9424 /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Spanish; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		02BD73A8044E6A7B000C9424 /* LiesMich.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = LiesMich.rtf; sourceTree = SOURCE_ROOT; };
-		02BD73A9044E6A7B000C9424 /* Lisez-Moi.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Lisez-Moi.rtf"; sourceTree = SOURCE_ROOT; };
-		02BD73AA044E6A7B000C9424 /* ReadMe (Japanese).rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "ReadMe (Japanese).rtf"; sourceTree = SOURCE_ROOT; };
-		02BFAFAC03EDEA94000CADE3 /* OctaveDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OctaveDown.png; sourceTree = "<group>"; };
-		02BFAFAD03EDEA94000CADE3 /* OctaveUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OctaveUp.png; sourceTree = "<group>"; };
-		02E533C20C122A2800CBD4A5 /* CTGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTGradient.h; sourceTree = "<group>"; };
-		02E533C30C122A2800CBD4A5 /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
-		02E533EA0C122BB500CBD4A5 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
-		02F45D0103CE8BB00067B094 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		F508BCF9036B5A4801EFE74C /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
-		F508BCFA036B5A4801EFE74C /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
-		F508BD00036B5E0F01EFE74C /* KeyMaps.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = KeyMaps.plist; sourceTree = "<group>"; };
-		F508BD02036B620801EFE74C /* MidiKeyMap.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MidiKeyMap.h; sourceTree = "<group>"; };
-		F508BD03036B620801EFE74C /* MidiKeyMap.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MidiKeyMap.m; sourceTree = "<group>"; };
-		F508BD06036B684A01EFE74C /* KeyMapManager.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = KeyMapManager.h; sourceTree = "<group>"; };
-		F508BD07036B684A01EFE74C /* KeyMapManager.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = KeyMapManager.m; sourceTree = "<group>"; };
-		F508BD0A036B783D01EFE74C /* ColourDefaults.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ColourDefaults.h; sourceTree = "<group>"; };
-		F508BD0B036B783D01EFE74C /* ColourDefaults.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ColourDefaults.m; sourceTree = "<group>"; };
-		F527A938036C845101ACC053 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
-		F546EC5F035D006C0199E6AF /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
-		F546EC63035D01E20199E6AF /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = /System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<absolute>"; };
-		F546EC7D035D0D950199E6AF /* MidiKeyView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MidiKeyView.h; sourceTree = "<group>"; };
-		F546EC7E035D0D950199E6AF /* MidiKeyView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MidiKeyView.m; sourceTree = "<group>"; };
-		F546ED0A035D17E50199E6AF /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
-		F58735E2C5B04BC501FD2FC7 /* ReadMe.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = SOURCE_ROOT; };
-		F5B7521E036765350140410E /* EndpointDefaults.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = EndpointDefaults.h; sourceTree = "<group>"; };
-		F5B7521F036765350140410E /* EndpointDefaults.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = EndpointDefaults.m; sourceTree = "<group>"; };
-		F5B75228036773F30140410E /* MidiKeys.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MidiKeys.icns; sourceTree = "<group>"; };
-		F5BB863D036C79E401281FE2 /* MidiKeysApplication.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MidiKeysApplication.h; sourceTree = "<group>"; };
-		F5BB863E036C79E401281FE2 /* MidiKeysApplication.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MidiKeysApplication.m; sourceTree = "<group>"; };
-		F5C9F6B5036761780140410E /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F5D503220371FB6A0140410E /* KeyMapNames.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = KeyMapNames.strings; path = en.lproj/KeyMapNames.strings; sourceTree = "<group>"; };
-		F5D503240371FB830140410E /* KeyMapNames.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = KeyMapNames.strings; path = de.lproj/KeyMapNames.strings; sourceTree = "<group>"; };
-		F5D5FEF10371F1130140410E /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F5D5FEF30371F1200140410E /* German */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = German; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F5D5FEF40371F30D0140410E /* MidiParser.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MidiParser.h; sourceTree = "<group>"; };
-		F5D5FEF50371F30D0140410E /* MidiParser.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MidiParser.m; sourceTree = "<group>"; };
-		F5D5FEF80371F4BC0140410E /* German */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = German; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F5F8BC1103909790013BC55C /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; usesTabs = 1; };
+		02D210DC2309F20A007F7B5E /* MidiKeys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MidiKeys.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02D210F12309F2E7007F7B5E /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
+		02D210F22309F2E7007F7B5E /* MidiKeysApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiKeysApplication.h; sourceTree = "<group>"; };
+		02D210F32309F2E7007F7B5E /* MidiKeyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiKeyView.m; sourceTree = "<group>"; };
+		02D210F42309F2E7007F7B5E /* MidiParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiParser.h; sourceTree = "<group>"; };
+		02D210F52309F2E7007F7B5E /* KeyMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyMapManager.m; sourceTree = "<group>"; };
+		02D210F62309F2E7007F7B5E /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		02D210F72309F2E7007F7B5E /* MidiKeyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiKeyMap.m; sourceTree = "<group>"; };
+		02D210F82309F2E7007F7B5E /* MIDI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDI.h; sourceTree = "<group>"; };
+		02D210F92309F2E7007F7B5E /* ColourDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColourDefaults.h; sourceTree = "<group>"; };
+		02D210FA2309F2E7007F7B5E /* OverlayIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayIndicator.h; sourceTree = "<group>"; };
+		02D210FB2309F2E7007F7B5E /* EndpointDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndpointDefaults.h; sourceTree = "<group>"; };
+		02D210FC2309F2E7007F7B5E /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		02D210FD2309F2E7007F7B5E /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		02D210FF2309F2E7007F7B5E /* KeyMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyMapManager.h; sourceTree = "<group>"; };
+		02D211002309F2E7007F7B5E /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		02D211012309F2E7007F7B5E /* MidiParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiParser.m; sourceTree = "<group>"; };
+		02D211022309F2E7007F7B5E /* MidiKeyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiKeyView.h; sourceTree = "<group>"; };
+		02D211032309F2E7007F7B5E /* MidiKeysApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiKeysApplication.m; sourceTree = "<group>"; };
+		02D211042309F2E7007F7B5E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		02D211052309F2E7007F7B5E /* CTGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTGradient.h; sourceTree = "<group>"; };
+		02D211072309F2E7007F7B5E /* ColourDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColourDefaults.m; sourceTree = "<group>"; };
+		02D211082309F2E7007F7B5E /* MidiKeyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiKeyMap.h; sourceTree = "<group>"; };
+		02D211092309F2E7007F7B5E /* EndpointDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndpointDefaults.m; sourceTree = "<group>"; };
+		02D2110A2309F2E7007F7B5E /* OverlayIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayIndicator.m; sourceTree = "<group>"; };
+		02D2110B2309F2E7007F7B5E /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		02D211292309F540007F7B5E /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02D2113C2309FCE0007F7B5E /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		02D2113E2309FCEE007F7B5E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		02D211412309FD35007F7B5E /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		02D211472309FEA8007F7B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		02D211492309FEA8007F7B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		02D2114B2309FEA8007F7B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
+		02D2114D2309FEA8007F7B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		02D2114F2309FEA8007F7B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/Credits.html; sourceTree = "<group>"; };
+		02D211512309FEA8007F7B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/KeyMapNames.strings; sourceTree = "<group>"; };
+		02D211532309FEA8007F7B5E /* MidiKeys.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MidiKeys.entitlements; sourceTree = "<group>"; };
+		02D211542309FEA8007F7B5E /* MidiKeys-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MidiKeys-Info.plist"; sourceTree = "<group>"; };
+		02D211552309FEA8007F7B5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02D211572309FEA8007F7B5E /* version_history.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = version_history.md; sourceTree = "<group>"; };
+		02D211582309FEA8007F7B5E /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		02D2115A2309FEA8007F7B5E /* KeyMaps.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyMaps.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		02BC7051050CE14900D77426 /* Frameworks */ = {
+		02D210D92309F20A007F7B5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				028AD5BC21CDA27C0044ED26 /* ShortcutRecorder.framework in Frameworks */,
-				02BC70F0050CE8EB00D77426 /* Carbon.framework in Frameworks */,
-				02BC7184050CE8EB00D77426 /* Cocoa.framework in Frameworks */,
-				02BC7188050CE8EC00D77426 /* CoreAudio.framework in Frameworks */,
-				02BC7190050CE8EC00D77426 /* CoreMIDI.framework in Frameworks */,
-				029ECAD410E7DB9C003648D5 /* Sparkle.framework in Frameworks */,
-				029ECDB210E95822003648D5 /* Quartz.framework in Frameworks */,
+				02D2113F2309FCEE007F7B5E /* CoreAudio.framework in Frameworks */,
+				02D2113D2309FCE0007F7B5E /* CoreMIDI.framework in Frameworks */,
+				02D2112A2309F540007F7B5E /* ShortcutRecorder.framework in Frameworks */,
+				02D2116C2309FF8B007F7B5E /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02AEA56504A01467003989A9 /* Documentation */ = {
+		02D210D32309F20A007F7B5E = {
 			isa = PBXGroup;
 			children = (
-				028AD5C121DAD8380044ED26 /* version_history.md */,
-				F58735E2C5B04BC501FD2FC7 /* ReadMe.rtf */,
-				02BD73A9044E6A7B000C9424 /* Lisez-Moi.rtf */,
-				02BD73A8044E6A7B000C9424 /* LiesMich.rtf */,
-				02BD73AA044E6A7B000C9424 /* ReadMe (Japanese).rtf */,
+				02D2116B2309FF36007F7B5E /* Documentation */,
+				02D210F02309F2E7007F7B5E /* Source */,
+				02D211452309FEA8007F7B5E /* Resources */,
+				02D210DD2309F20A007F7B5E /* Products */,
+				02D211282309F540007F7B5E /* Frameworks */,
 			);
-			name = Documentation;
-			path = Resources;
 			sourceTree = "<group>";
 		};
-		080E96DDFE201D6D7F000001 /* Classes */ = {
+		02D210DD2309F20A007F7B5E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F546EC5F035D006C0199E6AF /* AppController.h */,
-				F5F8BC1103909790013BC55C /* AppController.m */,
-				F508BD0A036B783D01EFE74C /* ColourDefaults.h */,
-				F508BD0B036B783D01EFE74C /* ColourDefaults.m */,
-				02E533C20C122A2800CBD4A5 /* CTGradient.h */,
-				02E533C30C122A2800CBD4A5 /* CTGradient.m */,
-				F5B7521E036765350140410E /* EndpointDefaults.h */,
-				F5B7521F036765350140410E /* EndpointDefaults.m */,
-				F508BD06036B684A01EFE74C /* KeyMapManager.h */,
-				F508BD07036B684A01EFE74C /* KeyMapManager.m */,
-				F508BD02036B620801EFE74C /* MidiKeyMap.h */,
-				F508BD03036B620801EFE74C /* MidiKeyMap.m */,
-				F5BB863D036C79E401281FE2 /* MidiKeysApplication.h */,
-				F5BB863E036C79E401281FE2 /* MidiKeysApplication.m */,
-				F546EC7D035D0D950199E6AF /* MidiKeyView.h */,
-				F546EC7E035D0D950199E6AF /* MidiKeyView.m */,
-				F5D5FEF40371F30D0140410E /* MidiParser.h */,
-				F5D5FEF50371F30D0140410E /* MidiParser.m */,
-				02AEA56104A00671003989A9 /* OverlayIndicator.h */,
-				02AEA56204A00671003989A9 /* OverlayIndicator.m */,
-				02F45D0103CE8BB00067B094 /* Preferences.h */,
-				F508BCF9036B5A4801EFE74C /* PreferencesController.h */,
-				F508BCFA036B5A4801EFE74C /* PreferencesController.m */,
-				02811A9321DC2B9100D97572 /* MIDI.h */,
-			);
-			name = Classes;
-			path = Source;
-			sourceTree = "<group>";
-		};
-		19C28FACFE9D520D11CA2CBB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				02BC7053050CE14900D77426 /* MidiKeys.app */,
+				02D210DC2309F20A007F7B5E /* MidiKeys.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* MidiKeys */ = {
+		02D210F02309F2E7007F7B5E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
-				02AEA56504A01467003989A9 /* Documentation */,
-				29B97323FDCFA39411CA2CEA /* Frameworks */,
-				19C28FACFE9D520D11CA2CBB /* Products */,
+				02D210F12309F2E7007F7B5E /* CTGradient.m */,
+				02D210F22309F2E7007F7B5E /* MidiKeysApplication.h */,
+				02D210F32309F2E7007F7B5E /* MidiKeyView.m */,
+				02D210F42309F2E7007F7B5E /* MidiParser.h */,
+				02D210F52309F2E7007F7B5E /* KeyMapManager.m */,
+				02D210F62309F2E7007F7B5E /* AppController.h */,
+				02D210F72309F2E7007F7B5E /* MidiKeyMap.m */,
+				02D210F82309F2E7007F7B5E /* MIDI.h */,
+				02D210F92309F2E7007F7B5E /* ColourDefaults.h */,
+				02D210FA2309F2E7007F7B5E /* OverlayIndicator.h */,
+				02D210FB2309F2E7007F7B5E /* EndpointDefaults.h */,
+				02D210FC2309F2E7007F7B5E /* Preferences.h */,
+				02D210FD2309F2E7007F7B5E /* PreferencesController.m */,
+				02D210FF2309F2E7007F7B5E /* KeyMapManager.h */,
+				02D211002309F2E7007F7B5E /* AppController.m */,
+				02D211012309F2E7007F7B5E /* MidiParser.m */,
+				02D211022309F2E7007F7B5E /* MidiKeyView.h */,
+				02D211032309F2E7007F7B5E /* MidiKeysApplication.m */,
+				02D211042309F2E7007F7B5E /* main.m */,
+				02D211052309F2E7007F7B5E /* CTGradient.h */,
+				02D211072309F2E7007F7B5E /* ColourDefaults.m */,
+				02D211082309F2E7007F7B5E /* MidiKeyMap.h */,
+				02D211092309F2E7007F7B5E /* EndpointDefaults.m */,
+				02D2110A2309F2E7007F7B5E /* OverlayIndicator.m */,
+				02D2110B2309F2E7007F7B5E /* PreferencesController.h */,
 			);
-			name = MidiKeys;
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				F5C9F6B5036761780140410E /* main.m */,
-				028FE9A803B6DA6C006ABE44 /* MidiKeys_Prefix.h */,
-			);
-			name = "Other Sources";
 			path = Source;
 			sourceTree = "<group>";
 		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
+		02D211282309F540007F7B5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				028AD5BE21D054960044ED26 /* MidiKeys.entitlements */,
-				029ECAE910E7DCCC003648D5 /* dsa_pub.pem */,
-				0255683705D5E8B2002EA660 /* MidiKeys-Info.plist */,
-				023CEAA722EE647D0071E364 /* Octave.png */,
-				02BFAFAC03EDEA94000CADE3 /* OctaveDown.png */,
-				02BFAFAD03EDEA94000CADE3 /* OctaveUp.png */,
-				F5B75228036773F30140410E /* MidiKeys.icns */,
-				F508BD00036B5E0F01EFE74C /* KeyMaps.plist */,
-				028FE9A503B6D8C1006ABE44 /* Credits.html */,
-				029ECBAF10E842FD003648D5 /* Preferences.xib */,
-				029ECBBD10E845B5003648D5 /* MainMenu.xib */,
-				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				F5D5FEF00371F1130140410E /* Localizable.strings */,
-				F5D503210371FB6A0140410E /* KeyMapNames.strings */,
+				02D211412309FD35007F7B5E /* Sparkle.framework */,
+				02D2113E2309FCEE007F7B5E /* CoreAudio.framework */,
+				02D2113C2309FCE0007F7B5E /* CoreMIDI.framework */,
+				02D211292309F540007F7B5E /* ShortcutRecorder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		02D211452309FEA8007F7B5E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				02D211462309FEA8007F7B5E /* Localizable.strings */,
+				02D211482309FEA8007F7B5E /* InfoPlist.strings */,
+				02D2114A2309FEA8007F7B5E /* Preferences.xib */,
+				02D2114C2309FEA8007F7B5E /* MainMenu.xib */,
+				02D2114E2309FEA8007F7B5E /* Credits.html */,
+				02D211502309FEA8007F7B5E /* KeyMapNames.strings */,
+				02D211532309FEA8007F7B5E /* MidiKeys.entitlements */,
+				02D211542309FEA8007F7B5E /* MidiKeys-Info.plist */,
+				02D211552309FEA8007F7B5E /* Assets.xcassets */,
+				02D211582309FEA8007F7B5E /* dsa_pub.pem */,
+				02D2115A2309FEA8007F7B5E /* KeyMaps.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+		02D2116B2309FF36007F7B5E /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				028AD5BB21CDA27C0044ED26 /* ShortcutRecorder.framework */,
-				029ECDB110E95822003648D5 /* Quartz.framework */,
-				029ECAD310E7DB9C003648D5 /* Sparkle.framework */,
-				F527A938036C845101ACC053 /* Carbon.framework */,
-				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				F546ED0A035D17E50199E6AF /* CoreAudio.framework */,
-				F546EC63035D01E20199E6AF /* CoreMIDI.framework */,
-				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
-				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				02D211572309FEA8007F7B5E /* version_history.md */,
 			);
-			name = Frameworks;
+			name = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		02BC7052050CE14900D77426 /* MidiKeys */ = {
+		02D210DB2309F20A007F7B5E /* MidiKeys */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0225C04708573BF200B30E71 /* Build configuration list for PBXNativeTarget "MidiKeys" */;
+			buildConfigurationList = 02D210ED2309F20C007F7B5E /* Build configuration list for PBXNativeTarget "MidiKeys" */;
 			buildPhases = (
-				02BC704F050CE14900D77426 /* Resources */,
-				02BC7050050CE14900D77426 /* Sources */,
-				02BC7051050CE14900D77426 /* Frameworks */,
-				027CBF610FFE9E7E0038B96A /* CopyFiles */,
+				02D210D82309F20A007F7B5E /* Sources */,
+				02D210D92309F20A007F7B5E /* Frameworks */,
+				02D210DA2309F20A007F7B5E /* Resources */,
+				02D211382309FC35007F7B5E /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MidiKeys;
-			productName = "MidiKeys App";
-			productReference = 02BC7053050CE14900D77426 /* MidiKeys.app */;
+			productName = MidiKeys;
+			productReference = 02D210DC2309F20A007F7B5E /* MidiKeys.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		29B97313FDCFA39411CA2CEA /* Project object */ = {
+		02D210D42309F20A007F7B5E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Immo Software";
 				TargetAttributes = {
-					02BC7052050CE14900D77426 = {
-						DevelopmentTeam = 7V78BSKXHX;
-						ProvisioningStyle = Automatic;
+					02D210DB2309F20A007F7B5E = {
+						CreatedOnToolsVersion = 10.3;
 						SystemCapabilities = {
-							com.apple.HardenedRuntime = {
-								enabled = 1;
-							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -312,321 +239,300 @@
 					};
 				};
 			};
-			buildConfigurationList = 0225C04B08573BF200B30E71 /* Build configuration list for PBXProject "MidiKeys" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 1;
+			buildConfigurationList = 02D210D72309F20A007F7B5E /* Build configuration list for PBXProject "MidiKeys" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
-				Spanish,
-				sv,
 				en,
-				de,
-				fr,
-				es,
-				ja,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* MidiKeys */;
+			mainGroup = 02D210D32309F20A007F7B5E;
+			productRefGroup = 02D210DD2309F20A007F7B5E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				02BC7052050CE14900D77426 /* MidiKeys */,
+				02D210DB2309F20A007F7B5E /* MidiKeys */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		02BC704F050CE14900D77426 /* Resources */ = {
+		02D210DA2309F20A007F7B5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02BC706C050CE74B00D77426 /* Credits.html in Resources */,
-				02BC706D050CE74C00D77426 /* InfoPlist.strings in Resources */,
-				02BC706E050CE74D00D77426 /* KeyMapNames.strings in Resources */,
-				02BC706F050CE74D00D77426 /* KeyMaps.plist in Resources */,
-				02BC7070050CE74D00D77426 /* LiesMich.rtf in Resources */,
-				02BC7071050CE74E00D77426 /* Lisez-Moi.rtf in Resources */,
-				02BC7072050CE74E00D77426 /* Localizable.strings in Resources */,
-				02BC7074050CE75000D77426 /* MidiKeys.icns in Resources */,
-				02BC7076050CE75000D77426 /* OctaveDown.png in Resources */,
-				02BC7077050CE75100D77426 /* OctaveUp.png in Resources */,
-				02BC7079050CE75200D77426 /* ReadMe (Japanese).rtf in Resources */,
-				02BC707A050CE75300D77426 /* ReadMe.rtf in Resources */,
-				029ECAEA10E7DCCC003648D5 /* dsa_pub.pem in Resources */,
-				029ECBB110E8440B003648D5 /* Preferences.xib in Resources */,
-				029ECBC510E84636003648D5 /* MainMenu.xib in Resources */,
-				023CEAA822EE647D0071E364 /* Octave.png in Resources */,
+				02D211692309FEA8007F7B5E /* KeyMaps.plist in Resources */,
+				02D211602309FEA8007F7B5E /* Credits.html in Resources */,
+				02D211672309FEA8007F7B5E /* dsa_pub.pem in Resources */,
+				02D2115C2309FEA8007F7B5E /* Localizable.strings in Resources */,
+				02D211632309FEA8007F7B5E /* MidiKeys-Info.plist in Resources */,
+				02D211612309FEA8007F7B5E /* KeyMapNames.strings in Resources */,
+				02D2115D2309FEA8007F7B5E /* InfoPlist.strings in Resources */,
+				02D2115E2309FEA8007F7B5E /* Preferences.xib in Resources */,
+				02D2115F2309FEA8007F7B5E /* MainMenu.xib in Resources */,
+				02D211642309FEA8007F7B5E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		02BC7050050CE14900D77426 /* Sources */ = {
+		02D210D82309F20A007F7B5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02BC7055050CE73B00D77426 /* main.m in Sources */,
-				02BC7059050CE73F00D77426 /* AppController.m in Sources */,
-				02BC705B050CE74000D77426 /* ColourDefaults.m in Sources */,
-				02BC705D050CE74100D77426 /* EndpointDefaults.m in Sources */,
-				02BC705F050CE74200D77426 /* KeyMapManager.m in Sources */,
-				02BC7061050CE74300D77426 /* MidiKeyMap.m in Sources */,
-				02BC7063050CE74400D77426 /* MidiKeysApplication.m in Sources */,
-				02BC7065050CE74500D77426 /* MidiKeyView.m in Sources */,
-				02BC7067050CE74600D77426 /* MidiParser.m in Sources */,
-				02BC7069050CE74700D77426 /* OverlayIndicator.m in Sources */,
-				02BC706B050CE74800D77426 /* PreferencesController.m in Sources */,
-				02E533C90C122A2800CBD4A5 /* CTGradient.m in Sources */,
+				02D211102309F2E7007F7B5E /* PreferencesController.m in Sources */,
+				02D211112309F2E7007F7B5E /* AppController.m in Sources */,
+				02D211122309F2E7007F7B5E /* MidiParser.m in Sources */,
+				02D211132309F2E7007F7B5E /* MidiKeysApplication.m in Sources */,
+				02D211172309F2E7007F7B5E /* EndpointDefaults.m in Sources */,
+				02D2110C2309F2E7007F7B5E /* CTGradient.m in Sources */,
+				02D2110F2309F2E7007F7B5E /* MidiKeyMap.m in Sources */,
+				02D2110D2309F2E7007F7B5E /* MidiKeyView.m in Sources */,
+				02D211182309F2E7007F7B5E /* OverlayIndicator.m in Sources */,
+				02D211142309F2E7007F7B5E /* main.m in Sources */,
+				02D2110E2309F2E7007F7B5E /* KeyMapManager.m in Sources */,
+				02D211162309F2E7007F7B5E /* ColourDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		028FE9A503B6D8C1006ABE44 /* Credits.html */ = {
+		02D211462309FEA8007F7B5E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				028FE9A303B6D8B5006ABE44 /* English */,
-				028FE9A703B6D8DC006ABE44 /* German */,
-				020631DF03EA0C5800488331 /* French */,
-				02BD73A2044E69CF000C9424 /* Spanish */,
+				02D211472309FEA8007F7B5E /* en */,
 			);
-			name = Credits.html;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		029ECBAF10E842FD003648D5 /* Preferences.xib */ = {
+		02D211482309FEA8007F7B5E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				029ECBB010E842FD003648D5 /* English */,
-				029ECBCD10E846C9003648D5 /* German */,
-				02A056D0229B419C0062DD9D /* French */,
-			);
-			name = Preferences.xib;
-			sourceTree = "<group>";
-		};
-		029ECBBD10E845B5003648D5 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				029ECBBE10E845B5003648D5 /* German */,
-				02A056D1229B41A10062DD9D /* French */,
-				0231216A229B49A9006555F9 /* en */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				089C165DFE840E0CC02AAC07 /* English */,
-				F5D5FEF80371F4BC0140410E /* German */,
-				020631E003EA0C5800488331 /* French */,
-				020D980E03EB1FDE0031FAE0 /* Japanese */,
-				02BD73A7044E6A2A000C9424 /* Spanish */,
+				02D211492309FEA8007F7B5E /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		F5D503210371FB6A0140410E /* KeyMapNames.strings */ = {
+		02D2114A2309FEA8007F7B5E /* Preferences.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F5D503220371FB6A0140410E /* KeyMapNames.strings */,
-				F5D503240371FB830140410E /* KeyMapNames.strings */,
-				020631E103EA0C5800488331 /* French */,
-				020D980F03EB1FDE0031FAE0 /* Japanese */,
-				02BD73A6044E6A20000C9424 /* Spanish */,
+				02D2114B2309FEA8007F7B5E /* en */,
 			);
-			name = KeyMapNames.strings;
+			name = Preferences.xib;
 			sourceTree = "<group>";
 		};
-		F5D5FEF00371F1130140410E /* Localizable.strings */ = {
+		02D2114C2309FEA8007F7B5E /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F5D5FEF10371F1130140410E /* English */,
-				F5D5FEF30371F1200140410E /* German */,
-				020631E203EA0C5800488331 /* French */,
-				020D981003EB1FDE0031FAE0 /* Japanese */,
-				02BD73A5044E6A0D000C9424 /* Spanish */,
-				02E533EA0C122BB500CBD4A5 /* sv */,
+				02D2114D2309FEA8007F7B5E /* en */,
 			);
-			name = Localizable.strings;
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		02D2114E2309FEA8007F7B5E /* Credits.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02D2114F2309FEA8007F7B5E /* en */,
+			);
+			name = Credits.html;
+			sourceTree = "<group>";
+		};
+		02D211502309FEA8007F7B5E /* KeyMapNames.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02D211512309FEA8007F7B5E /* en */,
+			);
+			name = KeyMapNames.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0225C04808573BF200B30E71 /* Debug */ = {
+		02D210EB2309F20C007F7B5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = Resources/MidiKeys.entitlements;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 7V78BSKXHX;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-				);
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Source/MidiKeys_Prefix.h;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"";
-				INFOPLIST_FILE = "Resources/MidiKeys-Info.plist";
-				INSTALL_PATH = "$(USER_APPS_DIR)";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.immosw.MidiKeys;
-				PRODUCT_NAME = MidiKeys;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				WARNING_CFLAGS = "-Wmost";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		0225C04908573BF200B30E71 /* Release */ = {
+		02D210EC2309F20C007F7B5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = Resources/MidiKeys.entitlements;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = 7V78BSKXHX;
-				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Source/MidiKeys_Prefix.h;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"";
-				INFOPLIST_FILE = "Resources/MidiKeys-Info.plist";
-				INSTALL_PATH = "$(USER_APPS_DIR)";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.immosw.MidiKeys;
-				PRODUCT_NAME = MidiKeys;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				WARNING_CFLAGS = "-Wmost";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		0225C04C08573BF200B30E71 /* Debug */ = {
+		02D210EE2309F20C007F7B5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = Resources/MidiKeys.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7V78BSKXHX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/MidiKeys-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.immosw.MidiKeys;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Wmost";
 			};
 			name = Debug;
 		};
-		0225C04D08573BF200B30E71 /* Release */ = {
+		02D210EF2309F20C007F7B5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = macosx;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = Resources/MidiKeys.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7V78BSKXHX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/MidiKeys-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.immosw.MidiKeys;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Wmost";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0225C04708573BF200B30E71 /* Build configuration list for PBXNativeTarget "MidiKeys" */ = {
+		02D210D72309F20A007F7B5E /* Build configuration list for PBXProject "MidiKeys" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0225C04808573BF200B30E71 /* Debug */,
-				0225C04908573BF200B30E71 /* Release */,
+				02D210EB2309F20C007F7B5E /* Debug */,
+				02D210EC2309F20C007F7B5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0225C04B08573BF200B30E71 /* Build configuration list for PBXProject "MidiKeys" */ = {
+		02D210ED2309F20C007F7B5E /* Build configuration list for PBXNativeTarget "MidiKeys" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0225C04C08573BF200B30E71 /* Debug */,
-				0225C04D08573BF200B30E71 /* Release */,
+				02D210EE2309F20C007F7B5E /* Debug */,
+				02D210EF2309F20C007F7B5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+	rootObject = 02D210D42309F20A007F7B5E /* Project object */;
 }
