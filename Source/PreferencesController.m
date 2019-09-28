@@ -161,10 +161,13 @@ static PreferencesController *_sharedPrefsController = nil;
     // Update toggle hot keys key combo. We must convert the Carbon modifier
     // mask to the Cocoa modifiers used by ShortcutRecorder.
     NSDictionary * toggleDict = [defaults dictionaryForKey:kToggleHotKeysShortcutPrefKey];
-    toggleDict = @{
-        SHORTCUT_FLAGS_KEY: @(SRCarbonToCocoaFlags([toggleDict[SHORTCUT_FLAGS_KEY] intValue])),
-        SHORTCUT_KEYCODE_KEY: toggleDict[SHORTCUT_KEYCODE_KEY],
-        };
+    if (toggleDict)
+    {
+        toggleDict = @{
+            SHORTCUT_FLAGS_KEY: @(SRCarbonToCocoaFlags([toggleDict[SHORTCUT_FLAGS_KEY] intValue])),
+            SHORTCUT_KEYCODE_KEY: toggleDict[SHORTCUT_KEYCODE_KEY],
+            };
+    }
     _toggleHotKeysShortcut.dictionaryValue = toggleDict;
 }
 
@@ -242,10 +245,14 @@ static PreferencesController *_sharedPrefsController = nil;
     // value as-is, we convert the modifier key mask from Cocoa to Carbon. This
     // keeps compatibility with previous preferences.
     NSDictionary *toggleDict = _toggleHotKeysShortcut.dictionaryValue;
-    toggleDict = @{
-        SHORTCUT_FLAGS_KEY: @(SRCocoaToCarbonFlags([toggleDict[SHORTCUT_FLAGS_KEY] intValue])),
-        SHORTCUT_KEYCODE_KEY: toggleDict[SHORTCUT_KEYCODE_KEY],
-        };
+    if (toggleDict)
+    {
+        toggleDict = @{
+            SHORTCUT_FLAGS_KEY: @(SRCocoaToCarbonFlags([toggleDict[SHORTCUT_FLAGS_KEY] intValue])),
+            SHORTCUT_KEYCODE_KEY: toggleDict[SHORTCUT_KEYCODE_KEY],
+            };
+    }
+
     [defaults setObject:toggleDict forKey:kToggleHotKeysShortcutPrefKey];
 
 	// send notification that the prefs have changed
