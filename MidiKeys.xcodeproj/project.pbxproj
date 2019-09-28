@@ -33,8 +33,8 @@
 		02D211642309FEA8007F7B5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D211552309FEA8007F7B5E /* Assets.xcassets */; };
 		02D211672309FEA8007F7B5E /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 02D211582309FEA8007F7B5E /* dsa_pub.pem */; };
 		02D211692309FEA8007F7B5E /* KeyMaps.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02D2115A2309FEA8007F7B5E /* KeyMaps.plist */; };
-		02F76648233FE49F0077D366 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D211412309FD35007F7B5E /* Sparkle.framework */; };
-		02F76649233FE49F0077D366 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02D211412309FD35007F7B5E /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		02F7664E234001630077D366 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F7664D234001630077D366 /* Sparkle.framework */; };
+		02F7664F234001630077D366 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02F7664D234001630077D366 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,7 +45,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				02D211392309FC4E007F7B5E /* ShortcutRecorder.framework in CopyFiles */,
-				02F76649233FE49F0077D366 /* Sparkle.framework in CopyFiles */,
+				02F7664F234001630077D366 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +81,6 @@
 		02D211292309F540007F7B5E /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D2113C2309FCE0007F7B5E /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		02D2113E2309FCEE007F7B5E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		02D211412309FD35007F7B5E /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		02D211472309FEA8007F7B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02D211492309FEA8007F7B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		02D2114B2309FEA8007F7B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		02D211572309FEA8007F7B5E /* version_history.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = version_history.md; sourceTree = "<group>"; };
 		02D211582309FEA8007F7B5E /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		02D2115A2309FEA8007F7B5E /* KeyMaps.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyMaps.plist; sourceTree = "<group>"; };
+		02F7664D234001630077D366 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		02FB1BB6230A033500A823AD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02FB1BB7230A033500A823AD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		02FB1BB8230A033500A823AD /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/Preferences.xib; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				02D2113F2309FCEE007F7B5E /* CoreAudio.framework in Frameworks */,
 				02D2113D2309FCE0007F7B5E /* CoreMIDI.framework in Frameworks */,
 				02D2112A2309F540007F7B5E /* ShortcutRecorder.framework in Frameworks */,
-				02F76648233FE49F0077D366 /* Sparkle.framework in Frameworks */,
+				02F7664E234001630077D366 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +177,7 @@
 		02D211282309F540007F7B5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				02D211412309FD35007F7B5E /* Sparkle.framework */,
+				02F7664D234001630077D366 /* Sparkle.framework */,
 				02D2113E2309FCEE007F7B5E /* CoreAudio.framework */,
 				02D2113C2309FCE0007F7B5E /* CoreMIDI.framework */,
 				02D211292309F540007F7B5E /* ShortcutRecorder.framework */,
