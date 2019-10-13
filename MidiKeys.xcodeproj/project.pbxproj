@@ -508,7 +508,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.9b5;
+				MARKETING_VERSION = 1.9b6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.immosw.MidiKeys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = "-Wmost";
@@ -534,7 +534,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.9b5;
+				MARKETING_VERSION = 1.9b6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.immosw.MidiKeys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = "-Wmost";
