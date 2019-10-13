@@ -159,13 +159,31 @@ static PreferencesController *_sharedPrefsController = nil;
 	[commandModifierCheckbox setIntValue:commandChecked];
 	
     // Update toggle hot keys key combo. We must convert the Carbon modifier
-    // mask to the Cocoa modifiers used by ShortcutRecorder.
+    // mask to the Cocoa modifiers used by ShortcutRecorder. We also convert
+    // the dict key names from those used by MidiKeys (for backwards compatibility)
+    // to ShortcutRecorder's.
     NSDictionary * toggleDict = [defaults dictionaryForKey:kToggleHotKeysShortcutPrefKey];
     if (toggleDict)
     {
+        NSNumber * flags = toggleDict[SHORTCUT_FLAGS_KEY];
+        NSNumber * convertedFlags;
+        if (flags)
+        {
+            convertedFlags = @(SRCarbonToCocoaFlags([flags intValue]));
+        }
+        else
+        {
+            convertedFlags = @(0);
+        }
+        NSNumber * keycode = toggleDict[SHORTCUT_KEYCODE_KEY];
+        if (!keycode)
+        {
+            keycode = @(0);
+        }
+        // Create the ShortcutRecorder key info dict.
         toggleDict = @{
-            SHORTCUT_FLAGS_KEY: @(SRCarbonToCocoaFlags([toggleDict[SHORTCUT_FLAGS_KEY] intValue])),
-            SHORTCUT_KEYCODE_KEY: toggleDict[SHORTCUT_KEYCODE_KEY],
+            SRShortcutKeyModifierFlags: convertedFlags,
+            SRShortcutKeyKeyCode: keycode,
             };
     }
     _toggleHotKeysShortcut.dictionaryValue = toggleDict;
@@ -243,13 +261,29 @@ static PreferencesController *_sharedPrefsController = nil;
     
     // Toggle hot keys shortcut. Instead of simply storing the shortcut object
     // value as-is, we convert the modifier key mask from Cocoa to Carbon. This
-    // keeps compatibility with previous preferences.
+    // keeps compatibility with previous preferences.  We also convert
+    // the dict key names.
     NSDictionary *toggleDict = _toggleHotKeysShortcut.dictionaryValue;
     if (toggleDict)
     {
+        NSNumber * flags = toggleDict[SRShortcutKeyModifierFlags];
+        NSNumber * convertedFlags;
+        if (flags)
+        {
+            convertedFlags = @(SRCocoaToCarbonFlags(flags.intValue));
+        }
+        else
+        {
+            convertedFlags = @(0);
+        }
+        NSNumber * keycode = toggleDict[SRShortcutKeyKeyCode];
+        if (!keycode)
+        {
+            keycode = @(0);
+        }
         toggleDict = @{
-            SHORTCUT_FLAGS_KEY: @(SRCocoaToCarbonFlags([toggleDict[SHORTCUT_FLAGS_KEY] intValue])),
-            SHORTCUT_KEYCODE_KEY: toggleDict[SHORTCUT_KEYCODE_KEY],
+            SHORTCUT_FLAGS_KEY: convertedFlags,
+            SHORTCUT_KEYCODE_KEY: keycode,
             };
     }
 
