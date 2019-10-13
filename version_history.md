@@ -1,13 +1,13 @@
 ### Version 1.9
 - MidiKeys is now 64-bit compliant. (And no longer a universal binary.)
-- Minimum system version is 10.9.
+- Minimum system version is 10.11.
 - Keys window is resizable (probably the most asked-for feature request).
-- Support for dark mode in Mojave, including a dark mode keyboard. A "force light keyboard" preference is visible in Mojave to allow you to revert the keyboard to a traditional appearance.
+- Support for system dark mode, including a dark mode keyboard. A "force light keyboard" preference is visible to allow you to revert the keyboard to a traditional appearance.
 - Added Clear Stuck Keys command.
 - On systems with a trackpad or mouse that reports pressure, MidiKeys will send channel aftertouch when keys are clicked and held.
 - New "show C notes" feature that draws "Cn" where "n" is the octave (i.e., C3, C4, etc) on the keyboard.
 - Fixed an issue with key caps where certain keys like tab and delete were not shown; they will now appear as the standard key icons.
-- Enabled app sandbox and the hardened runtime.
+- Enabled the hardened app runtime.
 - Changed version update feed URL to https.
 - Updated Sparkle and ShortcutRecorder frameworks to modern versions.
 
