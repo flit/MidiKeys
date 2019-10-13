@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		027038912353CCE20042A6C3 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 027038902353CCE20042A6C3 /* ReadMe.rtf */; };
 		02D2110C2309F2E7007F7B5E /* CTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D210F12309F2E7007F7B5E /* CTGradient.m */; };
 		02D2110D2309F2E7007F7B5E /* MidiKeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D210F32309F2E7007F7B5E /* MidiKeyView.m */; };
 		02D2110E2309F2E7007F7B5E /* KeyMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D210F52309F2E7007F7B5E /* KeyMapManager.m */; };
@@ -29,7 +30,6 @@
 		02D2115F2309FEA8007F7B5E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D2114C2309FEA8007F7B5E /* MainMenu.xib */; };
 		02D211602309FEA8007F7B5E /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 02D2114E2309FEA8007F7B5E /* Credits.html */; };
 		02D211612309FEA8007F7B5E /* KeyMapNames.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02D211502309FEA8007F7B5E /* KeyMapNames.strings */; };
-		02D211632309FEA8007F7B5E /* MidiKeys-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02D211542309FEA8007F7B5E /* MidiKeys-Info.plist */; };
 		02D211642309FEA8007F7B5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D211552309FEA8007F7B5E /* Assets.xcassets */; };
 		02D211672309FEA8007F7B5E /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 02D211582309FEA8007F7B5E /* dsa_pub.pem */; };
 		02D211692309FEA8007F7B5E /* KeyMaps.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02D2115A2309FEA8007F7B5E /* KeyMaps.plist */; };
@@ -52,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		027038902353CCE20042A6C3 /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = SOURCE_ROOT; };
 		02D210DC2309F20A007F7B5E /* MidiKeys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MidiKeys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D210F12309F2E7007F7B5E /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
 		02D210F22309F2E7007F7B5E /* MidiKeysApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiKeysApplication.h; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 		02D211452309FEA8007F7B5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				027038902353CCE20042A6C3 /* ReadMe.rtf */,
 				02D211462309FEA8007F7B5E /* Localizable.strings */,
 				02D211482309FEA8007F7B5E /* InfoPlist.strings */,
 				02D2114A2309FEA8007F7B5E /* Preferences.xib */,
@@ -279,11 +281,11 @@
 				02D211602309FEA8007F7B5E /* Credits.html in Resources */,
 				02D211672309FEA8007F7B5E /* dsa_pub.pem in Resources */,
 				02D2115C2309FEA8007F7B5E /* Localizable.strings in Resources */,
-				02D211632309FEA8007F7B5E /* MidiKeys-Info.plist in Resources */,
 				02D211612309FEA8007F7B5E /* KeyMapNames.strings in Resources */,
 				02D2115D2309FEA8007F7B5E /* InfoPlist.strings in Resources */,
 				02D2115E2309FEA8007F7B5E /* Preferences.xib in Resources */,
 				02D2115F2309FEA8007F7B5E /* MainMenu.xib in Resources */,
+				027038912353CCE20042A6C3 /* ReadMe.rtf in Resources */,
 				02D211642309FEA8007F7B5E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -482,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -508,6 +510,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 1.9b6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.immosw.MidiKeys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -534,6 +537,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 1.9b6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.immosw.MidiKeys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
