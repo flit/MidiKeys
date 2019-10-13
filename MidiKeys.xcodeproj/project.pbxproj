@@ -189,7 +189,6 @@
 		02D211452309FEA8007F7B5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				027038902353CCE20042A6C3 /* ReadMe.rtf */,
 				02D211462309FEA8007F7B5E /* Localizable.strings */,
 				02D211482309FEA8007F7B5E /* InfoPlist.strings */,
 				02D2114A2309FEA8007F7B5E /* Preferences.xib */,
@@ -209,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				02D211572309FEA8007F7B5E /* version_history.md */,
+				027038902353CCE20042A6C3 /* ReadMe.rtf */,
 			);
 			name = Documentation;
 			sourceTree = "<group>";
