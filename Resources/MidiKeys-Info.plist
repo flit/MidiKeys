@@ -10,8 +10,6 @@
 	<string>Copyright © 2002-2019 Immo Software.</string>
 	<key>CFBundleHelpBookName</key>
 	<string>ReadMe.rtf</string>
-	<key>CFBundleIconFile</key>
-	<string>MidiKeys.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
