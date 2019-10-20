@@ -292,7 +292,7 @@
                                     <action selector="sendAllNotesOff:" target="-1" id="261"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Débloquer touches coincées" id="2Dj-op-iR2">
+                            <menuItem title="Débloquer les touches coincées" id="2Dj-op-iR2">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="clearStuckKeys:" target="203" id="kKi-Um-M9J"/>
