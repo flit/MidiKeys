@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,32 +17,32 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="404" y="229" width="371" height="149"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
             <value key="minSize" type="size" width="371" height="149"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="371" height="149"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView id="250">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="250">
                         <rect key="frame" x="0.0" y="0.0" width="371" height="87"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
-                            <userLayoutGuide location="72" affinity="minY"/>
+                            <userLayoutGuide location="71" affinity="minY"/>
                         </userGuides>
                         <subviews>
-                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" imageHugsTitle="YES" id="275">
-                                <rect key="frame" x="330" y="62" width="29" height="26"/>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="275">
+                                <rect key="frame" x="332" y="61" width="25" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="buttonCell:276:image" imagePosition="overlaps" alignment="center" controlSize="mini" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="276">
+                                <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="buttonCell:276:image" imagePosition="overlaps" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="276">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                    <font key="font" metaFont="miniSystem"/>
+                                    <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="toggleMidiControls:" target="203" id="277"/>
                                 </connections>
                             </button>
-                            <slider verticalHuggingPriority="750" id="210">
-                                <rect key="frame" x="212" y="67" width="102" height="15"/>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="210">
+                                <rect key="frame" x="212" y="64" width="102" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <sliderCell key="cell" controlSize="small" continuous="YES" alignment="left" minValue="1" maxValue="127" doubleValue="67.896910000000005" tickMarkPosition="above" sliderType="linear" id="263">
                                     <font key="font" size="12" name="Helvetica"/>
@@ -52,12 +52,12 @@
                                     <outlet property="nextKeyView" destination="198" id="241"/>
                                 </connections>
                             </slider>
-                            <customView id="208" customClass="MidiKeyView">
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="208" customClass="MidiKeyView">
                                 <rect key="frame" x="0.0" y="0.0" width="371" height="57"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>
-                            <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="287">
-                                <rect key="frame" x="19" y="68" width="88" height="15"/>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="287">
+                                <rect key="frame" x="19" y="65" width="88" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Kanal 1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="291" id="288">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -114,8 +114,8 @@
                                     <outlet property="nextKeyView" destination="217" id="294"/>
                                 </connections>
                             </popUpButton>
-                            <textField verticalHuggingPriority="750" id="211">
-                                <rect key="frame" x="111" y="66" width="95" height="17"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="211">
+                                <rect key="frame" x="111" y="63" width="95" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Härte Anschlag:" id="264">
                                     <font key="font" metaFont="smallSystem"/>
@@ -125,11 +125,11 @@
                             </textField>
                         </subviews>
                     </customView>
-                    <customView id="254">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="254">
                         <rect key="frame" x="0.0" y="89" width="371" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <button imageHugsTitle="YES" id="256">
+                            <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="256">
                                 <rect key="frame" x="284" y="20" width="81" height="18"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <buttonCell key="cell" type="check" title="Weiterleitung" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="mini" inset="2" id="272">
@@ -140,7 +140,7 @@
                                     <action selector="toggleMidiThru:" target="203" id="258"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" id="236">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="236">
                                 <rect key="frame" x="17" y="36" width="57" height="11"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="Ziel:" id="271">
@@ -149,7 +149,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" id="219">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="219">
                                 <rect key="frame" x="17" y="14" width="93" height="11"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" alignment="left" title="Höre auf Anschluss:" id="270">
@@ -158,26 +158,8 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="217">
-                                <rect key="frame" x="115" y="12" width="167" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="214" id="269">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="miniSystem"/>
-                                    <menu key="menu" title="Zuhören" id="215">
-                                        <items>
-                                            <menuItem title="Item1" state="on" id="214"/>
-                                            <menuItem title="Item2" id="216"/>
-                                            <menuItem title="Item3" id="218"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                                <connections>
-                                    <action selector="sourceSelected:" target="203" id="221"/>
-                                </connections>
-                            </popUpButton>
-                            <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="198">
-                                <rect key="frame" x="115" y="34" width="167" height="15"/>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="198">
+                                <rect key="frame" x="115" y="33" width="167" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="200" id="268">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -193,6 +175,24 @@
                                 <connections>
                                     <action selector="destinationSelected:" target="203" id="206"/>
                                     <outlet property="nextKeyView" destination="217" id="238"/>
+                                </connections>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="217">
+                                <rect key="frame" x="115" y="11" width="167" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item1" bezelStyle="rounded" alignment="left" controlSize="mini" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="214" id="269">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="miniSystem"/>
+                                    <menu key="menu" title="Zuhören" id="215">
+                                        <items>
+                                            <menuItem title="Item1" state="on" id="214"/>
+                                            <menuItem title="Item2" id="216"/>
+                                            <menuItem title="Item3" id="218"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="sourceSelected:" target="203" id="221"/>
                                 </connections>
                             </popUpButton>
                         </subviews>
