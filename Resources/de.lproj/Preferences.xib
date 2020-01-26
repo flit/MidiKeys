@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -35,13 +35,13 @@
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="509" y="261" width="397" height="445"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="397" height="445"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="36">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="36">
                         <rect key="frame" x="299" y="12" width="84" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="130">
@@ -56,7 +56,7 @@ DQ
                             <outlet property="nextKeyView" destination="7" id="72"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="37">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="37">
                         <rect key="frame" x="198" y="12" width="101" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="131">
@@ -71,22 +71,22 @@ Gw
                             <outlet property="nextKeyView" destination="36" id="50"/>
                         </connections>
                     </button>
-                    <tabView initialItem="90" id="89">
+                    <tabView fixedFrame="YES" initialItem="90" translatesAutoresizingMaskIntoConstraints="NO" id="89">
                         <rect key="frame" x="13" y="40" width="371" height="391"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <font key="font" metaFont="message"/>
+                        <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="Anzeige" identifier="" id="90">
-                                <view key="view" id="92">
+                                <view key="view" ambiguous="YES" id="92">
                                     <rect key="frame" x="10" y="33" width="351" height="345"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <colorWell id="7">
+                                        <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7">
                                             <rect key="frame" x="17" y="301" width="38" height="26"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </colorWell>
-                                        <button imageHugsTitle="YES" id="17">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="17">
                                             <rect key="frame" x="15" y="113" width="239" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Tastatur immer im Vordergrund" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="132">
@@ -98,7 +98,7 @@ Gw
                                                 <outlet property="nextKeyView" destination="33" id="74"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="29">
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29">
                                             <rect key="frame" x="60" y="305" width="165" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Farbe der aktiven Taste" id="133">
@@ -107,17 +107,17 @@ Gw
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <slider verticalHuggingPriority="750" id="33">
+                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33">
                                             <rect key="frame" x="118" y="56" width="216" height="12"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <sliderCell key="cell" controlSize="mini" continuous="YES" alignment="left" maxValue="90" doubleValue="25" tickMarkPosition="below" sliderType="linear" id="134">
-                                                <font key="font" size="12" name="Helvetica"/>
+                                                <font key="font" metaFont="user"/>
                                             </sliderCell>
                                             <connections>
                                                 <outlet property="nextKeyView" destination="37" id="49"/>
                                             </connections>
                                         </slider>
-                                        <textField verticalHuggingPriority="750" id="66">
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66">
                                             <rect key="frame" x="14" y="54" width="93" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Transparenz:" id="135">
@@ -126,31 +126,31 @@ Gw
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button imageHugsTitle="YES" id="76">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="76">
                                             <rect key="frame" x="30" y="30" width="202" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Nur im Hintergrund" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="136">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="palette"/>
                                             </buttonCell>
                                         </button>
-                                        <button imageHugsTitle="YES" id="215">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="215">
                                             <rect key="frame" x="30" y="170" width="195" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Tastenkürzel umschalten" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="216">
+                                            <buttonCell key="cell" type="check" title="Tastaturkürzel umschalten" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="216">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="palette"/>
                                             </buttonCell>
                                         </button>
-                                        <button imageHugsTitle="YES" id="217">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="217">
                                             <rect key="frame" x="30" y="150" width="195" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Oktavverschiebung" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="218">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="palette"/>
                                             </buttonCell>
                                         </button>
-                                        <button toolTip="Zeigt die Zeichen auf den MIDI-Tastatur an." imageHugsTitle="YES" id="80">
+                                        <button toolTip="Zeigt die Zeichen auf den MIDI-Tastatur an." fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80">
                                             <rect key="frame" x="15" y="277" width="210" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Tastenkappen anzeigen" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="138">
@@ -158,17 +158,17 @@ Gw
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
-                                        <button imageHugsTitle="YES" id="127">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="127">
                                             <rect key="frame" x="30" y="73" width="306" height="36"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="139">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <string key="title">Klicken Sie sich durch, wenn nicht im
 Vordergrund befinden</string>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="palette"/>
                                             </buttonCell>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="237">
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="237">
                                             <rect key="frame" x="14" y="193" width="283" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Overlay-Benachrichtigungen für anzeigen:" id="238">
@@ -177,7 +177,7 @@ Vordergrund befinden</string>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button verticalHuggingPriority="750" id="oil-vE-9ee">
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oil-vE-9ee">
                                             <rect key="frame" x="14" y="237" width="293" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Helle Tastatur im dunklen Modus erzwingen" bezelStyle="regularSquare" imagePosition="left" inset="2" id="70k-Ak-QcI">
@@ -185,7 +185,7 @@ Vordergrund befinden</string>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
-                                        <button verticalHuggingPriority="750" id="5CD-fs-Ca2">
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5CD-fs-Ca2">
                                             <rect key="frame" x="15" y="257" width="282" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Zeige C-Noten für jede Oktave" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1kn-Nr-gC3">
@@ -201,7 +201,7 @@ Vordergrund befinden</string>
                                     <rect key="frame" x="10" y="33" width="351" height="345"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField verticalHuggingPriority="750" id="100">
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="100">
                                             <rect key="frame" x="15" y="304" width="118" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Tastaturbelegung:" id="141">
@@ -210,7 +210,7 @@ Vordergrund befinden</string>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button imageHugsTitle="YES" id="101">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="101">
                                             <rect key="frame" x="16" y="266" width="218" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Taste für systemweiten Zugriff" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="142">
@@ -221,48 +221,48 @@ Vordergrund befinden</string>
                                                 <outlet property="nextKeyView" destination="102" id="109"/>
                                             </connections>
                                         </button>
-                                        <button imageHugsTitle="YES" id="102">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="102">
                                             <rect key="frame" x="30" y="244" width="129" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="⌃ Control-Taste" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="143">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="palette"/>
                                             </buttonCell>
                                             <connections>
                                                 <outlet property="nextKeyView" destination="103" id="108"/>
                                             </connections>
                                         </button>
-                                        <button imageHugsTitle="YES" id="103">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="103">
                                             <rect key="frame" x="30" y="224" width="129" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="⇧ Umschalttaste" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="144">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="palette"/>
                                             </buttonCell>
                                             <connections>
                                                 <outlet property="nextKeyView" destination="104" id="110"/>
                                             </connections>
                                         </button>
-                                        <button imageHugsTitle="YES" id="104">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="104">
                                             <rect key="frame" x="30" y="204" width="129" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="⌥ Wahltaste" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="145">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="palette"/>
                                             </buttonCell>
                                             <connections>
                                                 <outlet property="nextKeyView" destination="105" id="112"/>
                                             </connections>
                                         </button>
-                                        <button imageHugsTitle="YES" id="105">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="105">
                                             <rect key="frame" x="30" y="184" width="129" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="⌘ Befehlstaste" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="146">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="palette"/>
                                             </buttonCell>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="186">
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="186">
                                             <rect key="frame" x="15" y="134" width="144" height="34"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Umschalten Tasten für systemweiten Zugriff:" id="188">
@@ -271,25 +271,25 @@ Vordergrund befinden</string>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="189">
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="189">
                                             <rect key="frame" x="15" y="112" width="321" height="14"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Hinweis: Die Pfeiltasten steuern Oktave und Anschlagstärke." id="190">
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="palette"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <customView id="244" customClass="SRRecorderControl">
+                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="244" customClass="SRRecorderControl">
                                             <rect key="frame" x="165" y="138" width="169" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </customView>
-                                        <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="94">
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="94">
                                             <rect key="frame" x="130" y="298" width="164" height="26"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <popUpButtonCell key="cell" type="push" title="US-Englisch" bezelStyle="rounded" alignment="left" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="99" id="140">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="95">
                                                     <items>
                                                         <menuItem title="US-Englisch" state="on" id="99"/>
@@ -311,7 +311,7 @@ Vordergrund befinden</string>
                                     <rect key="frame" x="10" y="33" width="351" height="345"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button imageHugsTitle="YES" id="194">
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="194">
                                             <rect key="frame" x="15" y="304" width="297" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Automatisch nach Aktualisierungen suchen" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="195">
@@ -322,7 +322,7 @@ Vordergrund befinden</string>
                                                 <binding destination="193" name="value" keyPath="automaticallyChecksForUpdates" id="208"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="196">
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="196">
                                             <rect key="frame" x="14" y="266" width="237" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Aktualisierungsüberprüfungsintervall:" id="197">
@@ -331,12 +331,12 @@ Vordergrund befinden</string>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" id="198">
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="198">
                                             <rect key="frame" x="26" y="233" width="100" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Stündlich" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="3600" imageScaling="proportionallyDown" inset="2" selectedItem="201" id="199">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
+                                                <font key="font" metaFont="system"/>
                                                 <menu key="menu" title="OtherViews" id="200">
                                                     <items>
                                                         <menuItem title="Stündlich" state="on" tag="3600" id="201"/>
