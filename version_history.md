@@ -7,7 +7,6 @@
 - On systems with a trackpad or mouse that reports pressure, MidiKeys will send channel aftertouch when keys are clicked and held.
 - New "show C notes" feature that draws "Cn" where "n" is the octave (i.e., C3, C4, etc) on the keyboard.
 - Fixed an issue with key caps where certain keys like tab and delete were not shown; they will now appear as the standard key icons.
-- Enabled the hardened app runtime.
 - Changed version update feed URL to https.
 - Updated Sparkle and ShortcutRecorder frameworks to modern versions.
 
