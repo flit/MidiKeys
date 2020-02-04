@@ -23,7 +23,7 @@
 	<key>CFBundleSignature</key>
 	<string>MKéY</string>
 	<key>CFBundleVersion</key>
-	<string>42</string>
+	<string>1.9.0</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
