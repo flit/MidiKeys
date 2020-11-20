@@ -8,12 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "Preferences.h"
-#import <ShortcutRecorder/SRRecorderControl.h>
+// #import <ShortcutRecorder/SRRecorderControl.h>
 
 /*!
  * @brief Manages the preferences panel.
  */
-@interface PreferencesController : NSWindowController <SRRecorderControlDelegate>
+@interface PreferencesController : NSWindowController // <SRRecorderControlDelegate>
 {
 	IBOutlet NSWindow * _prefsWindow;
 	IBOutlet NSPopUpButton *keymapPopup;
@@ -30,7 +30,7 @@
     IBOutlet NSButton * _showCNotesCheckbox;
     IBOutlet NSButton * _forceLightModeCheckbox;
 	IBOutlet NSButton * _clickThroughCheckbox;
-	IBOutlet SRRecorderControl * _toggleHotKeysShortcut;
+//	IBOutlet SRRecorderControl * _toggleHotKeysShortcut;
     IBOutlet NSButton * _hotKeysOverlaysCheckbox;
     IBOutlet NSButton * _octaveShiftOverlaysCheckbox;
     IBOutlet NSButton * _velocityOverlaysCheckbox;

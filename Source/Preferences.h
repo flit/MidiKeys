@@ -6,7 +6,7 @@
 //  Copyright (c) 2002-2003 Chris Reed. All rights reserved.
 //
 
-#import <ShortcutRecorder/SRRecorderControl.h>
+// #import <ShortcutRecorder/SRRecorderControl.h>
 
 //! @name Preference Keys
 //@{
