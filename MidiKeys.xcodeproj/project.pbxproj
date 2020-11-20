@@ -20,8 +20,6 @@
 		02D211162309F2E7007F7B5E /* ColourDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D211072309F2E7007F7B5E /* ColourDefaults.m */; };
 		02D211172309F2E7007F7B5E /* EndpointDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D211092309F2E7007F7B5E /* EndpointDefaults.m */; };
 		02D211182309F2E7007F7B5E /* OverlayIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D2110A2309F2E7007F7B5E /* OverlayIndicator.m */; };
-		02D2112A2309F540007F7B5E /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D211292309F540007F7B5E /* ShortcutRecorder.framework */; };
-		02D211392309FC4E007F7B5E /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02D211292309F540007F7B5E /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		02D2113D2309FCE0007F7B5E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D2113C2309FCE0007F7B5E /* CoreMIDI.framework */; };
 		02D2113F2309FCEE007F7B5E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D2113E2309FCEE007F7B5E /* CoreAudio.framework */; };
 		02D2115C2309FEA8007F7B5E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02D211462309FEA8007F7B5E /* Localizable.strings */; };
@@ -33,23 +31,7 @@
 		02D211642309FEA8007F7B5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D211552309FEA8007F7B5E /* Assets.xcassets */; };
 		02D211672309FEA8007F7B5E /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 02D211582309FEA8007F7B5E /* dsa_pub.pem */; };
 		02D211692309FEA8007F7B5E /* KeyMaps.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02D2115A2309FEA8007F7B5E /* KeyMaps.plist */; };
-		02F7664E234001630077D366 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F7664D234001630077D366 /* Sparkle.framework */; };
-		02F7664F234001630077D366 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02F7664D234001630077D366 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		02D211382309FC35007F7B5E /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				02D211392309FC4E007F7B5E /* ShortcutRecorder.framework in CopyFiles */,
-				02F7664F234001630077D366 /* Sparkle.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		022368EA256B22790087FB13 /* ci.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ci.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -117,8 +99,6 @@
 			files = (
 				02D2113F2309FCEE007F7B5E /* CoreAudio.framework in Frameworks */,
 				02D2113D2309FCE0007F7B5E /* CoreMIDI.framework in Frameworks */,
-				02D2112A2309F540007F7B5E /* ShortcutRecorder.framework in Frameworks */,
-				02F7664E234001630077D366 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +205,6 @@
 				02D210D82309F20A007F7B5E /* Sources */,
 				02D210D92309F20A007F7B5E /* Frameworks */,
 				02D210DA2309F20A007F7B5E /* Resources */,
-				02D211382309FC35007F7B5E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -501,7 +480,7 @@
 				CODE_SIGN_ENTITLEMENTS = Resources/MidiKeys.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 26G7NGZPAT;
+				DEVELOPMENT_TEAM = UP6SS5ES7E;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,7 +507,7 @@
 				CODE_SIGN_ENTITLEMENTS = Resources/MidiKeys.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 26G7NGZPAT;
+				DEVELOPMENT_TEAM = UP6SS5ES7E;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

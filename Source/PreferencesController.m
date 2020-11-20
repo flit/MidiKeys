@@ -9,7 +9,7 @@
 #import "PreferencesController.h"
 #import "ColourDefaults.h"
 #import "KeyMapManager.h"
-#import "ShortcutRecorder/ShortcutRecorder.h"
+// #import "ShortcutRecorder/ShortcutRecorder.h"
 #import "AppController.h"
 #import <Carbon/Carbon.h>
 
@@ -72,24 +72,24 @@ static PreferencesController *_sharedPrefsController = nil;
         [_forceLightModeCheckbox setHidden:YES];
     }
 
-    _toggleHotKeysShortcut.delegate = self;
+//    _toggleHotKeysShortcut.delegate = self;
 //    [_toggleHotKeysShortcut setCanCaptureGlobalHotKeys:YES];
 }
 
-- (BOOL)recorderControl:(SRRecorderControl *)aRecorder shouldUnconditionallyAllowModifierFlags:(NSEventModifierFlags)aModifierFlags forKeyCode:(unsigned short)aKeyCode
-{
-    return YES;
-}
-
-- (void)recorderControlDidBeginRecording:(SRRecorderControl *)aControl
-{
-    [[AppController sharedController] unregisterToggleHotKey];
-}
-
-- (void)recorderControlDidEndRecording:(SRRecorderControl *)aControl
-{
-    [[AppController sharedController] registerToggleHotKey];
-}
+//- (BOOL)recorderControl:(SRRecorderControl *)aRecorder shouldUnconditionallyAllowModifierFlags:(NSEventModifierFlags)aModifierFlags forKeyCode:(unsigned short)aKeyCode
+//{
+//    return YES;
+//}
+//
+//- (void)recorderControlDidBeginRecording:(SRRecorderControl *)aControl
+//{
+//    [[AppController sharedController] unregisterToggleHotKey];
+//}
+//
+//- (void)recorderControlDidEndRecording:(SRRecorderControl *)aControl
+//{
+//    [[AppController sharedController] registerToggleHotKey];
+//}
 
 - (void)showPanel:(id)sender
 {
@@ -162,31 +162,31 @@ static PreferencesController *_sharedPrefsController = nil;
     // mask to the Cocoa modifiers used by ShortcutRecorder. We also convert
     // the dict key names from those used by MidiKeys (for backwards compatibility)
     // to ShortcutRecorder's.
-    NSDictionary * toggleDict = [defaults dictionaryForKey:kToggleHotKeysShortcutPrefKey];
-    if (toggleDict)
-    {
-        NSNumber * flags = toggleDict[SHORTCUT_FLAGS_KEY];
-        NSNumber * convertedFlags;
-        if (flags)
-        {
-            convertedFlags = @(SRCarbonToCocoaFlags([flags intValue]));
-        }
-        else
-        {
-            convertedFlags = @(0);
-        }
-        NSNumber * keycode = toggleDict[SHORTCUT_KEYCODE_KEY];
-        if (!keycode)
-        {
-            keycode = @(0);
-        }
-        // Create the ShortcutRecorder key info dict.
-        toggleDict = @{
-            SRShortcutKeyModifierFlags: convertedFlags,
-            SRShortcutKeyKeyCode: keycode,
-            };
-    }
-    _toggleHotKeysShortcut.dictionaryValue = toggleDict;
+//    NSDictionary * toggleDict = [defaults dictionaryForKey:kToggleHotKeysShortcutPrefKey];
+//    if (toggleDict)
+//    {
+//        NSNumber * flags = toggleDict[SHORTCUT_FLAGS_KEY];
+//        NSNumber * convertedFlags;
+//        if (flags)
+//        {
+//            convertedFlags = @(SRCarbonToCocoaFlags([flags intValue]));
+//        }
+//        else
+//        {
+//            convertedFlags = @(0);
+//        }
+//        NSNumber * keycode = toggleDict[SHORTCUT_KEYCODE_KEY];
+//        if (!keycode)
+//        {
+//            keycode = @(0);
+//        }
+//        // Create the ShortcutRecorder key info dict.
+//        toggleDict = @{
+//            SRShortcutKeyModifierFlags: convertedFlags,
+//            SRShortcutKeyKeyCode: keycode,
+//            };
+//    }
+//    _toggleHotKeysShortcut.dictionaryValue = toggleDict;
 }
 
 //! @brief Save preferences to defaults and send prefs changed notification.
@@ -263,31 +263,31 @@ static PreferencesController *_sharedPrefsController = nil;
     // value as-is, we convert the modifier key mask from Cocoa to Carbon. This
     // keeps compatibility with previous preferences.  We also convert
     // the dict key names.
-    NSDictionary *toggleDict = _toggleHotKeysShortcut.dictionaryValue;
-    if (toggleDict)
-    {
-        NSNumber * flags = toggleDict[SRShortcutKeyModifierFlags];
-        NSNumber * convertedFlags;
-        if (flags)
-        {
-            convertedFlags = @(SRCocoaToCarbonFlags(flags.intValue));
-        }
-        else
-        {
-            convertedFlags = @(0);
-        }
-        NSNumber * keycode = toggleDict[SRShortcutKeyKeyCode];
-        if (!keycode)
-        {
-            keycode = @(0);
-        }
-        toggleDict = @{
-            SHORTCUT_FLAGS_KEY: convertedFlags,
-            SHORTCUT_KEYCODE_KEY: keycode,
-            };
-    }
-
-    [defaults setObject:toggleDict forKey:kToggleHotKeysShortcutPrefKey];
+//    NSDictionary *toggleDict = _toggleHotKeysShortcut.dictionaryValue;
+//    if (toggleDict)
+//    {
+//        NSNumber * flags = toggleDict[SRShortcutKeyModifierFlags];
+//        NSNumber * convertedFlags;
+//        if (flags)
+//        {
+//            convertedFlags = @(SRCocoaToCarbonFlags(flags.intValue));
+//        }
+//        else
+//        {
+//            convertedFlags = @(0);
+//        }
+//        NSNumber * keycode = toggleDict[SRShortcutKeyKeyCode];
+//        if (!keycode)
+//        {
+//            keycode = @(0);
+//        }
+//        toggleDict = @{
+//            SHORTCUT_FLAGS_KEY: convertedFlags,
+//            SHORTCUT_KEYCODE_KEY: keycode,
+//            };
+//    }
+//
+//    [defaults setObject:toggleDict forKey:kToggleHotKeysShortcutPrefKey];
 
 	// send notification that the prefs have changed
 	[[NSNotificationCenter defaultCenter] postNotificationName:kPreferencesChangedNotification object:nil];
