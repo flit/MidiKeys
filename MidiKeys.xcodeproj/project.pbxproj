@@ -52,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		022368EA256B22790087FB13 /* ci.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ci.xcconfig; sourceTree = SOURCE_ROOT; };
 		027038902353CCE20042A6C3 /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = SOURCE_ROOT; };
 		02D210DC2309F20A007F7B5E /* MidiKeys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MidiKeys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D210F12309F2E7007F7B5E /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
@@ -200,6 +201,7 @@
 				02D211552309FEA8007F7B5E /* Assets.xcassets */,
 				02D211582309FEA8007F7B5E /* dsa_pub.pem */,
 				02D2115A2309FEA8007F7B5E /* KeyMaps.plist */,
+				022368EA256B22790087FB13 /* ci.xcconfig */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

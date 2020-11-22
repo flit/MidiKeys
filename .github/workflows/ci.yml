@@ -18,4 +18,4 @@ jobs:
         env:
           scheme: MidiKeys
         run: |
-          xcodebuild build -scheme "$scheme" -workspace MidiKeys.xcworkspace -allowProvisioningUpdates
+          xcodebuild build -scheme "$scheme" -workspace MidiKeys.xcworkspace -xcconfig ci.xcconfig -allowProvisioningUpdates

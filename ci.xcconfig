@@ -1,0 +1,16 @@
+//
+//  ci.xcconfig
+//  MidiKeys
+//
+//  Created by Chris Reed on 11/22/20.
+//  Copyright © 2020 beatimprint LLC.
+//
+
+// Change code signing identity so we don't have to deal with certificates in CI.
+//CODE_SIGN_IDENTITY = Apple Development
+
+
+CODE_SIGN_STYLE = Manual
+CODE_SIGN_IDENTITY =
+DEVELOPMENT_TEAM =
+PROVISIONING_PROFILE_SPECIFIER =
