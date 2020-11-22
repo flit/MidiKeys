@@ -1,0 +1,21 @@
+# Workflow to build MidiKeys.
+
+name: CI
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        env:
+          scheme: MidiKeys
+        run: |
+          xcodebuild build -scheme "$scheme" -workspace MidiKeys.xcworkspace -allowProvisioningUpdates
