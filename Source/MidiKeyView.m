@@ -8,7 +8,6 @@
 
 #import "MidiKeyView.h"
 #import "AppController.h"
-#import "CTGradient.h"
 #import "Preferences.h"
 
 //! Maximum number of keys to show.
@@ -420,10 +419,9 @@ static const key_info_t kNoteInOctaveInfo[] = {
 
     [insetPath setClip];
 
-    CTGradient * gradient = [CTGradient
-        gradientWithBeginningColor:keyFillTopColor
-        endingColor:keyFillBottomColor];
-    [gradient fillRect:[insetPath bounds] angle:330.0];
+    NSGradient *gradient = [[NSGradient alloc] initWithStartingColor: keyFillTopColor endingColor:keyFillBottomColor];
+    [gradient drawInRect: [insetPath bounds] angle: 330.0];
+    [gradient release];
 
     [NSGraphicsContext restoreGraphicsState];
 
@@ -497,8 +495,9 @@ static const key_info_t kNoteInOctaveInfo[] = {
 
 	[keyPath setClip];
 
-	CTGradient * gradient = [CTGradient gradientWithBeginningColor:darkerHighlightColor endingColor:lighterHighlightColor];
-	[gradient fillRect:[keyPath bounds] angle:330.0];
+        NSGradient *gradient = [[NSGradient alloc] initWithStartingColor: darkerHighlightColor endingColor:lighterHighlightColor];
+        [gradient drawInRect: [keyPath bounds] angle: 330.0];
+        [gradient release];
 
 	[NSGraphicsContext restoreGraphicsState];
 
