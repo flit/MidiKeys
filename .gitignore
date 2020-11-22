@@ -83,6 +83,7 @@ EW*.tmp
 .svn
 Build
 build
+DerivedData
 
 # Sparkle private key
 dsa_priv.pem
