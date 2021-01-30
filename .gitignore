@@ -71,6 +71,7 @@ workspace
 # Xcode user state
 *.xcbkptlist
 *.xcuserstate
+*.xcuserdatad
 
 # Python bytecode
 *.pyc
