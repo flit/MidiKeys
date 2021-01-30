@@ -472,8 +472,13 @@ static const key_info_t kNoteInOctaveInfo[] = {
 
     if (_showCNotes && info->noteInOctave == 0)
     {
+        // Get the octave number from the MIDI note number.
+        // MIDI note 60 is C4 for most devices, and that's what we use here.
+        // Yamaha and some others use C3 for note 60.
+        int octaveNumber = (note / 12) - 1;
+        c = [NSString stringWithFormat:@"C%d", octaveNumber];
+        
         [attributes setValue:[NSFont labelFontOfSize:(fontSize * 2) / 3] forKey:NSFontAttributeName];
-        c = [NSString stringWithFormat:@"C%d", (note / 12) - 2];
         NSSize noteCapSize = [c sizeWithAttributes:attributes];
         xOffset = ((pathBounds.size.width - noteCapSize.width) / 2.0) - 0.5;
         drawPoint = pathBounds.origin;
