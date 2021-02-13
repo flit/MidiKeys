@@ -1,7 +1,7 @@
 ### Version 1.9.1
 - Support for macOS 11.0 Big Sur.
 - Universal binary with support for Apple Silicon (AArch64).
-- Fixed #8 by displaying C4 for MIDI note 60.
+- Fixed issue #8 by displaying C4 for MIDI note 60.
 
 ### Version 1.9
 - MidiKeys is now 64-bit compliant. (And no longer a universal binary.)
